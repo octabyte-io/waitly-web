@@ -83,11 +83,11 @@ export default function PreordersPage() {
           <Explainer title="Order tags for your team">
             <p>
               Every order that contains a preorder is tagged{" "}
-              <code className="rounded bg-mist px-1.5 py-0.5 text-[0.9375rem]">waitly-preorder</code>, so it’s
+              <code className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9375rem] ring-1 ring-ink/10">waitly-preorder</code>, so it’s
               easy to filter in Shopify and in your fulfilment tools.
             </p>
             <p className="flex flex-wrap items-center gap-2">
-              Add your own tag per policy too, like <code className="rounded bg-mist px-1.5 py-0.5 text-[0.9375rem]">winter-drop</code>.
+              Add your own tag per policy too, like <code className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9375rem] ring-1 ring-ink/10">winter-drop</code>.
               Waitly adds tags but never removes one. <PlanBadge level="growth" />
             </p>
           </Explainer>
@@ -106,21 +106,21 @@ export default function PreordersPage() {
           intro="A policy is a named set of rules. Make one for each kind of preorder you run, like “Winter jackets” or “Made to order”. Only you see the name; shoppers see “Pre-order”."
         />
         <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-2">
-          <div className="rounded-3xl bg-paper p-6 sm:p-8">
+          <div className="rounded-[1.5rem] bg-white/65 p-6 ring-1 ring-white/80 sm:p-8">
             <h3 className="text-d3 font-bold tracking-[-0.02em]">Offer preorder on</h3>
             <p className="mt-3 text-ink/80">Any product or variant that matches one of these.</p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {["Collection: Outerwear", "Tag: made-to-order", "Product: Trail runner, low"].map((c) => (
-                <li key={c} className="rounded-full bg-mist px-4 py-2 font-medium">{c}</li>
+                <li key={c} className="rounded-full bg-sky/70 px-4 py-2 font-medium">{c}</li>
               ))}
             </ul>
           </div>
-          <div className="rounded-3xl bg-paper p-6 sm:p-8">
+          <div className="rounded-[1.5rem] bg-white/65 p-6 ring-1 ring-white/80 sm:p-8">
             <h3 className="text-d3 font-bold tracking-[-0.02em]">Except</h3>
             <p className="mt-3 text-ink/80">Leave out anything that matches one of these, even if it matches above.</p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {["Variant: Harbor overshirt / XS", "Tag: final-sale"].map((c) => (
-                <li key={c} className="rounded-full bg-mist px-4 py-2 font-medium">{c}</li>
+                <li key={c} className="rounded-full bg-sky/70 px-4 py-2 font-medium">{c}</li>
               ))}
             </ul>
           </div>

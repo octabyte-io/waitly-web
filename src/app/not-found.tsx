@@ -3,7 +3,7 @@ import { DotQueue } from "@/components/demos/dot-queue";
 
 export default function NotFound() {
   return (
-    <section className="bg-sky py-24 sm:py-32">
+    <section className="py-20 sm:py-28">
       <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <div>
           <h1 className="text-d1 font-bold tracking-[-0.03em]">

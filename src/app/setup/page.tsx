@@ -62,7 +62,7 @@ const PROCESSORS = [
 export default function SetupPage() {
   return (
     <>
-      <section className="bg-sky pt-14 pb-20 sm:pt-20 sm:pb-24">
+      <section className="pt-10 pb-12 sm:pt-16 sm:pb-16">
         <Container className="grid grid-cols-1 gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <div>
             <h1 className="text-d1 font-bold tracking-[-0.03em]">
@@ -82,13 +82,13 @@ export default function SetupPage() {
                 <span
                   className={
                     "flex size-12 items-center justify-center rounded-full font-display text-[1.25rem] font-bold " +
-                    (i === 0 ? "bg-paper text-ink" : "bg-ink text-paper")
+                    (i === 0 ? "glass-thin text-ink" : "bg-ink text-paper shadow-[inset_0_1px_0_rgb(191_227_255/0.25)]")
                   }
                 >
                   {i === 0 ? "0" : i}
                 </span>
                 <div>
-                  <h2 className="text-[1.375rem] font-bold tracking-[-0.01em]">{step.title}</h2>
+                  <h2 className="text-[1.375rem] font-semibold tracking-[-0.01em]">{step.title}</h2>
                   <p className="mt-2 text-ink/80">{step.body}</p>
                 </div>
               </li>
@@ -97,7 +97,7 @@ export default function SetupPage() {
         </Container>
       </section>
 
-      <Band tone="paper">
+      <Band tone="mist">
         <SectionHeading
           title="Waitly’s theme blocks"
           intro="Add them in the theme editor like any other block. Each one’s text and style is set on the block itself."
@@ -155,7 +155,7 @@ export default function SetupPage() {
         </div>
       </Band>
 
-      <Band tone="mist" id="privacy">
+      <Band tone="paper" id="privacy">
         <SectionHeading
           title="Data and privacy"
           intro="Waitly keeps as little as it can. The only customer detail it asks Shopify for is an email address."

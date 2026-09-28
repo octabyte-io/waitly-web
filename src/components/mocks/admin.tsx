@@ -18,17 +18,12 @@ export function AdminFrame({
   className?: string;
 }) {
   return (
-    <figure
-      className={cn(
-        "overflow-hidden rounded-2xl border border-line bg-[#f4f7fa] text-ink shadow-[0_24px_48px_-28px_rgba(11,37,69,0.45)]",
-        className,
-      )}
-    >
-      <div className="flex items-center justify-between gap-3 border-b border-line bg-paper px-5 py-3">
+    <figure className={cn("glass rounded-[1.75rem] p-2 text-ink sm:p-2.5", className)}>
+      <div className="flex items-center justify-between gap-3 px-3.5 pt-2 pb-3 sm:px-4">
         <p className="font-semibold">{title}</p>
         <p className="text-[0.8125rem] text-ink-soft">Example store</p>
       </div>
-      <div className="space-y-3 p-3 sm:p-4">{children}</div>
+      <div className="space-y-2.5">{children}</div>
     </figure>
   );
 }
@@ -45,7 +40,7 @@ export function Panel({
   className?: string;
 }) {
   return (
-    <div className={cn("rounded-xl border border-line bg-paper p-4", className)}>
+    <div className={cn("rounded-[1.25rem] bg-white/85 p-4 ring-1 ring-[#0b2545]/8", className)}>
       {title ? (
         <p className="mb-3 flex items-center gap-2 text-[0.9375rem] font-semibold">
           {title}

@@ -87,49 +87,46 @@ export function ProductFrame({
   compact?: boolean;
 }) {
   return (
-    <figure
-      className={cn(
-        "overflow-hidden rounded-2xl border border-[#d9dee4] bg-white text-[#1a1a1a] shadow-[0_24px_48px_-28px_rgba(11,37,69,0.45)]",
-        className,
-      )}
-    >
-      <div className="flex items-center gap-2 border-b border-[#e6e9ee] px-4 py-2.5 text-[0.8125rem] text-[#5c6570]">
-        <span className="flex gap-1.5" aria-hidden="true">
-          <span className="size-2.5 rounded-full bg-[#d9dee4]" />
-          <span className="size-2.5 rounded-full bg-[#d9dee4]" />
-          <span className="size-2.5 rounded-full bg-[#d9dee4]" />
-        </span>
-        <span className="ml-2 truncate">{store}</span>
-      </div>
-      <div className={cn("grid", compact ? "" : "sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]")}>
-        {compact ? null : <ProductArt kind={art} className="sm:aspect-auto sm:h-full" />}
-        <div className="space-y-4 p-5 sm:p-6">
-          <div>
-            <p className="font-sans text-[1.125rem] font-semibold leading-snug">{title}</p>
-            <p className="mt-1 text-[0.9375rem] text-[#5c6570] tnum">{price}</p>
-          </div>
-          {options ? (
+    <figure className={cn("glass rounded-[1.75rem] p-2 sm:p-2.5", className)}>
+      <div className="overflow-hidden rounded-[1.25rem] bg-white text-[#1a1a1a] ring-1 ring-[#0b2545]/10">
+        <div className="flex items-center gap-2 border-b border-[#e6e9ee] px-4 py-2.5 text-[0.8125rem] text-[#5c6570]">
+          <span className="flex gap-1.5" aria-hidden="true">
+            <span className="size-2.5 rounded-full bg-[#d9dee4]" />
+            <span className="size-2.5 rounded-full bg-[#d9dee4]" />
+            <span className="size-2.5 rounded-full bg-[#d9dee4]" />
+          </span>
+          <span className="ml-2 truncate">{store}</span>
+        </div>
+        <div className={cn("grid", compact ? "" : "sm:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]")}>
+          {compact ? null : <ProductArt kind={art} className="sm:aspect-auto sm:h-full" />}
+          <div className="space-y-4 p-5 sm:p-6">
             <div>
-              <p className="text-[0.8125rem] text-[#5c6570]">
-                {options.label}: <span className="text-[#1a1a1a]">{options.value}</span>
-              </p>
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {options.values.map((v) => (
-                  <span
-                    key={v.name}
-                    className={cn(
-                      "inline-flex h-8 min-w-10 items-center justify-center rounded-md border px-2.5 text-[0.8125rem]",
-                      v.name === options.value ? "border-[#1a1a1a]" : "border-[#d9dee4]",
-                      v.soldOut && "text-[#9aa2ab] line-through",
-                    )}
-                  >
-                    {v.name}
-                  </span>
-                ))}
-              </div>
+              <p className="font-sans text-[1.125rem] font-semibold leading-snug">{title}</p>
+              <p className="mt-1 text-[0.9375rem] text-[#5c6570] tnum">{price}</p>
             </div>
-          ) : null}
-          {children}
+            {options ? (
+              <div>
+                <p className="text-[0.8125rem] text-[#5c6570]">
+                  {options.label}: <span className="text-[#1a1a1a]">{options.value}</span>
+                </p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {options.values.map((v) => (
+                    <span
+                      key={v.name}
+                      className={cn(
+                        "inline-flex h-8 min-w-10 items-center justify-center rounded-md border px-2.5 text-[0.8125rem]",
+                        v.name === options.value ? "border-[#1a1a1a]" : "border-[#d9dee4]",
+                        v.soldOut && "text-[#9aa2ab] line-through",
+                      )}
+                    >
+                      {v.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+            {children}
+          </div>
         </div>
       </div>
     </figure>
@@ -177,7 +174,7 @@ export function NotifyMeBlock({
             Email me once when this is back in stock.
           </p>
           <p
-            className="flex h-11 items-center justify-center text-[0.9375rem] font-semibold text-white"
+            className="flex min-h-11 items-center justify-center px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold text-white"
             style={{ background: buttonColor, borderRadius: radius }}
           >
             Notify me when available
@@ -205,7 +202,7 @@ export function PreorderBlock({
       </span>
       <p className="text-[0.9375rem]">{fact}</p>
       {message ? <p className="text-[0.875rem] text-[#5c6570]">{message}</p> : null}
-      <p className="flex h-11 items-center justify-center rounded-md bg-[#1a1a1a] text-[0.9375rem] font-semibold text-white">
+      <p className="flex min-h-11 items-center justify-center rounded-md bg-[#1a1a1a] px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold text-white">
         Pre-order
       </p>
       {powered ? <PoweredBy /> : null}
@@ -243,7 +240,7 @@ export function ComingSoonBlock({
         you@example.com
       </p>
       {country ? <p className="text-[0.8125rem] text-[#5c6570]">Shopping from Canada</p> : null}
-      <p className="flex h-11 items-center justify-center rounded-md bg-[#1a1a1a] text-[0.9375rem] font-semibold text-white">
+      <p className="flex min-h-11 items-center justify-center rounded-md bg-[#1a1a1a] px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold text-white">
         I want this
       </p>
     </div>
@@ -257,47 +254,49 @@ export function VotingBlock() {
     { title: "Trail runner, low", text: "The runner, in a lighter everyday cut.", price: "$140", checked: true, art: "sneaker" as const },
   ];
   return (
-    <figure className="overflow-hidden rounded-2xl border border-[#d9dee4] bg-white p-5 text-[#1a1a1a] shadow-[0_24px_48px_-28px_rgba(11,37,69,0.45)] sm:p-6">
-      <p className="font-sans text-[1.25rem] font-semibold">Vote for what we make next</p>
-      <p className="mt-1 text-[0.9375rem] text-[#5c6570]">
-        Tick the ones you&rsquo;d buy. We&rsquo;ll only email you about those.
-      </p>
-      <ul className="mt-5 grid gap-3">
-        {proposals.map((p) => (
-          <li
-            key={p.title}
-            className={cn(
-              "grid grid-cols-[4.5rem_minmax(0,1fr)_auto] items-center gap-4 rounded-lg border p-2.5",
-              p.checked ? "border-[#1a1a1a]" : "border-[#e6e9ee]",
-            )}
-          >
-            <ProductArt kind={p.art} className="aspect-square rounded-md" />
-            <div className="min-w-0">
-              <p className="font-semibold">{p.title}</p>
-              <p className="truncate text-[0.8125rem] text-[#5c6570]">{p.text}</p>
-              <p className="text-[0.8125rem] text-[#5c6570] tnum">{p.price}</p>
-            </div>
-            <span
-              aria-hidden="true"
+    <figure className="glass rounded-[1.75rem] p-2 sm:p-2.5">
+      <div className="rounded-[1.25rem] bg-white p-5 text-[#1a1a1a] ring-1 ring-[#0b2545]/10 sm:p-6">
+        <p className="font-sans text-[1.25rem] font-semibold">Vote for what we make next</p>
+        <p className="mt-1 text-[0.9375rem] text-[#5c6570]">
+          Tick the ones you&rsquo;d buy. We&rsquo;ll only email you about those.
+        </p>
+        <ul className="mt-5 grid gap-3">
+          {proposals.map((p) => (
+            <li
+              key={p.title}
               className={cn(
-                "mr-1.5 flex size-5 items-center justify-center rounded-[4px] border",
-                p.checked ? "border-[#1a1a1a] bg-[#1a1a1a] text-white" : "border-[#8a939c]",
+                "grid grid-cols-[4.5rem_minmax(0,1fr)_auto] items-center gap-4 rounded-lg border p-2.5",
+                p.checked ? "border-[#1a1a1a]" : "border-[#e6e9ee]",
               )}
             >
-              {p.checked ? <Check className="size-3.5" /> : null}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <p className="mt-4 flex h-10 items-center rounded-md border border-[#c5ccd4] px-3 text-[0.9375rem] text-[#9aa2ab]">
-        you@example.com
-      </p>
-      <p className="mt-3 text-[0.75rem] text-[#5c6570]">
-        By voting, you agree to get emails about these products. You can unsubscribe at any time.
-      </p>
-      <p className="mt-3 flex h-11 items-center justify-center rounded-md bg-[#1a1a1a] text-[0.9375rem] font-semibold text-white">
-        Vote
-      </p>
+              <ProductArt kind={p.art} className="aspect-square rounded-md" />
+              <div className="min-w-0">
+                <p className="font-semibold">{p.title}</p>
+                <p className="truncate text-[0.8125rem] text-[#5c6570]">{p.text}</p>
+                <p className="text-[0.8125rem] text-[#5c6570] tnum">{p.price}</p>
+              </div>
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "mr-1.5 flex size-5 items-center justify-center rounded-[4px] border",
+                  p.checked ? "border-[#1a1a1a] bg-[#1a1a1a] text-white" : "border-[#8a939c]",
+                )}
+              >
+                {p.checked ? <Check className="size-3.5" /> : null}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 flex h-10 items-center rounded-md border border-[#c5ccd4] px-3 text-[0.9375rem] text-[#9aa2ab]">
+          you@example.com
+        </p>
+        <p className="mt-3 text-[0.75rem] text-[#5c6570]">
+          By voting, you agree to get emails about these products. You can unsubscribe at any time.
+        </p>
+        <p className="mt-3 flex min-h-11 items-center justify-center rounded-md bg-[#1a1a1a] px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold text-white">
+          Vote
+        </p>
+      </div>
     </figure>
   );
 }

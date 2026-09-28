@@ -19,7 +19,7 @@ export default function PricingPage() {
 
   return (
     <>
-      <section className="bg-mist pt-14 pb-20 sm:pt-20 sm:pb-24">
+      <section className="pt-10 pb-12 sm:pt-16 sm:pb-16">
         <Container>
           <h1 className="max-w-4xl text-d1 font-bold tracking-[-0.03em]">
             Pay for Waitly when it’s paying you back
@@ -33,7 +33,7 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      <Band tone="paper" aria-labelledby="compare-title">
+      <Band tone="mist" aria-labelledby="compare-title">
         <SectionHeading id="compare-title" title="Compare every feature" />
         <div className="mt-12 relative overflow-x-auto">
           <table className="w-full min-w-[40rem] border-collapse text-left">
@@ -45,7 +45,7 @@ export default function PricingPage() {
                 </th>
                 {PLANS.map((plan) => (
                   <th key={plan.level} scope="col" className="w-[16%] py-4 text-center">
-                    <span className="block font-display text-[1.25rem] font-bold">{plan.name}</span>
+                    <span className="block font-display text-[1.25rem] font-semibold">{plan.name}</span>
                     <span className="block text-[0.9375rem] font-normal text-ink-soft tnum">
                       ${plan.price}/mo
                     </span>
@@ -56,7 +56,7 @@ export default function PricingPage() {
             {COMPARISON.map((group) => (
               <tbody key={group.title}>
                 <tr>
-                  <th colSpan={4} scope="colgroup" className="pt-10 pb-3 font-display text-[1.25rem] font-bold">
+                  <th colSpan={4} scope="colgroup" className="pt-10 pb-3 font-display text-[1.25rem] font-semibold">
                     {group.title}
                   </th>
                 </tr>
@@ -81,7 +81,7 @@ export default function PricingPage() {
         </div>
       </Band>
 
-      <Band tone="mist">
+      <Band tone="paper">
         <SectionHeading
           title="How billing works"
           intro="Waitly is billed by Shopify, so there’s no card to enter and nothing to manage outside your Shopify admin."
@@ -117,7 +117,7 @@ export default function PricingPage() {
         </div>
       </Band>
 
-      <Band tone="paper">
+      <Band tone="sky">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
           <SectionHeading title="Billing questions" />
           <FaqList items={billingFaq} />

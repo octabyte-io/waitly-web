@@ -39,7 +39,7 @@ function inline(text: string, keyPrefix = ""): ReactNode[] {
       return <em key={key}>{inline(part.slice(1, -1), key)}</em>;
     if (part.startsWith("`"))
       return (
-        <code key={key} className="rounded bg-mist px-1.5 py-0.5 text-[0.9em]">
+        <code key={key} className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9em] ring-1 ring-ink/10">
           {part.slice(1, -1)}
         </code>
       );

@@ -78,10 +78,10 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-sky pt-12 pb-20 sm:pt-16 sm:pb-28">
+      <section className="pt-10 pb-16 sm:pt-14 sm:pb-24">
         <Container className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)]">
           <div className="lg:pt-16">
-            <h1 className="text-d1 font-bold tracking-[-0.03em]">
+            <h1 className="text-d1 font-bold tracking-[-0.035em]">
               Sold out is where the next sale starts.
             </h1>
             <p className="mt-7 max-w-[33rem] text-lead text-ink/80">
@@ -108,23 +108,23 @@ export default function Home() {
       </section>
 
       {/* Four states */}
-      <Band tone="paper">
+      <Band tone="mist">
         <SectionHeading
           title="A product can be unavailable in four ways. Waitly has a tool for each."
           intro="Every one of them ends the same way: the shopper leaves an email instead of leaving your store, and you hear about the demand."
         />
-        <div className="mt-14 grid grid-cols-1 border-t border-line md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 border-t border-ink/10 md:grid-cols-2 lg:grid-cols-4">
           {STATES.map((s, i) => (
             <div
               key={s.tool}
               className={
-                "flex flex-col gap-4 border-b border-line py-8 md:px-6 lg:border-b-0 " +
+                "flex flex-col gap-4 border-b border-ink/10 py-8 md:px-6 lg:border-b-0 " +
                 (i % 2 === 1 ? "md:border-l " : "") +
                 (i > 0 ? "lg:border-l" : "lg:pl-0")
               }
             >
               <p className="text-ink-soft">When it’s</p>
-              <p className="-mt-3 text-d3 font-bold tracking-[-0.02em] font-display">{s.state}</p>
+              <p className="-mt-3 text-d3 font-semibold tracking-[-0.02em] font-display">{s.state}</p>
               <p className="text-[0.9375rem]">
                 <span className="text-ink-soft">The shopper sees </span>
                 <span className="font-semibold">{s.shopper}</span>
@@ -201,7 +201,7 @@ export default function Home() {
       </Band>
 
       {/* Preorders */}
-      <Band tone="mist">
+      <Band tone="paper" className="pt-0 sm:pt-0">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
           <ProductFrame
             title="Trail runner, low"
@@ -220,7 +220,7 @@ export default function Home() {
             <ul className="mt-8 space-y-3 text-ink/85">
               <li>Offer preorder only while a variant is sold out, and it turns off when stock arrives.</li>
               <li>Cap the units per product so you never promise more than you can ship.</li>
-              <li>Every preorder order is tagged <code className="rounded bg-paper px-1.5 py-0.5 text-[0.9375rem]">waitly-preorder</code> for fulfilment.</li>
+              <li>Every preorder order is tagged <code className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9375rem] ring-1 ring-ink/10">waitly-preorder</code> for fulfilment.</li>
             </ul>
             <CtaLink href="/features/preorders/" variant="quiet" className="mt-9">
               Explore preorders
@@ -230,7 +230,7 @@ export default function Home() {
       </Band>
 
       {/* Analytics */}
-      <Band tone="paper">
+      <Band tone="paper" className="pt-0 sm:pt-0">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
           <div>
             <SectionHeading
@@ -293,7 +293,7 @@ export default function Home() {
       </Band>
 
       {/* Pricing */}
-      <Band tone="mist" aria-labelledby="pricing-title">
+      <Band tone="paper" aria-labelledby="pricing-title">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
             id="pricing-title"
@@ -308,7 +308,7 @@ export default function Home() {
       </Band>
 
       {/* Setup */}
-      <Band tone="paper">
+      <Band tone="mist">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
           <SectionHeading
             title="Two steps to your first waitlist"
@@ -348,8 +348,8 @@ export default function Home() {
       </Band>
 
       {/* FAQ */}
-      <Band tone="paper" className="pt-0 sm:pt-0">
-        <div className="grid grid-cols-1 gap-12 border-t border-line pt-20 sm:pt-28 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+      <Band tone="paper">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
           <div>
             <SectionHeading title="Questions merchants ask first" />
             <p className="mt-5 text-ink/80">

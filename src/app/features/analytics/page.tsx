@@ -160,7 +160,7 @@ export default function AnalyticsPage() {
             <AdminFrame title="Harbor overshirt / M">
               <Panel title="Demand Score">
                 <p className="mb-4 flex items-baseline gap-3">
-                  <span className="font-display text-[3rem] leading-none font-extrabold tnum">78</span>
+                  <span className="font-display text-[3rem] leading-none font-bold tnum">78</span>
                   <span className="font-semibold">Very high</span>
                 </p>
                 <DemandScoreScale score={78} />
@@ -186,7 +186,7 @@ export default function AnalyticsPage() {
           <span aria-hidden="true" className="hidden items-center justify-center px-2 font-display text-[2.5rem] font-bold text-sky lg:flex">=</span>
           <div className="flex flex-col justify-center rounded-2xl bg-signal p-5 text-ink">
             <span className="text-[0.9375rem] font-semibold">about</span>
-            <span className="font-display text-[2.75rem] leading-none font-extrabold tnum">70</span>
+            <span className="font-display text-[2.75rem] leading-none font-bold tnum">70</span>
             <span className="mt-2 text-[0.9375rem] font-semibold">units to restock</span>
           </div>
         </div>
@@ -265,7 +265,7 @@ function EquationPart({ op, value, label }: { op?: string; value: string; label:
         </span>
       ) : null}
       <span className="sr-only">{op === "−" ? "minus" : op === "+" ? "plus" : ""}</span>
-      <span className="font-display text-[2.75rem] leading-none font-extrabold tnum">{value}</span>
+      <span className="font-display text-[2.75rem] leading-none font-bold tnum">{value}</span>
       <span className="mt-2 text-[0.9375rem] text-paper/75">{label}</span>
     </div>
   );

@@ -16,29 +16,53 @@ export function Container({
   );
 }
 
-const BAND_TONES = {
-  paper: "bg-paper text-ink",
-  mist: "bg-mist text-ink",
-  sky: "bg-sky text-ink",
-  ink: "on-ink bg-ink text-paper",
+/**
+ * Paper sections sit straight on the window light. The rest are panes of
+ * glass: frosted (mist), sky-tinted (sky) or smoked ink (ink).
+ */
+const PANE_TONES = {
+  paper: "",
+  mist: "glass text-ink",
+  sky: "glass-sky text-ink",
+  ink: "on-ink glass-smoke text-paper",
 } as const;
 
-export type BandTone = keyof typeof BAND_TONES;
+export type BandTone = keyof typeof PANE_TONES;
 
-/** A full-bleed section. Topics are separated by tone, not by boxes. */
 export function Band({
   tone = "paper",
   className,
   children,
   ...props
 }: ComponentProps<"section"> & { tone?: BandTone }) {
+  const pane = tone !== "paper";
   return (
-    <section
-      className={cn("py-20 sm:py-28", BAND_TONES[tone], className)}
-      {...props}
-    >
-      <Container>{children}</Container>
+    <section className={cn(pane ? "py-6 sm:py-10" : "py-16 sm:py-24", className)} {...props}>
+      <Container>
+        {pane ? (
+          <div
+            className={cn(
+              "rounded-[2rem] px-5 py-12 sm:rounded-[2.5rem] sm:px-10 sm:py-16 lg:px-14",
+              PANE_TONES[tone],
+            )}
+          >
+            {children}
+          </div>
+        ) : (
+          children
+        )}
+      </Container>
     </section>
+  );
+}
+
+/**
+ * A glass bezel around something that stays solid, like a merchant's product
+ * page or email: the thing itself, shown behind the shop window.
+ */
+export function Bezel({ className, children }: { className?: string; children: ReactNode }) {
+  return (
+    <div className={cn("glass rounded-[1.75rem] p-2 sm:p-2.5", className)}>{children}</div>
   );
 }
 
@@ -55,7 +79,7 @@ export function SectionHeading({
 }) {
   return (
     <div className={cn("max-w-3xl", className)}>
-      <h2 id={id} className="text-d2 font-extrabold tracking-[-0.03em]">
+      <h2 id={id} className="text-d2 font-bold tracking-[-0.025em]">
         {title}
       </h2>
       {intro ? (
@@ -67,10 +91,11 @@ export function SectionHeading({
 
 const CTA_STYLES = {
   primary:
-    "bg-signal text-ink hover:bg-[#ff814f] shadow-[0_2px_0_0_var(--ink)] active:translate-y-px active:shadow-none",
+    "bg-signal text-ink shadow-[inset_0_1px_0_rgb(255_255_255/0.5),0_12px_28px_-12px_rgb(255_107_53/0.85)] hover:bg-[#ff814f] active:translate-y-px",
   secondary:
-    "bg-transparent text-current ring-2 ring-current/80 ring-inset hover:bg-current/[0.06]",
-  quiet: "bg-ink text-paper hover:bg-ink/90",
+    "bg-white/60 text-ink ring-1 ring-white/90 ring-inset shadow-[0_8px_20px_-12px_rgb(11_37_69/0.35)] backdrop-blur-md hover:bg-white/85 in-[.on-ink]:bg-white/10 in-[.on-ink]:text-paper in-[.on-ink]:ring-white/25 in-[.on-ink]:shadow-none in-[.on-ink]:hover:bg-white/20",
+  quiet:
+    "bg-ink text-paper shadow-[inset_0_1px_0_rgb(191_227_255/0.25),0_12px_28px_-14px_rgb(11_37_69/0.8)] hover:bg-ink/90",
 } as const;
 
 export function CtaLink({
@@ -124,7 +149,7 @@ export function PlanBadge({ level, className }: { level: Level; className?: stri
     <span
       className={cn(
         "inline-flex h-6 shrink-0 items-center rounded-full px-2.5 align-middle text-[0.8125rem] font-semibold",
-        level === "growth" ? "bg-sky text-ink" : "bg-ink text-sky",
+        level === "growth" ? "bg-sky text-ink ring-1 ring-ink/15 ring-inset" : "bg-ink text-sky ring-1 ring-sky/30 ring-inset",
         className,
       )}
     >
@@ -195,7 +220,7 @@ export function Explainer({
         className,
       )}
     >
-      <h3 className="flex flex-wrap items-center gap-2.5 text-d3 font-bold tracking-[-0.02em]">
+      <h3 className="flex flex-wrap items-center gap-2.5 text-d3 font-semibold tracking-[-0.02em]">
         {title}
         {level ? <PlanBadge level={level} /> : null}
       </h3>
@@ -217,16 +242,14 @@ export function PageHero({
   intro,
   children,
   aside,
-  tone = "sky",
 }: {
   title: ReactNode;
   intro: ReactNode;
   children?: ReactNode;
   aside?: ReactNode;
-  tone?: BandTone;
 }) {
   return (
-    <section className={cn("pt-14 pb-20 sm:pt-20 sm:pb-24", BAND_TONES[tone])}>
+    <section className="pt-10 pb-10 sm:pt-16 sm:pb-16">
       <Container
         className={cn(
           "grid items-center gap-12",
@@ -234,10 +257,8 @@ export function PageHero({
         )}
       >
         <div>
-          <h1 className="text-d1 font-bold tracking-[-0.03em]">
-            {title}
-          </h1>
-          <p className="mt-6 max-w-[34rem] text-lead text-current/80">{intro}</p>
+          <h1 className="text-d1 font-bold tracking-[-0.03em]">{title}</h1>
+          <p className="mt-6 max-w-[34rem] text-lead text-ink/80">{intro}</p>
           {children ? <div className="mt-9 flex flex-wrap gap-3">{children}</div> : null}
         </div>
         {aside ? <div className="min-w-0">{aside}</div> : null}

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { PLANS, formatCount } from "@/content/plans";
 import { InstallLink } from "@/components/site/primitives";
 
-/** The three plans side by side. Pro is set on ink to mark it as the full kit. */
+/** The three plans side by side. Pro is smoked glass to mark it as the full kit. */
 export function PlanColumns({ className }: { className?: string }) {
   return (
     <div className={cn("grid grid-cols-1 gap-4 lg:grid-cols-3", className)}>
@@ -13,13 +13,13 @@ export function PlanColumns({ className }: { className?: string }) {
           <div
             key={plan.level}
             className={cn(
-              "flex flex-col rounded-3xl p-6 sm:p-8",
-              dark ? "on-ink bg-ink text-paper" : "bg-paper text-ink ring-1 ring-line",
+              "flex flex-col rounded-[2rem] p-6 sm:p-8",
+              dark ? "on-ink glass-smoke text-paper" : "glass text-ink",
             )}
           >
-            <h3 className="text-d3 font-bold tracking-[-0.02em]">{plan.name}</h3>
+            <h3 className="text-d3 font-semibold tracking-[-0.02em]">{plan.name}</h3>
             <p className="mt-4 flex items-baseline gap-1.5">
-              <span className="font-display text-[3.25rem] leading-none font-extrabold tracking-[-0.04em] tnum">
+              <span className="font-display text-[3.25rem] leading-none font-bold tracking-[-0.04em] tnum">
                 ${plan.price}
               </span>
               <span className={dark ? "text-paper/70" : "text-ink-soft"}>
@@ -34,7 +34,7 @@ export function PlanColumns({ className }: { className?: string }) {
             <dl
               className={cn(
                 "mt-6 grid grid-cols-2 gap-4 border-y py-5 tnum",
-                dark ? "border-paper/15" : "border-line",
+                dark ? "border-paper/15" : "border-ink/10",
               )}
             >
               <div>

@@ -139,7 +139,7 @@ export default function RestockReleasePage() {
                       <span
                         className={
                           "flex size-10 shrink-0 items-center justify-center rounded-full font-display font-bold tnum " +
-                          (last ? "bg-paper text-ink-soft ring-2 ring-line ring-inset" : "bg-ink text-paper")
+                          (last ? "bg-white/70 text-ink-soft ring-2 ring-line ring-inset" : "bg-ink text-paper")
                         }
                       >
                         {last ? "·" : i + 1}
@@ -150,7 +150,7 @@ export default function RestockReleasePage() {
                       <p className="pt-2 font-semibold">{step.rule}</p>
                       {step.detail ? <p className="mt-1 text-ink/75">{step.detail}</p> : null}
                       {step.example ? (
-                        <p className="mt-2 inline-block rounded-full bg-paper px-3 py-1 text-[0.9375rem]">
+                        <p className="mt-2 inline-block rounded-full bg-white/70 px-3 py-1 text-[0.9375rem]">
                           e.g. {step.example}
                         </p>
                       ) : null}

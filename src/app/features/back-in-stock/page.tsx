@@ -285,7 +285,7 @@ export default function BackInStockPage() {
             </p>
             <p className="flex flex-wrap items-center gap-2">
               Export any waitlist as CSV, and tag customers an alert brought back with{" "}
-              <code className="rounded bg-mist px-1.5 py-0.5 text-[0.9375rem]">waitly-recovered</code>.
+              <code className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9375rem] ring-1 ring-ink/10">waitly-recovered</code>.
               <PlanBadge level="growth" />
             </p>
           </Explainer>

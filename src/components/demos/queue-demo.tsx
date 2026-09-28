@@ -10,6 +10,8 @@ import { useFrames } from "./use-frames";
 const SHOPPERS = 48;
 const UNITS = 12;
 const PRICE = 68;
+const RESTOCK_LIGHT =
+  "inset 0 1px 0 rgb(191 227 255 / 0.28), 0 0 0 1px rgb(255 107 53 / 0.5), 0 20px 110px 14px rgb(255 107 53 / 0.6)";
 
 /**
  * The home page's one orchestrated moment: a sold-out variant, its waitlist,
@@ -49,7 +51,11 @@ export function QueueDemo() {
         <NotifyMeBlock />
       </ProductFrame>
 
-      <div className="on-ink relative z-10 -mt-4 ml-4 max-w-[31rem] rounded-2xl bg-ink p-5 text-paper shadow-[0_30px_60px_-30px_rgba(11,37,69,0.8)] sm:ml-12 sm:p-6">
+      {/* The restock light: the waitlist glows when stock comes back, and stays lit while it sells. */}
+      <div
+        className="on-ink glass-smoke relative z-10 -mt-6 ml-4 max-w-[31rem] rounded-[1.75rem] p-5 text-paper transition-shadow duration-[1600ms] ease-out sm:ml-12 sm:p-6"
+        style={index === 0 ? undefined : { boxShadow: RESTOCK_LIGHT }}
+      >
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
           <p className="font-semibold">Waitlist for Harbor overshirt / M</p>
           <p className="flex gap-3 text-[0.9375rem] tnum">

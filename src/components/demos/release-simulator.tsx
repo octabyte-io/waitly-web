@@ -45,7 +45,7 @@ export function ReleaseSimulator() {
   }, [mode, perBatch, maxHeld]);
 
   return (
-    <div className="rounded-3xl bg-paper p-4 text-ink shadow-[0_30px_60px_-36px_rgba(11,37,69,0.6)] sm:p-8">
+    <div className="rounded-[1.75rem] bg-white p-4 text-ink shadow-[inset_0_1px_0_#fff] sm:p-8">
       <Tabs value={mode} onValueChange={(value) => setMode(value as Mode)}>
         <TabsList className="h-auto w-full flex-wrap justify-start gap-1 rounded-2xl bg-mist p-1 group-data-horizontal/tabs:h-auto">
           {MODES.map((m) => (

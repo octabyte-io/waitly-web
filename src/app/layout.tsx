@@ -1,19 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree, Plus_Jakarta_Sans } from "next/font/google";
+import { Mona_Sans } from "next/font/google";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { siteConfig } from "@/config/site";
 import { PLANS } from "@/content/plans";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const mona = Mona_Sans({
+  variable: "--font-mona",
   subsets: ["latin"],
-});
-
-const figtree = Figtree({
-  variable: "--font-figtree",
-  subsets: ["latin"],
+  axes: ["wdth"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#BFE3FF",
+  themeColor: "#E8F4FF",
 };
 
 const jsonLd = {
@@ -55,11 +51,12 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${figtree.variable} antialiased`}>
+    <html lang="en" className={`${mona.variable} antialiased`}>
       <body className="flex min-h-dvh flex-col">
+        <WindowLight />
         <a
           href="#main"
-          className="sr-only z-50 rounded-full bg-ink px-5 py-3 font-semibold text-paper focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+          className="sr-only z-[60] rounded-full bg-ink px-5 py-3 font-semibold text-paper focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
         >
           Skip to content
         </a>
@@ -76,5 +73,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </body>
     </html>
+  );
+}
+
+/** The waiting line behind the glass. Positions are in viewport units so it frames any screen. */
+function WindowLight() {
+  return (
+    <div aria-hidden="true" className="window-light">
+      <span className="top-[-18vmax] left-[-14vmax] size-[52vmax] bg-sky" />
+      <span className="top-[14vh] right-[-12vmax] size-[38vmax] bg-lilac" />
+      <span className="top-[38vh] left-[48vw] size-[12vmax] bg-[#a9d2f5]" />
+      <span className="bottom-[-12vmax] left-[-6vmax] size-[34vmax] bg-sky" />
+      <span className="right-[-8vmax] bottom-[-16vmax] size-[30vmax] bg-peach opacity-80" />
+    </div>
   );
 }

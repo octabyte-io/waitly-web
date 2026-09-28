@@ -28,7 +28,7 @@ const faqJsonLd = {
 export default function FaqPage() {
   return (
     <>
-      <section className="bg-mist pt-14 pb-16 sm:pt-20">
+      <section className="pt-10 pb-8 sm:pt-16 sm:pb-10">
         <Container>
           <h1 className="max-w-4xl text-d1 font-bold tracking-[-0.03em]">
             Questions and answers
@@ -46,7 +46,7 @@ export default function FaqPage() {
                 <li key={group.title}>
                   <a
                     href={`#${slug(group.title)}`}
-                    className="inline-flex h-10 items-center rounded-full bg-paper px-4 font-medium ring-1 ring-line hover:ring-ink/40"
+                    className="glass-thin inline-flex h-10 items-center rounded-full px-4 font-medium hover:bg-white/75"
                   >
                     {group.title}
                   </a>
@@ -57,7 +57,7 @@ export default function FaqPage() {
         </Container>
       </section>
 
-      <Band tone="paper" className="pt-12 sm:pt-16">
+      <Band tone="mist">
         <div className="space-y-20">
           {FAQ.map((group) => (
             <section
@@ -66,7 +66,7 @@ export default function FaqPage() {
               aria-labelledby={`${slug(group.title)}-title`}
               className="grid grid-cols-1 scroll-mt-24 gap-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)]"
             >
-              <h2 id={`${slug(group.title)}-title`} className="text-d3 font-bold tracking-[-0.02em]">
+              <h2 id={`${slug(group.title)}-title`} className="text-d3 font-semibold tracking-[-0.02em]">
                 {group.title}
               </h2>
               <FaqList items={group.items} />
