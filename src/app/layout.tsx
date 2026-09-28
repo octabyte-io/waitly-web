@@ -1,15 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Figtree } from "next/font/google";
+import { Figtree, Plus_Jakarta_Sans } from "next/font/google";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { siteConfig } from "@/config/site";
 import { PLANS } from "@/content/plans";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-  axes: ["opsz", "wdth"],
 });
 
 const figtree = Figtree({
@@ -56,7 +55,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${figtree.variable} antialiased`}>
+    <html lang="en" className={`${jakarta.variable} ${figtree.variable} antialiased`}>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#main"

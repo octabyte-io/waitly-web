@@ -234,7 +234,7 @@ export function PageHero({
         )}
       >
         <div>
-          <h1 className="text-d1 font-extrabold tracking-[-0.045em] [font-stretch:92%]">
+          <h1 className="text-d1 font-bold tracking-[-0.03em]">
             {title}
           </h1>
           <p className="mt-6 max-w-[34rem] text-lead text-current/80">{intro}</p>

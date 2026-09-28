@@ -81,7 +81,7 @@ export default function Home() {
       <section className="bg-sky pt-12 pb-20 sm:pt-16 sm:pb-28">
         <Container className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)]">
           <div className="lg:pt-16">
-            <h1 className="text-d1 font-extrabold tracking-[-0.045em] [font-stretch:90%]">
+            <h1 className="text-d1 font-bold tracking-[-0.03em]">
               Sold out is where the next sale starts.
             </h1>
             <p className="mt-7 max-w-[33rem] text-lead text-ink/80">

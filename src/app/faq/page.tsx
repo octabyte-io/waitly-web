@@ -30,7 +30,7 @@ export default function FaqPage() {
     <>
       <section className="bg-mist pt-14 pb-16 sm:pt-20">
         <Container>
-          <h1 className="max-w-4xl text-d1 font-extrabold tracking-[-0.045em] [font-stretch:92%]">
+          <h1 className="max-w-4xl text-d1 font-bold tracking-[-0.03em]">
             Questions and answers
           </h1>
           <p className="mt-6 max-w-2xl text-lead text-ink/80">

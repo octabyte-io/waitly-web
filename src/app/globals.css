@@ -8,8 +8,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-figtree);
-  --font-heading: var(--font-bricolage);
-  --font-display: var(--font-bricolage);
+  --font-heading: var(--font-jakarta);
+  --font-display: var(--font-jakarta);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -51,9 +51,9 @@
   --text-d3: 1.625rem;
   --text-d3--line-height: 1.2;
   --text-d2: clamp(2.125rem, 1.55rem + 2.4vw, 3.25rem);
-  --text-d2--line-height: 1.02;
+  --text-d2--line-height: 1.08;
   --text-d1: clamp(2.75rem, 1.5rem + 5.2vw, 5.5rem);
-  --text-d1--line-height: 0.94;
+  --text-d1--line-height: 1.02;
 }
 
 :root {
@@ -102,8 +102,7 @@
   h2,
   h3,
   .font-display {
-    font-family: var(--font-bricolage);
-    font-variation-settings: "opsz" 96;
+    font-family: var(--font-jakarta);
     text-wrap: balance;
   }
   p {

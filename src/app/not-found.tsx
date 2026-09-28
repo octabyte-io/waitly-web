@@ -6,7 +6,7 @@ export default function NotFound() {
     <section className="bg-sky py-24 sm:py-32">
       <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <div>
-          <h1 className="text-d1 font-extrabold tracking-[-0.045em] [font-stretch:92%]">
+          <h1 className="text-d1 font-bold tracking-[-0.03em]">
             This page is out of stock
           </h1>
           <p className="mt-6 max-w-xl text-lead text-ink/80">
