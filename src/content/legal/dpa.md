@@ -4,9 +4,9 @@
 
 ### 1.1 Parties
 
-This agreement is between {{OCTABYTE_LEGAL_NAME}} of {{OCTABYTE_ADDRESS}}
-("Octabyte", "Processor") and the Shopify merchant who installs the Waitly app
-("Merchant", "Controller").
+This agreement is between {{OCTABYTE_LEGAL_NAME}} ([octabyte.io](https://octabyte.io),
+"Processor") and the Shopify merchant who installs the Waitly app ("Merchant",
+"Controller").
 
 ### 1.2 How it is agreed
 
@@ -26,14 +26,14 @@ of personal data, this agreement prevails.
 ## 2. Roles
 
 For personal data relating to the Merchant's customers and storefront visitors,
-the Merchant is the **controller** and Octabyte is the **processor**.
+the Merchant is the **controller** and OctaByte is the **processor**.
 
-Octabyte processes that data only on the Merchant's documented instructions.
+OctaByte processes that data only on the Merchant's documented instructions.
 The Merchant's use of the app, and the settings they configure in it, are those
-instructions. Octabyte will tell the Merchant if an instruction appears to
+instructions. OctaByte will tell the Merchant if an instruction appears to
 breach applicable data protection law, and may decline to act on it.
 
-For the Merchant's own account and contact data, Octabyte is a controller in
+For the Merchant's own account and contact data, OctaByte is a controller in
 its own right, and that processing is described in the
 [Waitly Privacy Policy](/privacy/).
 
@@ -49,16 +49,16 @@ its own right, and that processing is described in the
 | **Personal data**      | Email address; phone number where a data subject supplies one; Shopify customer identifier; IP address and browser user agent captured as consent evidence; order and line item identifiers with amounts, for attribution |
 | **Special categories** | None. Waitly neither requests nor stores special category data, and Merchants must not enter any into it                                                                                                                  |
 
-Octabyte requests exactly one protected customer data field from Shopify —
+OctaByte requests exactly one protected customer data field from Shopify —
 **email** — and does not request name, address or phone.
 
-## 4. Octabyte's obligations
+## 4. OctaByte's obligations
 
-Octabyte will:
+OctaByte will:
 
 1. process personal data only on the Merchant's documented instructions, and
    only for the purposes in section 3, unless required otherwise by law — in
-   which case Octabyte will inform the Merchant first, unless the law forbids
+   which case OctaByte will inform the Merchant first, unless the law forbids
    it;
 2. ensure that everyone authorised to process the data is bound by
    confidentiality;
@@ -66,14 +66,14 @@ Octabyte will:
 4. observe the sub-processor conditions in section 6;
 5. assist the Merchant with data subject requests, as described in section 7;
 6. assist the Merchant with security, breach notification and impact
-   assessments, taking account of what Octabyte knows and can see;
+   assessments, taking account of what OctaByte knows and can see;
 7. delete the data as described in section 10;
 8. make available the information needed to demonstrate compliance with this
    section, and allow the audits described in section 11.
 
 ## 5. Security measures
 
-Octabyte maintains, at minimum:
+OctaByte maintains, at minimum:
 
 - **A single store for personal data.** Personal data is held in the
   application database only. It is deliberately excluded from the job queue,
@@ -99,7 +99,7 @@ Octabyte maintains, at minimum:
 - **Retention limits** enforced automatically, per section 9.
 - **Erasure paths that are tested**, not assumed.
 
-Octabyte may change these measures, but not in a way that materially reduces
+OctaByte may change these measures, but not in a way that materially reduces
 their overall protection.
 
 ## 6. Sub-processors
@@ -113,41 +113,41 @@ The Merchant gives general authorisation for the sub-processors below.
 | Hetzner Online GmbH                    | Application, database and queue hosting                           | Germany (`nbg1`)            |
 | Functional Software, Inc. d/b/a Sentry | Application error reporting                                       | United States (Iowa)        |
 
-Octabyte will give the Merchant **30 days' notice** before adding or replacing
+OctaByte will give the Merchant **30 days' notice** before adding or replacing
 a sub-processor. A Merchant who objects on reasonable data protection grounds
 within that period may terminate their use of Waitly without penalty, and
-Octabyte will delete their data under section 10.
+OctaByte will delete their data under section 10.
 
-Octabyte imposes on each sub-processor obligations no less protective than
+OctaByte imposes on each sub-processor obligations no less protective than
 those in this agreement, and remains fully liable to the Merchant for their
 performance.
 
 ## 7. Data subject requests
 
-Shopify's mandatory compliance webhooks are the primary channel, and Octabyte
+Shopify's mandatory compliance webhooks are the primary channel, and OctaByte
 implements all three:
 
-- **`customers/data_request`** — Octabyte compiles the personal data it holds
+- **`customers/data_request`** — OctaByte compiles the personal data it holds
   for that data subject and provides it to the Merchant.
-- **`customers/redact`** — Octabyte **anonymises** the subscriber record,
+- **`customers/redact`** — OctaByte **anonymises** the subscriber record,
   permanently removing the email address, phone number, Shopify customer
   identifier, unsubscribe token, IP address and user agent. The record is
   retained without any identifier, for the reasons in section 8. Where the
-  Merchant requires the row itself deleted, Octabyte will do so on written
+  Merchant requires the row itself deleted, OctaByte will do so on written
   request.
-- **`shop/redact`** — Octabyte deletes all of that store's data.
+- **`shop/redact`** — OctaByte deletes all of that store's data.
 
-A request that reaches Octabyte directly is forwarded to the Merchant and acted
-on under their instruction. Octabyte responds within 30 days.
+A request that reaches OctaByte directly is forwarded to the Merchant and acted
+on under their instruction. OctaByte responds within 30 days.
 
 ## 8. Erasure by anonymisation
 
-Octabyte answers a customer erasure request by removing every identifier from
+OctaByte answers a customer erasure request by removing every identifier from
 the record rather than by deleting the record, because deletion would cascade
 through, and destroy, the Merchant's own demand and revenue history —
 retroactively changing figures the Merchant was already shown.
 
-Octabyte relies on this as a complete answer only because what remains cannot
+OctaByte relies on this as a complete answer only because what remains cannot
 identify a natural person: no address, no phone number, no platform identifier,
 no network address, no device string, and no field from which any of these
 could be reconstructed.
@@ -177,10 +177,10 @@ by a store erasure request, or by the uninstall erasure in section 10.
 
 ## 10. Deletion on termination
 
-On uninstall, Shopify sends `shop/redact` 48 hours later and Octabyte deletes
+On uninstall, Shopify sends `shop/redact` 48 hours later and OctaByte deletes
 the store's personal data on receipt.
 
-Shopify does not guarantee that webhook's delivery. Octabyte therefore deletes
+Shopify does not guarantee that webhook's delivery. OctaByte therefore deletes
 an uninstalled store's data **seven days after the uninstall** whether or not
 the webhook arrived. This is well inside the 30 days Shopify's API terms allow,
 and the shorter window is deliberate: it leaves room to retry a failed deletion
@@ -190,7 +190,7 @@ A Merchant may request deletion sooner in writing.
 
 ## 11. Audit
 
-Octabyte will provide the information reasonably needed to demonstrate
+OctaByte will provide the information reasonably needed to demonstrate
 compliance with this agreement, on written request and no more than once a
 year, unless a supervisory authority or a security incident requires otherwise.
 Where an on-site audit is required by law, the parties will agree its scope,
@@ -210,27 +210,23 @@ apply too.
 
 ## 13. Breach notification
 
-Octabyte notifies the Merchant of a personal data breach affecting the
+OctaByte notifies the Merchant of a personal data breach affecting the
 Merchant's data **without undue delay and within 48 hours** of becoming aware
 of it, so that the Merchant can meet a 72-hour regulatory deadline. The
 notification describes what is known: the nature of the breach, the categories
 and approximate number of data subjects and records, the likely consequences,
-and the measures taken. Octabyte updates it as more is established rather than
+and the measures taken. OctaByte updates it as more is established rather than
 delaying the first notice until everything is known.
 
-## 14. Liability and governing law
+## 14. Liability
 
 Liability under this agreement is subject to the limitations in the Waitly
 terms of service, except where applicable data protection law does not permit
 that.
 
-This agreement is governed by the law of {{GOVERNING_LAW}}, without prejudice
-to any mandatory provision of the data protection law that applies to the
-Merchant.
-
 ## 15. Changes
 
-Octabyte may update this agreement to reflect a change in law, in
+OctaByte may update this agreement to reflect a change in law, in
 sub-processors, or in the app. Material changes are notified to Merchants
 through the app at least 30 days before they take effect. The version number
 and effective date at the top record each change.

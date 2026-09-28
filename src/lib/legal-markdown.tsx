@@ -13,9 +13,7 @@ import { siteConfig } from "@/config/site";
  */
 
 const PLACEHOLDERS: Record<string, { value: string | null; label: string }> = {
-  OCTABYTE_LEGAL_NAME: { value: siteConfig.legal.legalName, label: "Octabyte legal name" },
-  OCTABYTE_ADDRESS: { value: siteConfig.legal.address, label: "Octabyte registered address" },
-  GOVERNING_LAW: { value: siteConfig.legal.governingLaw, label: "Governing law" },
+  OCTABYTE_LEGAL_NAME: { value: siteConfig.legal.legalName, label: "OctaByte legal name" },
   LAST_UPDATED: { value: siteConfig.legal.lastUpdated, label: "Date set on publication" },
 };
 

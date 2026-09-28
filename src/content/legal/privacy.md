@@ -2,8 +2,8 @@
 
 ## 1. Who we are
 
-Waitly is a Shopify app operated by {{OCTABYTE_LEGAL_NAME}} ("Octabyte", "we",
-"us"), of {{OCTABYTE_ADDRESS}}.
+Waitly is a Shopify app operated by {{OCTABYTE_LEGAL_NAME}}
+([octabyte.io](https://octabyte.io), "we", "us").
 
 Contact us about anything in this policy at **support@octabyte.io**.
 

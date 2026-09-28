@@ -8,17 +8,15 @@
  */
 export const siteConfig = {
   name: "Waitly",
-  company: "Octabyte",
+  company: "OctaByte",
   url: "https://waitly.octabyte.io",
   installUrl: "https://apps.shopify.com/search?q=waitly",
   supportEmail: "support@octabyte.io",
   description:
     "Waitly adds Notify me, preorders, Coming Soon pages and product voting to your Shopify store, emails shoppers the moment stock returns, and shows you what to restock next.",
   legal: {
-    legalName: null as string | null,
-    address: null as string | null,
-    governingLaw: null as string | null,
-    lastUpdated: null as string | null,
+    legalName: "OctaByte" as string | null,
+    lastUpdated: "28 September 2026" as string | null,
   },
 } as const;
 
