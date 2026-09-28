@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { PreorderBlock, ProductFrame } from "@/components/mocks/storefront";
 import {
   Band,
@@ -11,13 +10,10 @@ import {
   SettingList,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
+import { pages } from "@/config/pages";
+import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Preorders",
-  description:
-    "Take full-payment preorders on Shopify with Waitly. Rule-based policies, sold-out-only or date windows, unit limits, ship estimates and automatic order tags.",
-  alternates: { canonical: "/features/preorders/" },
-};
+export const metadata = pageMetadata(pages.preorders);
 
 const WHEN = [
   {
@@ -45,6 +41,7 @@ const ESTIMATES = [
 export default function PreordersPage() {
   return (
     <>
+      <JsonLd data={webPageJsonLd(pages.preorders)} />
       <PageHero
         title="Keep selling while the next batch is on its way"
         intro="Waitly turns the Buy button into a Pre-order button for the products you choose. Shoppers pay in full at checkout, and Shopify holds the order until you ship."

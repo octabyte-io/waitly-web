@@ -2,8 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Mona_Sans } from "next/font/google";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { pages } from "@/config/pages";
 import { siteConfig } from "@/config/site";
-import { PLANS } from "@/content/plans";
+import { appJsonLd, JsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 const mona = Mona_Sans({
@@ -15,38 +16,19 @@ const mona = Mona_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Waitly: back in stock alerts and preorders for Shopify",
+    default: pages.home.title,
     template: "%s | Waitly",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  openGraph: {
-    type: "website",
-    siteName: siteConfig.name,
-    images: [{ url: "/brand/waitly-app-icon-1200.png", width: 1200, height: 1200, alt: "Waitly" }],
-  },
-  twitter: { card: "summary" },
+  authors: [{ name: siteConfig.company }],
+  creator: siteConfig.company,
+  publisher: siteConfig.company,
+  category: "Shopify app",
 };
 
 export const viewport: Viewport = {
   themeColor: "#E8F4FF",
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: siteConfig.name,
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Shopify",
-  description: siteConfig.description,
-  url: siteConfig.url,
-  publisher: { "@type": "Organization", name: siteConfig.company },
-  offers: PLANS.map((plan) => ({
-    "@type": "Offer",
-    name: plan.name,
-    price: plan.price.toFixed(2),
-    priceCurrency: "USD",
-  })),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -65,12 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <SiteFooter />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
-          }}
-        />
+        <JsonLd data={[organizationJsonLd, websiteJsonLd, appJsonLd]} />
       </body>
     </html>
   );

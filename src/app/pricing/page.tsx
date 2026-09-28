@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Check, Minus } from "lucide-react";
 import { Band, Container, Explainer, SectionHeading } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
@@ -6,19 +5,17 @@ import { FaqList } from "@/components/sections/faq-list";
 import { PlanColumns } from "@/components/sections/plan-columns";
 import { FAQ } from "@/content/faq";
 import { COMPARISON, PLANS } from "@/content/plans";
+import { pages } from "@/config/pages";
+import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Pricing",
-  description:
-    "Waitly is free to start. Growth is $19 a month and Pro is $49 a month, each with a 14-day free trial, billed through Shopify.",
-  alternates: { canonical: "/pricing/" },
-};
+export const metadata = pageMetadata(pages.pricing);
 
 export default function PricingPage() {
   const billingFaq = FAQ.find((g) => g.title === "Plans and billing")?.items ?? [];
 
   return (
     <>
+      <JsonLd data={webPageJsonLd(pages.pricing)} />
       <section className="pt-10 pb-12 sm:pt-16 sm:pb-16">
         <Container>
           <h1 className="max-w-4xl text-d1 font-bold tracking-[-0.03em]">

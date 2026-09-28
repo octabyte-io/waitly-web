@@ -1,16 +1,12 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Band, Container, CtaLink, Explainer, InstallLink, PlanBadge, SectionHeading } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { siteConfig } from "@/config/site";
 import type { Level } from "@/content/plans";
+import { pages } from "@/config/pages";
+import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Setup guide",
-  description:
-    "Set up Waitly in two steps: add the Notify me block to your product page and test it on a sold-out product. No code, any Online Store 2.0 theme.",
-  alternates: { canonical: "/setup/" },
-};
+export const metadata = pageMetadata(pages.setup);
 
 const STEPS = [
   {
@@ -59,9 +55,23 @@ const PROCESSORS = [
   { name: "Sentry", role: "Error monitoring", where: "United States" },
 ];
 
+const howToJsonLd = {
+  "@type": "HowTo",
+  name: "How to set up Waitly on a Shopify store",
+  description: pages.setup.description,
+  tool: { "@type": "HowToTool", name: "A Shopify store with an Online Store 2.0 theme" },
+  step: STEPS.map((step, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: step.title,
+    text: step.body,
+  })),
+};
+
 export default function SetupPage() {
   return (
     <>
+      <JsonLd data={[webPageJsonLd(pages.setup), howToJsonLd]} />
       <section className="pt-10 pb-12 sm:pt-16 sm:pb-16">
         <Container className="grid grid-cols-1 gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <div>

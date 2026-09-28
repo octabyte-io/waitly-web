@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { EmailMock } from "@/components/mocks/email";
 import { ComingSoonBlock, ProductFrame, VotingBlock } from "@/components/mocks/storefront";
 import {
@@ -11,13 +10,10 @@ import {
   SettingList,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
+import { pages } from "@/config/pages";
+import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Coming Soon pages and product voting",
-  description:
-    "Collect “I want this” signups before launch and let shoppers vote on what you make next. Waitly emails everyone the moment it goes on sale.",
-  alternates: { canonical: "/features/coming-soon/" },
-};
+export const metadata = pageMetadata(pages.comingSoon);
 
 const PROPOSAL_STATES = [
   { name: "Draft", detail: "Only you can see it while you write it." },
@@ -29,6 +25,7 @@ const PROPOSAL_STATES = [
 export default function ComingSoonPage() {
   return (
     <>
+      <JsonLd data={webPageJsonLd(pages.comingSoon)} />
       <PageHero
         title="Find out what sells before you make it"
         intro="Two ways to hear from shoppers before a product exists: a Coming Soon page for something you’re about to launch, and a vote for ideas you haven’t committed to yet."

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ReleaseSimulator } from "@/components/demos/release-simulator";
 import { EmailMock, muted } from "@/components/mocks/email";
 import {
@@ -12,13 +11,10 @@ import {
   CtaLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
+import { pages } from "@/config/pages";
+import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Restock release and waitlist priority",
-  description:
-    "Decide who hears about a restock first. Waitly Pro puts VIPs and top spenders at the front, sends alerts in batches until sold out, or holds a unit for each of the first shoppers.",
-  alternates: { canonical: "/features/restock-release/" },
-};
+export const metadata = pageMetadata(pages.restockRelease);
 
 const LADDER = [
   {
@@ -49,6 +45,7 @@ const LADDER = [
 export default function RestockReleasePage() {
   return (
     <>
+      <JsonLd data={webPageJsonLd(pages.restockRelease)} />
       <PageHero
         title="Decide who hears first when stock comes back"
         intro="Ten units and forty people waiting is a good problem, but emailing everyone at once turns it into a race. Waitly Pro lets you put your best customers first and release stock at a pace you choose."

@@ -1,21 +1,17 @@
-import type { Metadata } from "next";
 import { Band, Container } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { FaqList } from "@/components/sections/faq-list";
+import { pages } from "@/config/pages";
 import { siteConfig } from "@/config/site";
 import { FAQ } from "@/content/faq";
+import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Questions and answers",
-  description: "Answers about Waitly setup, back in stock alerts, preorders, billing and privacy.",
-  alternates: { canonical: "/faq/" },
-};
+export const metadata = pageMetadata(pages.faq);
 
 const slug = (title: string) => title.toLowerCase().replace(/[^a-z]+/g, "-");
 
 const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
+  ...webPageJsonLd(pages.faq, "FAQPage"),
   mainEntity: FAQ.flatMap((group) =>
     group.items.map((item) => ({
       "@type": "Question",
@@ -28,6 +24,7 @@ const faqJsonLd = {
 export default function FaqPage() {
   return (
     <>
+      <JsonLd data={faqJsonLd} />
       <section className="pt-10 pb-8 sm:pt-16 sm:pb-10">
         <Container>
           <h1 className="max-w-4xl text-d1 font-bold tracking-[-0.03em]">
@@ -76,10 +73,6 @@ export default function FaqPage() {
       </Band>
 
       <ClosingCta />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
-      />
     </>
   );
 }

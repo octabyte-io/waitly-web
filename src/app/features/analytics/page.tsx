@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import {
   AdminFrame,
   DemandScoreScale,
@@ -18,13 +17,10 @@ import {
   CtaLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
+import { pages } from "@/config/pages";
+import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Demand analytics",
-  description:
-    "See what Waitly alerts recover, score every waiting product from 0 to 100, and get a restock suggestion built from real demand, preorders and sales.",
-  alternates: { canonical: "/features/analytics/" },
-};
+export const metadata = pageMetadata(pages.analytics);
 
 const SCORE_INPUTS = [
   { name: "Waitlist size", detail: "How many shoppers are waiting right now." },
@@ -49,6 +45,7 @@ const STATUSES = [
 export default function AnalyticsPage() {
   return (
     <>
+      <JsonLd data={webPageJsonLd(pages.analytics)} />
       <PageHero
         title="Know what your waitlist is worth"
         intro="Waitly measures what every restock alert brings back, then turns waiting shoppers, preorders and sales into a score and a restock estimate for each product."

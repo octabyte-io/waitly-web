@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { EmailMock, muted } from "@/components/mocks/email";
 import { NotifyMeBlock, ProductFrame } from "@/components/mocks/storefront";
 import {
@@ -12,17 +11,15 @@ import {
   CtaLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
+import { pages } from "@/config/pages";
+import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Back in stock alerts",
-  description:
-    "Add a Notify me button to sold-out Shopify products. Waitly detects restocks automatically and emails every shopper waiting, in your brand.",
-  alternates: { canonical: "/features/back-in-stock/" },
-};
+export const metadata = pageMetadata(pages.backInStock);
 
 export default function BackInStockPage() {
   return (
     <>
+      <JsonLd data={webPageJsonLd(pages.backInStock)} />
       <PageHero
         title="A Notify me button on every sold-out variant"
         intro="When a size or color runs out, the Add to cart button can’t help. Waitly’s Notify me block takes its place, collects an email, and sends one alert when Shopify says it’s back."

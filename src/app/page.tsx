@@ -14,7 +14,11 @@ import { ClosingCta } from "@/components/sections/closing-cta";
 import { HeroSteps } from "@/components/sections/hero-steps";
 import { FaqList } from "@/components/sections/faq-list";
 import { PlanColumns } from "@/components/sections/plan-columns";
+import { pages } from "@/config/pages";
 import { FAQ } from "@/content/faq";
+import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
+
+export const metadata = pageMetadata(pages.home);
 
 const STATES = [
   {
@@ -77,6 +81,7 @@ export default function Home() {
 
   return (
     <>
+      <JsonLd data={webPageJsonLd(pages.home)} />
       {/* Hero */}
       <section className="pt-10 pb-16 sm:pt-16 sm:pb-24">
         <Container>
