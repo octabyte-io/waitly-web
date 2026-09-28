@@ -12,6 +12,19 @@ npm run build     # static export to out/ + optimized images
 npm run preview   # serve out/ locally
 ```
 
+## Content
+
+The site markets only what the Waitly app actually ships. When the app changes, update these:
+
+| What | Where |
+| --- | --- |
+| Domain, install link, support email, legal details | `src/config/site.ts` |
+| Plans, limits and the feature comparison | `src/content/plans.ts` (mirrors `waitly/app/domain/billing/plan.ts`) |
+| FAQ | `src/content/faq.ts` |
+| Privacy policy and DPA | `src/content/legal/*.md` (from `waitly/docs/legal/`) |
+
+`installUrl` points at an App Store search until the listing is live. Legal fields left as `null` render as highlighted placeholders, and a draft notice appears on both legal pages until every field is filled in.
+
 ## Styling
 
 Use Tailwind utility classes and shadcn/ui components — avoid custom CSS. Add components with:
