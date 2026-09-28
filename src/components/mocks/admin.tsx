@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PlanBadge } from "@/components/site/primitives";
 import type { Level } from "@/content/plans";
@@ -212,6 +213,34 @@ export function RestockPlannerMock() {
           ))}
         </tbody>
       </table>
+    </div>
+  );
+}
+
+/** A Shopify admin order, as the merchant sees it after a Waitly alert. */
+export function OrderCard({ className }: { className?: string }) {
+  return (
+    <div
+      className={cn(
+        "rounded-[1.25rem] bg-white p-4 text-[#1a1a1a] shadow-[0_24px_60px_-28px_rgb(11_37_69/0.55)] ring-1 ring-[#0b2545]/10",
+        className,
+      )}
+    >
+      <div className="flex items-center justify-between gap-3">
+        <p className="font-semibold">Order #1042</p>
+        <span className="inline-flex h-6 items-center gap-1 rounded-full bg-[#dcf5e4] px-2.5 text-[0.75rem] font-semibold text-[#14532d]">
+          <Check aria-hidden="true" className="size-3" />
+          Paid
+        </span>
+      </div>
+      <div className="mt-3 flex items-center justify-between gap-3 text-[0.9375rem]">
+        <span className="text-[#5c6570]">Harbor overshirt / M</span>
+        <span className="font-semibold tnum">$68.00</span>
+      </div>
+      <p className="mt-3 flex items-center gap-2 border-t border-[#e6e9ee] pt-3 text-[0.8125rem] text-[#5c6570]">
+        <span aria-hidden="true" className="size-2.5 rounded-full bg-signal" />
+        Bought 4 minutes after a Waitly alert
+      </p>
     </div>
   );
 }

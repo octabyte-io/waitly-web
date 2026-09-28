@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { QueueDemo } from "@/components/demos/queue-demo";
 import { EmailMock, muted } from "@/components/mocks/email";
 import { PreorderBlock, ProductFrame, ComingSoonBlock } from "@/components/mocks/storefront";
 import { AdminFrame, DemandScoreScale, Figure, Panel } from "@/components/mocks/admin";
@@ -12,6 +11,7 @@ import {
   SectionHeading,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
+import { HeroSteps } from "@/components/sections/hero-steps";
 import { FaqList } from "@/components/sections/faq-list";
 import { PlanColumns } from "@/components/sections/plan-columns";
 import { FAQ } from "@/content/faq";
@@ -78,32 +78,29 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-10 pb-16 sm:pt-14 sm:pb-24">
-        <Container className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)]">
-          <div className="lg:pt-16">
+      <section className="pt-10 pb-16 sm:pt-16 sm:pb-24">
+        <Container>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
             <h1 className="text-d1 font-bold tracking-[-0.035em]">
               Sold out is where the next sale starts.
             </h1>
-            <p className="mt-7 max-w-[33rem] text-lead text-ink/80">
-              Waitly puts a Notify me button on your sold-out Shopify products, emails every
-              shopper in line when stock returns, and shows you exactly what to restock next.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <InstallLink />
-              <CtaLink href="#how-it-works" variant="secondary">
-                See how it works
-              </CtaLink>
+            <div className="lg:pb-2">
+              <p className="max-w-[31rem] text-lead text-ink/80">
+                Shoppers leave their email on sold-out products. When you restock, Waitly tells them,
+                and they come back to buy.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <InstallLink />
+                <CtaLink href="#how-it-works" variant="secondary">
+                  See how it works
+                </CtaLink>
+              </div>
             </div>
-            <p className="mt-6 text-[0.9375rem] text-ink/70">
-              Free plan for small stores. Growth and Pro start with a 14-day trial.
-            </p>
-            <p className="mt-14 hidden max-w-[30rem] border-l-4 border-signal pl-5 text-ink/80 lg:block">
-              The demo is one restock: 12 units back for 48 shoppers waiting on size M, sent in
-              batches of 8. Sending stops the moment it sells out, so nobody is emailed about stock
-              that has already gone.
-            </p>
           </div>
-          <QueueDemo />
+          <HeroSteps className="mt-12 lg:mt-14" />
+          <p className="mt-8 text-center text-[0.9375rem] text-ink/70">
+            Free plan for small stores. Growth and Pro start with a 14-day trial.
+          </p>
         </Container>
       </section>
 
