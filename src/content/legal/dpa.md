@@ -1,4 +1,4 @@
-**Version:** 1.0 · **Effective:** {{LAST_UPDATED}}
+**Version:** 1.1 · **Effective:** {{LAST_UPDATED}}
 
 ## 1. Parties and formation
 
@@ -43,10 +43,10 @@ its own right, and that processing is described in the
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Subject matter**     | Operating the Waitly back-in-stock and preorder app for the Merchant's store                                                                                                                                              |
 | **Duration**           | The life of the Merchant's installation, plus the deletion window in section 10                                                                                                                                           |
-| **Nature**             | Collection, storage, organisation, use, transmission by email, and erasure                                                                                                                                                |
-| **Purposes**           | App functionality; marketing communication to the data subject under their own consent; analytics and reporting to the Merchant                                                                                           |
-| **Data subjects**      | The Merchant's customers and storefront visitors who ask to be notified about a product; the Merchant's own staff users                                                                                                   |
-| **Personal data**      | Email address; phone number where a data subject supplies one; Shopify customer identifier; IP address and browser user agent captured as consent evidence; order and line item identifiers with amounts, for attribution |
+| **Nature**             | Collection, storage, organisation, use, transmission by email, cancellation and refund of preorder order lines through Shopify, and erasure |
+| **Purposes**           | App functionality; marketing communication to the data subject under their own consent; transactional email about the data subject's own preorders; carrying out preorder cancellations and refunds, including the automatic refund of a preorder whose shopper did not agree to a delay of more than 30 days; analytics and reporting to the Merchant |
+| **Data subjects**      | The Merchant's customers and storefront visitors who ask to be notified about a product or vote for a product idea; the Merchant's customers who place an order containing a preorder; the Merchant's own staff users |
+| **Personal data**      | Email address; phone number where a data subject supplies one; Shopify customer identifier; IP address and browser user agent captured as consent evidence; order and line item identifiers with amounts, for attribution; for an order containing a preorder, the order email address, order number and date, items, amounts, promised ship dates, and any cancellation or agreement to wait; where the Merchant enables them, quantity interest and the store's selling country on a Coming Soon signup; on the Pro plan, Shopify customer tags, order count and amount spent, read to set waitlist priority and not stored |
 | **Special categories** | None. Waitly neither requests nor stores special category data, and Merchants must not enter any into it                                                                                                                  |
 
 OctaByte requests exactly one protected customer data field from Shopify —
@@ -174,6 +174,10 @@ ended, so nothing is retained longer than twice the configured period.
 address is held for the life of the installation. Retention bounds the demand
 history, not the identity. An address is removed by a customer erasure request,
 by a store erasure request, or by the uninstall erasure in section 10.
+
+The email address on an order containing a preorder is removed automatically
+once nothing on that order is left to ship. The rest of the preorder record,
+with no email address, is kept for the life of the installation.
 
 ## 10. Deletion on termination
 

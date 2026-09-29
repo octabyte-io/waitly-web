@@ -9,8 +9,8 @@ Contact us about anything in this policy at **support@octabyte.io**.
 
 ## 2. What this policy covers, and the two roles we hold
 
-Waitly lets a Shopify merchant collect back-in-stock and preorder demand from
-shoppers, and notify those shoppers when a product returns.
+Waitly lets a Shopify merchant collect back-in-stock and preorder demand from shoppers, notify those shoppers
+when a product returns, and look after the preorders they place.
 
 We hold two different legal roles, and they are worth separating because they
 carry different rights:
@@ -38,9 +38,23 @@ merchant's instruction.
 - **Product, variant and inventory data**: variant identifiers and available
   quantities. This is not personal data, and it is what tells us a product has
   come back in stock.
-- **Order data**, used only to tell a merchant whether a notification led to a
-  purchase: order and line item identifiers, the amount and currency of the
-  matched line, and **the email address on the order**.
+- **Order data**, used for two things:
+  - to tell a merchant whether a notification led to a purchase: order and line
+    item identifiers, the amount and currency of the matched line, and **the
+    email address on the order**;
+  - to look after an order that contains a preorder: the order number and date,
+    the quantity and amount of each preorder item, the ship date the shopper was
+    promised, and **the email address on the order**, so we can send the
+    shopper their receipt and any delay notice, and carry out a cancellation.
+
+  Other orders are read only within Shopify's most recent 60 days. An order that
+  contains a preorder is read for as long as it has something left to ship,
+  however old it is.
+- **Customer data, for waitlist priority** (Pro plan only): when a shopper
+  joins a waitlist, we look up the Shopify customer with the same email address
+  and read their customer tags, number of orders and total amount spent. We do
+  not store those values. We keep only the Shopify customer id and the priority
+  the merchant's rules give that shopper's place in line.
 
 The order email address is the **only protected customer data field** Waitly
 requests from Shopify. We do not request name, address or phone. We match on
@@ -63,7 +77,14 @@ merchant's storefront, we collect:
 - optionally a **phone number** — the field exists in our system but Waitly
   does not use it, because Waitly has no SMS channel;
 - the **IP address and browser user agent** at the moment they subscribed,
-  together with the page or source they subscribed from.
+  together with the page or source they subscribed from;
+- on a Coming Soon form, and only when the merchant turns these on, **how many
+  units** they want (one to ten) and the **country the store was selling in**
+  when they joined. The country is the store's market, not the shopper's
+  location.
+
+A vote for a product idea is given with an email address in the same way, so
+the shopper can be told if the product is made.
 
 The IP address and user agent are collected for one purpose only: they are the
 evidence that consent was given, by whom and from where. They are not used to
@@ -79,6 +100,10 @@ storefront. We do not track how a shopper navigates a store.
 Records of the waitlist entries themselves, the notifications we queue and
 send, unsubscribe tokens, and the standing record that someone has asked not to
 be contacted.
+
+For preorders: the receipts and delay notices we send, and what a shopper
+chooses on the Keep or cancel page linked from them: a cancellation, or their
+agreement to wait for a later ship date, and when they gave it.
 
 ### 3.5 What we never collect
 
@@ -97,10 +122,26 @@ We process personal data for these purposes and no others:
 3. **Analytics and reporting to the merchant** — showing a merchant how much
    demand a product has, how many notifications were sent, and how much revenue
    followed from them.
+4. **Emails about a preorder** — a Preorder receipt when a shopper places an
+   order that contains a preorder, and a Delay notice if its ship date moves
+   later or passes. These are about a purchase the shopper made, not marketing.
+   They need no marketing consent and are sent on every plan.
+5. **Cancellations and refunds** — when a shopper cancels a preorder that has
+   not shipped, we cancel and refund that item in full through Shopify at once,
+   with no approval step.
 
 We do not sell personal data. We do not share it with advertisers. We do not
-use it to train machine learning models. We do not use it to make automated
-decisions that have legal or similarly significant effects on anyone.
+use it to train machine learning models.
+
+**We make one automated decision about a shopper, and it is one they can
+always avoid.** If a preorder's ship date moves more than 30 days past what the
+shopper was promised, or no ship date remains, their Delay notice asks them to
+agree to wait. If they have not agreed by the deadline it states, at least 7
+days after it was sent, we cancel that preorder and refund it in full through
+Shopify, as if they had cancelled it themselves. The terms are stated on the
+product page before purchase and in every preorder email. We make no other
+automated decisions that have legal or similarly significant effects on
+anyone.
 
 ## 5. Who else sees it
 
@@ -171,6 +212,13 @@ merchant's installation, and is removed when:
   hours after an uninstall. If that request never arrives, we erase the store
   anyway, **seven days after the uninstall**, without being asked.
 
+**Preorder orders** are kept apart from waitlist entries. The email address on
+an order that contains a preorder is removed once nothing on that order is left
+to ship: every preorder item on it has shipped, been cancelled or been refunded.
+What remains (the order number, items, amounts and dates, with no email
+address) is the merchant's preorder history, and is deleted on uninstall with
+everything else.
+
 Aggregated revenue figures already reported to a merchant survive the deletion
 of the notification they came from, because a merchant's historical revenue
 report should not silently change months later. Those figures identify an order
@@ -207,6 +255,10 @@ despite them:
   emailed. This is the one case where we hold an address in order to honour a
   request, and forgetting it would make that address contactable again.
 
+A customer erasure request also erases that customer's preorder records,
+matched by their Shopify customer id or by the orders Shopify names, so it
+reaches a shopper who checked out as a guest.
+
 A store erasure request deletes everything, with no exception.
 
 ## 9. Consent, and how to stop
@@ -219,6 +271,11 @@ requires visiting a page or filling in a form.
 Unsubscribing records a standing suppression: we stop emailing that address for
 that store, on every waitlist, immediately and permanently, until the person
 subscribes again themselves.
+
+The one exception is email about a preorder the person bought. A Preorder
+receipt or a Delay notice still reaches them after they unsubscribe, because it
+concerns their own purchase and their right to cancel it, not a product they
+asked to hear about.
 
 ## 10. Security
 

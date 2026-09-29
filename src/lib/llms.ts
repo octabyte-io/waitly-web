@@ -28,7 +28,7 @@ ${siteConfig.name} is a Shopify app made by ${siteConfig.company}. Key facts:
 - Works with any Shopify Online Store 2.0 theme through theme app blocks. No code or theme edits.
 - Restock alerts are sent by email only. There is no SMS or push today.
 - Restocks are detected automatically from Shopify inventory changes.
-- Preorders are paid in full at checkout through Shopify selling plans. Deposits and partial payments are not supported.
+- Preorders are paid in full at checkout through Shopify selling plans. Deposits and partial payments are not supported. Shoppers get a Preorder receipt and can cancel for a full refund until it ships; if a ship date moves more than 30 days later, they are asked to agree to wait or are refunded automatically.
 - Plans: ${plans}. ${trial} start with a ${trialDays}-day free trial. Billed monthly on the merchant's Shopify invoice, in US dollars. No annual plan.
 - No Klaviyo or Shopify Flow integration today. Waitlists export as CSV on Growth and Pro.
 - Install: ${siteConfig.installUrl}

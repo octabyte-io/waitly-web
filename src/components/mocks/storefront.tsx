@@ -201,6 +201,7 @@ export function PreorderBlock({
         Pre-order
       </span>
       <p className="text-[0.9375rem]">{fact}</p>
+      <p className="text-[0.875rem]">Cancel any time before it ships for a full refund.</p>
       {message ? <p className="text-[0.875rem] text-[#5c6570]">{message}</p> : null}
       <p className="flex min-h-11 items-center justify-center rounded-md bg-[#1a1a1a] px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold text-white">
         Pre-order

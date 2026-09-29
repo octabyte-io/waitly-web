@@ -32,7 +32,7 @@ const BLOCKS: { name: string; where: string; what: string; level?: Level }[] = [
   {
     name: "Pre-order",
     where: "Product page",
-    what: "The Pre-order badge, ship estimate and your message, for products a preorder policy covers.",
+    what: "The Pre-order badge, ship estimate, cancellation terms and your message, for products a preorder policy covers.",
   },
   {
     name: "Coming soon",

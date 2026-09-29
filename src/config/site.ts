@@ -16,7 +16,7 @@ export const siteConfig = {
     "Waitly adds Notify me, preorders, Coming Soon pages and product voting to your Shopify store, emails shoppers the moment stock returns, and shows you what to restock next.",
   legal: {
     legalName: "OctaByte" as string | null,
-    lastUpdated: "28 September 2026" as string | null,
+    lastUpdated: "29 September 2026" as string | null,
   },
 } as const;
 

@@ -90,8 +90,14 @@ export default function PreordersPage() {
           </Explainer>
           <Explainer title="Track what’s owed">
             <p>
-              The Preorders page lists every preorder with its status, read straight from Shopify’s
-              fulfilments, refunds and cancellations: waiting, partly shipped, shipped or cancelled.
+              The Preorders page lists every preorder with its customer, order and status, read
+              straight from Shopify’s fulfilments, refunds and cancellations: waiting, partly shipped,
+              shipped or cancelled. Filter it by status.
+            </p>
+            <p>
+              Beside the status, a mark tells you what needs attention: a Delay notice sent, a shopper
+              who agreed to wait or hasn’t yet, an undated preorder about to reach 30 days, or a refund
+              Shopify couldn’t make.
             </p>
           </Explainer>
         </div>
@@ -140,6 +146,11 @@ export default function PreordersPage() {
                 "If another policy already covers some of the same products, Waitly warns you before you save. The older policy keeps them.",
             },
             {
+              name: "From the product page",
+              detail:
+                "Open More actions → Pre-order with Waitly, or the Purchase options card, on any product in Shopify. Add it to a policy, create a new one, remove it, or switch its policy on or off without leaving the product.",
+            },
+            {
               name: "Theme check",
               detail:
                 "Waitly checks that the Pre-order block is actually on your product page, and tells you if it isn’t.",
@@ -181,7 +192,7 @@ export default function PreordersPage() {
           <div>
             <SectionHeading
               title={<span className="inline-flex flex-wrap items-center gap-3">What shoppers see <PlanBadge level="growth" /></span>}
-              intro="On the free plan the block shows the Pre-order badge and “Pay in full today. This item ships later.” Growth adds a ship estimate and your own message of up to 200 characters."
+              intro="On the free plan the block shows the Pre-order badge, “Pay in full today. This item ships later.” and “Cancel any time before it ships for a full refund.” Growth adds a ship estimate and your own message of up to 200 characters."
             />
             <div className="mt-10 relative overflow-x-auto">
               <table className="w-full min-w-[26rem] text-left">
@@ -218,6 +229,47 @@ export default function PreordersPage() {
               <PreorderBlock powered />
             </ProductFrame>
           </div>
+        </div>
+      </Band>
+
+      <Band tone="paper">
+        <SectionHeading
+          title="Shoppers always know where their order stands"
+          intro="Preorder emails are about a purchase, not a promotion, so they go out on every plan, never count toward a limit, and reach shoppers who unsubscribed from alerts."
+        />
+        <div className="mt-14 space-y-14">
+          <Explainer title="A receipt for every preorder">
+            <p>
+              Each new order with a preorder gets one Preorder receipt, in your logo and brand color.
+              It names every preorder item, when it’s expected to ship, and the cancellation terms.
+            </p>
+          </Explainer>
+          <Explainer title="Cancel before it ships">
+            <p>
+              The receipt links to a Keep or cancel page on your store. A shopper can cancel a
+              preorder that hasn’t shipped, and Waitly refunds that line in full through Shopify
+              straight away. No approval step, and the rest of the order is untouched.
+            </p>
+          </Explainer>
+          <Explainer title="Told when a date moves">
+            <p>
+              Save a later ship estimate and your editor shows how many shoppers it affects before you
+              do. Each one gets a Delay notice 30 minutes after your last save, so a quick fix sends
+              nothing. A shopper whose date passes with nothing shipped hears from you too.
+            </p>
+            <p>
+              A preorder with no ship estimate is promised within 30 days of the order, and is told so
+              in its receipt.
+            </p>
+          </Explainer>
+          <Explainer title="Agree to wait, or get a refund">
+            <p>
+              If the new date is more than 30 days past what a shopper was promised, or there’s no
+              date at all, the notice asks them to keep their preorder. They get at least 7 days to
+              answer. Anyone who doesn’t agree by the deadline is refunded automatically, so no one is
+              left waiting on something they never agreed to.
+            </p>
+          </Explainer>
         </div>
       </Band>
 

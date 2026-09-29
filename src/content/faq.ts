@@ -89,6 +89,19 @@ export const FAQ: FaqGroup[] = [
         ],
       },
       {
+        q: "Can shoppers cancel a preorder?",
+        a: [
+          "Yes, any time before it ships, for a full refund. The Pre-order block says so before they buy, and every preorder order gets a Preorder receipt email with a link to keep or cancel. A cancel refunds that line straight away through Shopify; there’s no approval step. This is on every plan.",
+        ],
+      },
+      {
+        q: "What happens if a ship date slips?",
+        a: [
+          "When you save a later ship estimate, Waitly emails each affected shopper a Delay notice about 30 minutes after your last save, so a quick correction doesn’t send anything. A shopper whose promised date passes is told too.",
+          "If the new date is more than 30 days past what the shopper was promised, or there’s no date at all, the notice asks them to agree to wait. Anyone who doesn’t agree by the deadline, at least 7 days after the notice, is refunded automatically. A preorder with no ship estimate is promised within 30 days of the order.",
+        ],
+      },
+      {
         q: "Can I stop overselling a preorder?",
         a: [
           "Yes. Set a maximum number of units per product on any policy. Cancelled or refunded preorders give their units back. You can also offer preorder only while a variant is sold out, so it turns itself off the moment stock arrives.",

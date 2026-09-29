@@ -222,6 +222,7 @@ export default function Home() {
             <ul className="mt-8 space-y-3 text-ink/85">
               <li>Offer preorder only while a variant is sold out, and it turns off when stock arrives.</li>
               <li>Cap the units per product so you never promise more than you can ship.</li>
+              <li>Shoppers get a receipt, can cancel for a full refund before it ships, and hear from you if a ship date slips.</li>
               <li>Every preorder order is tagged <code className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9375rem] ring-1 ring-ink/10">waitly-preorder</code> for fulfilment.</li>
             </ul>
             <CtaLink href="/features/preorders/" variant="quiet" className="mt-9">
