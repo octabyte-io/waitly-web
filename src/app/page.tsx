@@ -12,6 +12,7 @@ import {
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { HeroSteps } from "@/components/sections/hero-steps";
+import { WalkthroughVideo } from "@/components/sections/walkthrough-video";
 import { FaqList } from "@/components/sections/faq-list";
 import { PlanColumns } from "@/components/sections/plan-columns";
 import { pages } from "@/config/pages";
@@ -169,6 +170,14 @@ export default function Home() {
             </li>
           ))}
         </ol>
+        <div className="mt-16 grid grid-cols-1 gap-x-12 gap-y-3 border-t border-paper/15 pt-10 md:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]">
+          <h3 className="text-d3 font-semibold tracking-[-0.02em]">See it on a real store</h3>
+          <p className="text-paper/75 measure">
+            Seven and a half minutes, silent with captions: install, a shopper joining the waitlist, the
+            restock alert, then a preorder from checkout to cancellation.
+          </p>
+        </div>
+        <WalkthroughVideo className="mt-10" />
       </Band>
 
       {/* Back in stock */}

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Band, Bezel, Container, CtaLink, Explainer, InstallLink, PlanBadge, SectionHeading } from "@/components/site/primitives";
+import { Band, Container, CtaLink, Explainer, InstallLink, PlanBadge, SectionHeading } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
+import { WALKTHROUGH, WalkthroughVideo } from "@/components/sections/walkthrough-video";
 import { siteConfig } from "@/config/site";
 import type { Level } from "@/content/plans";
 import { pages } from "@/config/pages";
@@ -54,11 +55,6 @@ const PROCESSORS = [
   { name: "Hetzner", role: "Hosting Waitly’s servers and database", where: "Germany" },
   { name: "Sentry", role: "Error monitoring", where: "United States" },
 ];
-
-const WALKTHROUGH = {
-  src: "/video/waitly-walkthrough.mp4",
-  poster: "/video/waitly-walkthrough-poster.jpg",
-};
 
 const videoJsonLd = {
   "@type": "VideoObject",
@@ -132,18 +128,7 @@ export default function SetupPage() {
           title="Watch Waitly from install to restock"
           intro="Seven and a half minutes on a real store: installing Waitly, a shopper joining the waitlist and getting the restock alert, then a preorder from checkout to a later ship date and a cancellation. It’s silent, with captions."
         />
-        <Bezel className="mt-12">
-          <video
-            controls
-            playsInline
-            preload="none"
-            poster={WALKTHROUGH.poster}
-            className="aspect-video w-full rounded-[1.25rem] bg-ink"
-          >
-            <source src={WALKTHROUGH.src} type="video/mp4" />
-            <a href={WALKTHROUGH.src}>Download the setup walkthrough</a> (MP4, 15 MB).
-          </video>
-        </Bezel>
+        <WalkthroughVideo className="mt-12" />
       </Band>
 
       <Band tone="mist">
