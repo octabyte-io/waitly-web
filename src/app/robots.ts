@@ -27,8 +27,9 @@ const AI_CRAWLERS = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/" },
-      { userAgent: AI_CRAWLERS, allow: "/" },
+      // The App Store review screencast is for Shopify's reviewers, not search.
+      { userAgent: "*", allow: "/", disallow: "/review/" },
+      { userAgent: AI_CRAWLERS, allow: "/", disallow: "/review/" },
     ],
     sitemap: new URL("/sitemap.xml", siteConfig.url).toString(),
   };
