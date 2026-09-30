@@ -343,7 +343,7 @@ export default function Home() {
                 <NotifyDotRow />
               </span>
               <p className="self-center text-ink/80">
-                Want more? <Link href="/setup/" className="font-semibold underline decoration-signal decoration-2 underline-offset-4">See the full setup guide</Link>, including preorders, Coming Soon and voting blocks.
+                Want more? <Link href="/setup/" className="font-semibold underline decoration-signal decoration-2 underline-offset-4">See the full setup guide</Link>, including preorders, Coming Soon and voting blocks, or <Link href="/setup/#walkthrough" className="font-semibold underline decoration-signal decoration-2 underline-offset-4">watch the setup video</Link>.
               </p>
             </li>
           </ol>

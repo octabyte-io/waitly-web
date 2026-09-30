@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Band, Container, CtaLink, Explainer, InstallLink, PlanBadge, SectionHeading } from "@/components/site/primitives";
+import { Band, Bezel, Container, CtaLink, Explainer, InstallLink, PlanBadge, SectionHeading } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { siteConfig } from "@/config/site";
 import type { Level } from "@/content/plans";
@@ -55,6 +55,23 @@ const PROCESSORS = [
   { name: "Sentry", role: "Error monitoring", where: "United States" },
 ];
 
+const WALKTHROUGH = {
+  src: "/video/waitly-walkthrough.mp4",
+  poster: "/video/waitly-walkthrough-poster.jpg",
+};
+
+const videoJsonLd = {
+  "@type": "VideoObject",
+  name: "Waitly setup and test walkthrough",
+  description:
+    "Installing Waitly on a Shopify store, a shopper joining a back in stock waitlist and getting the restock alert, then a preorder from checkout to a later ship date and a cancellation.",
+  thumbnailUrl: new URL(WALKTHROUGH.poster, siteConfig.url).toString(),
+  contentUrl: new URL(WALKTHROUGH.src, siteConfig.url).toString(),
+  uploadDate: "2026-09-30",
+  duration: "PT7M29S",
+  inLanguage: "en",
+};
+
 const howToJsonLd = {
   "@type": "HowTo",
   name: "How to set up Waitly on a Shopify store",
@@ -71,7 +88,7 @@ const howToJsonLd = {
 export default function SetupPage() {
   return (
     <>
-      <JsonLd data={[webPageJsonLd(pages.setup), howToJsonLd]} />
+      <JsonLd data={[webPageJsonLd(pages.setup), howToJsonLd, videoJsonLd]} />
       <section className="pt-10 pb-12 sm:pt-16 sm:pb-16">
         <Container className="grid grid-cols-1 gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <div>
@@ -84,6 +101,9 @@ export default function SetupPage() {
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <InstallLink />
+              <CtaLink href="#walkthrough" variant="secondary">
+                Watch the walkthrough
+              </CtaLink>
             </div>
           </div>
           <ol className="grid gap-8">
@@ -106,6 +126,25 @@ export default function SetupPage() {
           </ol>
         </Container>
       </section>
+
+      <Band tone="sky" id="walkthrough">
+        <SectionHeading
+          title="Watch Waitly from install to restock"
+          intro="Seven and a half minutes on a real store: installing Waitly, a shopper joining the waitlist and getting the restock alert, then a preorder from checkout to a later ship date and a cancellation. It’s silent, with captions."
+        />
+        <Bezel className="mt-12">
+          <video
+            controls
+            playsInline
+            preload="none"
+            poster={WALKTHROUGH.poster}
+            className="aspect-video w-full rounded-[1.25rem] bg-ink"
+          >
+            <source src={WALKTHROUGH.src} type="video/mp4" />
+            <a href={WALKTHROUGH.src}>Download the setup walkthrough</a> (MP4, 15 MB).
+          </video>
+        </Bezel>
+      </Band>
 
       <Band tone="mist">
         <SectionHeading
