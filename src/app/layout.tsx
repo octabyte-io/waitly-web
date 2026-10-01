@@ -33,7 +33,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${mona.variable} antialiased`}>
+    // Smooth scrolling is for links within a page. This tells Next to jump
+    // straight to the top when the page changes instead of animating there.
+    <html lang="en" data-scroll-behavior="smooth" className={`${mona.variable} antialiased`}>
       <body className="flex min-h-dvh flex-col">
         <WindowLight />
         <a
