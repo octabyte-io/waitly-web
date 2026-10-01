@@ -11,6 +11,7 @@ import {
   CtaLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
+import { GuideLinks } from "@/components/guide/guide-links";
 import { pages } from "@/config/pages";
 import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -289,6 +290,7 @@ export default function BackInStockPage() {
         </div>
       </Band>
 
+      <GuideLinks sections={["back-in-stock", "waitlists"]} />
       <ClosingCta />
     </>
   );

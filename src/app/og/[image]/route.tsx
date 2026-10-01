@@ -1,4 +1,5 @@
 import { pages } from "@/config/pages";
+import { guideEntries } from "@/content/guide";
 import { ogImage } from "@/lib/og-image";
 import { ogImageName } from "@/lib/seo";
 
@@ -10,13 +11,15 @@ import { ogImageName } from "@/lib/seo";
 export const dynamic = "force-static";
 export const dynamicParams = false;
 
+const entries = [...Object.values(pages), ...guideEntries];
+
 export function generateStaticParams() {
-  return Object.values(pages).map((page) => ({ image: ogImageName(page) }));
+  return entries.map((page) => ({ image: ogImageName(page) }));
 }
 
 export async function GET(_request: Request, ctx: RouteContext<"/og/[image]">) {
   const { image } = await ctx.params;
-  const page = Object.values(pages).find((entry) => ogImageName(entry) === image);
+  const page = entries.find((entry) => ogImageName(entry) === image);
   if (!page) return new Response("Not found", { status: 404 });
   return ogImage(page);
 }

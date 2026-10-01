@@ -10,7 +10,7 @@ export const FAQ: FaqGroup[] = [
         q: "How long does setup take?",
         home: true,
         a: [
-          "Two steps. Install Waitly, then press “Add the Notify me block” on the Waitly home page. It opens your theme editor with the block already placed on your product page. Save the theme and test it on a sold-out product.",
+          "Two steps. Install Waitly, then press “Add block” in the setup guide on the Waitly home page. It opens your theme editor with the block already placed on your product page. Save the theme and test it on a sold-out product.",
           "No code, no theme files to edit, and nothing to paste.",
         ],
       },

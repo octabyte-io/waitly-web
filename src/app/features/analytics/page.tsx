@@ -17,6 +17,7 @@ import {
   CtaLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
+import { GuideLinks } from "@/components/guide/guide-links";
 import { pages } from "@/config/pages";
 import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -245,6 +246,7 @@ export default function AnalyticsPage() {
         </div>
       </Band>
 
+      <GuideLinks sections={["analytics"]} />
       <ClosingCta
         title="Restock with numbers, not a hunch."
         intro="Start free and see your waitlists fill. Growth shows what they recover; Pro shows what to reorder."

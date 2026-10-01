@@ -53,5 +53,6 @@ export const featureNav: NavItem[] = [
 export const mainNav: { href: string; label: string }[] = [
   { href: "/pricing/", label: "Pricing" },
   { href: "/setup/", label: "Setup" },
+  { href: "/guide/", label: "Guide" },
   { href: "/faq/", label: "FAQ" },
 ];

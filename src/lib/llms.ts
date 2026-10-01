@@ -5,6 +5,8 @@
 import { pages, type PageEntry } from "@/config/pages";
 import { siteConfig } from "@/config/site";
 import { FAQ } from "@/content/faq";
+import { GUIDE_SECTIONS, articlesIn, guidePath } from "@/content/guide";
+import { plainText } from "@/components/guide/rich-text";
 import { COMPARISON, formatCount, LEVEL_NAMES, PLANS, type Level } from "@/content/plans";
 
 const url = (path: string) => new URL(path, siteConfig.url).toString();
@@ -44,7 +46,11 @@ ${[pages.backInStock, pages.preorders, pages.restockRelease, pages.analytics, pa
 
 ## Plans and setup
 
-${[pages.pricing, pages.setup, pages.faq].map(link).join("\n")}
+${[pages.pricing, pages.setup, pages.guide, pages.faq].map(link).join("\n")}
+
+## User guide
+
+${guideLinks()}
 
 ## Legal
 
@@ -107,5 +113,35 @@ ${comparison}
 ## Questions and answers
 
 ${faq}
+
+## User guide
+
+${guideFull()}
 `;
+}
+
+function guideLinks() {
+  return GUIDE_SECTIONS.flatMap((section) =>
+    articlesIn(section.key).map((a) => `- [${a.title}](${url(guidePath(a.slug))}): ${a.summary}`),
+  ).join("\n");
+}
+
+function guideFull() {
+  return GUIDE_SECTIONS.map((section) => {
+    const articles = articlesIn(section.key);
+    if (articles.length === 0) return "";
+    return `### ${section.title}
+
+${articles
+  .map(
+    (a) => `#### ${a.title}${a.level ? ` (${LEVEL_NAMES[a.level]})` : ""}
+
+${a.summary} ${url(guidePath(a.slug))}
+
+${a.steps.map((step, i) => `${i + 1}. ${step.title}. ${step.body.map(plainText).join(" ")}`).join("\n")}`,
+  )
+  .join("\n\n")}`;
+  })
+    .filter(Boolean)
+    .join("\n\n");
 }

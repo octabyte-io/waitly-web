@@ -72,6 +72,13 @@ export const pages = {
     description:
       "Set up Waitly in two steps: add the Notify me block to your product page and test it on a sold-out product. No code, any Online Store 2.0 theme.",
   },
+  guide: {
+    path: "/guide/",
+    title: "User guide",
+    headline: "How to use every part of Waitly",
+    description:
+      "Step-by-step guides with screenshots for every Waitly feature: Notify me, waitlists, preorders, restock release, Coming Soon, voting, analytics, emails, settings and billing.",
+  },
   faq: {
     path: "/faq/",
     title: "Questions and answers",

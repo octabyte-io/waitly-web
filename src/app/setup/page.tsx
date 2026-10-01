@@ -100,6 +100,9 @@ export default function SetupPage() {
               <CtaLink href="#walkthrough" variant="secondary">
                 Watch the walkthrough
               </CtaLink>
+              <CtaLink href="/guide/" variant="secondary">
+                Read the user guide
+              </CtaLink>
             </div>
           </div>
           <ol className="grid gap-8">
