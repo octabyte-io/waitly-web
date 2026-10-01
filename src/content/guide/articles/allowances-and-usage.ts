@@ -18,10 +18,10 @@ export const article: GuideArticle = {
         src: "/guide/allowances-and-usage/01-this-cycle.jpg",
         width: 1000,
         height: 225,
-        alt: "The This billing cycle card on Waitly’s Billing page: Restock alerts at 16 of 20,000, Preorders at 5 with Unlimited on your plan, and the line Your allowances reset on October 16, 2026.",
+        alt: "The This billing cycle card on Waitly’s Billing page: Restock alerts at 16 of 20,000 with a note that Waitly held back 1 alert this cycle, Preorders at 5 with Unlimited on your plan, and the line Your allowances reset on October 16, 2026.",
         frame: "admin",
         highlights: [
-          { x: 20.1, y: 27.0, w: 29.0, h: 41.2, label: "Restock alerts used, out of your allowance" },
+          { x: 20.1, y: 27.0, w: 29.0, h: 21.4, label: "Restock alerts used, out of your allowance" },
           { x: 51.3, y: 27.0, w: 23.8, h: 32.8, label: "Preorders used" },
           { x: 19.5, y: 76.7, w: 28.2, h: 9.6, label: "The day your allowances reset" },
         ],
@@ -30,8 +30,8 @@ export const article: GuideArticle = {
     {
       title: "Know what counts",
       body: [
-        "Each back-in-stock or launch alert email Waitly sends uses one restock alert. Each preorder placed through one of your preorder policies uses one preorder.",
-        "Waitlist confirmations, preorder receipts and delay notices don’t use either allowance. A preorder receipt or delay notice is always sent, because it’s about an order the shopper already placed.",
+        "Each back-in-stock or launch alert email Waitly sends uses one restock alert. Each line of an order placed through one of your preorder policies uses one preorder, whatever its quantity: three of the same jacket on one line count as one.",
+        "Waitlist confirmations, preorder receipts and delay notices don’t use either allowance. A preorder receipt or delay notice is never held back, because it’s about an order the shopper already placed.",
       ],
     },
     {

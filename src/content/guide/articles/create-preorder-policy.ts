@@ -94,7 +94,7 @@ export const article: GuideArticle = {
     {
       title: "Save the policy",
       body: [
-        "Select **Save** in the bar at the top of the page. You’ll see “Saved. Updating Shopify…”.",
+        "Select **Save** in the bar at the top of the page. The page title changes from “Create policy” to the policy’s name. When you save a change to it later, you’ll see “Saved. Updating Shopify…”.",
         "Waitly then sets up the Pre-order purchase option in Shopify. The **In Shopify** card reads **Updating…** while it works, then **Up to date** once Shopify matches the policy.",
         "The **Summary** card sums it up: what the policy covers, how many rules and exceptions it has, **Full price, charged at checkout**, and **Orders held until you release them**.",
       ],

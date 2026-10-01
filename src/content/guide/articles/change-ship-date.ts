@@ -22,7 +22,7 @@ export const article: GuideArticle = {
       title: "Enter the new estimate",
       body: [
         "Change the date, the range, or the time after the order. You can also switch to another kind of estimate, or to **None**.",
-        "Only a later date is news. Moving the estimate earlier, or to the same day, tells no one.",
+        "Only a later date, or no date at all, is news. Moving the estimate earlier, or to the same day, tells no one.",
       ],
       shot: {
         src: "/guide/change-ship-date/01-new-estimate.jpg",
@@ -133,7 +133,7 @@ export const article: GuideArticle = {
     },
     {
       q: "Does a shopper who agreed to wait get asked again?",
-      a: "Only if you move the date more than 30 days past the one they agreed to. A shopper who agreed to wait with no date isn’t asked again until you name one.",
+      a: "Only if you move the date more than 30 days past the one they agreed to, or that date passes before the preorder ships. A shopper who agreed to wait with no date isn’t asked again when you name one. That date becomes the one they agreed to.",
     },
     {
       q: "Do delay notices count toward my plan’s email limits?",

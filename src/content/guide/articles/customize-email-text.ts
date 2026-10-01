@@ -53,13 +53,13 @@ export const article: GuideArticle = {
     {
       title: "Write your words",
       body: [
-        "An empty **Subject**, **Heading** or **Button label** shows Waitly’s own wording in gray, with “Blue Hoodie” standing in for the item’s name. Leave a field empty to keep Waitly’s wording, or type your own.",
+        "An empty **Subject**, **Heading** or **Button label** shows Waitly’s own wording in gray. In the two alerts, “Blue Hoodie” stands in for the item’s name. Leave a field empty to keep Waitly’s wording, or type your own.",
         "Type {item} where the item’s name should go, for example “Good news: {item} is back”. It fills in with what the shopper is waiting for, such as “The Complete Snowboard - Powder”.",
         "Your **Message** appears after the line that names the item. Each line you write becomes its own paragraph.",
       ],
       aside: {
         kind: "note",
-        text: "Some lines always stay, whatever you write: the line naming the item, the “first come, first served” line, the shopper’s place in line, and the unsubscribe footer.",
+        text: "Some lines always stay, whatever you write: the line naming the item, the “first come, first served” line, the shopper’s place in line, and the unsubscribe footer. On Pro, an alert that holds a unit for the shopper uses your heading and message, but keeps Waitly’s subject and its **Complete your purchase** button.",
       },
     },
     {

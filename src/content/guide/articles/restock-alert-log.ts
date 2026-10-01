@@ -51,7 +51,7 @@ export const article: GuideArticle = {
     {
       title: "Read how many went out",
       body: [
-        "**Queued** is how many shoppers the alert was addressed to. **Delivered** is how many alerts the email service accepted to send.",
+        "**Queued** is how many alerts Waitly started to send. **Delivered** is how many of them the email service accepted.",
         "On Pro, **Not sent** counts shoppers still left when batches stopped because the item sold out or the send ran out of time. They stay on the waitlist for next time.",
       ],
     },
@@ -68,7 +68,7 @@ export const article: GuideArticle = {
         alt: "A Held figure of 5 in the Restock alerts table with its tooltip reading “1 sold · 0 lapsed · 1 released”.",
         frame: "admin",
         highlights: [
-          { x: 51.4, y: 48.4, w: 22.0, h: 23.2, label: "Sold, lapsed and released units" },
+          { x: 51.7, y: 47.5, w: 21.7, h: 15.0, label: "Sold, lapsed and released units" },
         ],
       },
     },
@@ -104,7 +104,7 @@ export const article: GuideArticle = {
   faqs: [
     {
       q: "Why is Queued bigger than Delivered?",
-      a: "Queued counts everyone the alert was for. Some may still be sending, stopped with the batches (Not sent), withheld by your plan’s allowance, or failed.",
+      a: "Queued counts every alert Waitly started to send. Some may still be sending, and some may have failed. Withheld and Not sent shoppers are counted in their own columns, not in Queued.",
     },
     {
       q: "Why don’t I see an alert I expected?",

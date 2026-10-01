@@ -61,7 +61,7 @@ export const article: GuideArticle = {
       title: "Open the restock planner",
       body: [
         "Select **View all** under the section to open the **Restock planner**. It lists every product shoppers are waiting on or have unshipped preorders for, 25 to a page.",
-        "Search with **Search by product**, and use **Sort** to order by **Demand Score**, **Suggested restock** or **Waiting**. Point at a column header for a short explanation.",
+        "Search with **Search by product**, and use **Sort** to order by **Demand Score**, **Suggested restock** or **Waiting**. Point at the **Demand Score** or **Suggested restock** header for a short explanation.",
       ],
       shot: {
         src: "/guide/demand-score/02-planner.jpg",
@@ -71,7 +71,7 @@ export const article: GuideArticle = {
         frame: "admin",
         highlights: [
           { x: 2.0, y: 26.9, w: 84.2, h: 5.7, label: "Search by product" },
-          { x: 85.6, y: 26.9, w: 14.0, h: 20.8, label: "Choose the order" },
+          { x: 92.0, y: 26.9, w: 5.7, h: 5.6, label: "Choose the order" },
           { x: 35.7, y: 33.2, w: 10.5, h: 4.7, label: "Point here for an explanation" },
         ],
       },

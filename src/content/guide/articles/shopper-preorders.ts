@@ -15,7 +15,7 @@ export const article: GuideArticle = {
     {
       title: "The shopper sees the Pre-order panel",
       body: [
-        "On a sold-out variant your policy covers, a panel appears above the buy buttons. It has a **Pre-order** badge, the line “Pay in full today. This item ships later.” and your terms: “Cancel any time before it ships for a full refund.”",
+        "On a sold-out variant your policy covers, a panel appears where you placed the Pre-order block. It has a **Pre-order** badge, the line “Pay in full today. This item ships later.” and your terms: “Cancel any time before it ships for a full refund.”",
         "On Growth and Pro, the line gives your ship estimate instead, such as “Pay in full today. Ships around” a date, and your own message shows under the terms.",
       ],
       shot: {
@@ -23,6 +23,7 @@ export const article: GuideArticle = {
         width: 1828,
         height: 862,
         alt: "A sold-out product page with the Pre-order panel under the product: a Pre-order badge, Pay in full today. Ships around November 2, 2026, Cancel any time before it ships for a full refund, and the store’s message, Ships from our next delivery.",
+        caption: "This store placed the block under the product, so the panel shows there.",
         frame: "storefront",
         highlights: [
           { x: 3.5, y: 78.0, w: 22.5, h: 8.1, label: "The badge and the ship estimate" },
@@ -32,7 +33,7 @@ export const article: GuideArticle = {
       },
       aside: {
         kind: "note",
-        text: "The block has no button of its own. Your theme’s usual buttons buy the preorder, with their usual labels. The Notify me form doesn’t show on a variant that can be preordered.",
+        text: "The block has no button of its own. Your theme’s usual buttons buy the preorder, with their usual labels. If the Notify me block is on the page too, its form still shows on that variant, so a shopper can join the waitlist instead.",
       },
     },
     {

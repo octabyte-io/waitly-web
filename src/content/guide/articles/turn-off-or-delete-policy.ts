@@ -58,8 +58,8 @@ export const article: GuideArticle = {
         frame: "admin",
         highlights: [
           { x: 54.1, y: 91.7, w: 9.3, h: 6.3, label: "Select **Delete policy**" },
-          { x: 55.6, y: 48.7, w: 9.3, h: 6.3, label: "Confirm" },
-          { x: 49.6, y: 48.7, w: 6.5, h: 6.3, label: "Or keep the policy" },
+          { x: 55.8, y: 48.2, w: 8.9, h: 7.2, label: "Confirm" },
+          { x: 49.8, y: 48.2, w: 5.9, h: 7.2, label: "Or keep the policy" },
         ],
       },
       aside: {

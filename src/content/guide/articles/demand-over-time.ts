@@ -62,7 +62,7 @@ export const article: GuideArticle = {
         alt: "The New signups chart with the pointer on one bar and its day and count, Sep 25: 19 new signups, shown under the chart.",
         frame: "admin",
         highlights: [
-          { x: 37.4, y: 43.9, w: 2.7, h: 33.3, label: "Point at a bar" },
+          { x: 38.0, y: 44.3, w: 1.4, h: 32.7, label: "Point at a bar" },
           { x: 3.9, y: 80.9, w: 13.6, h: 5.9, label: "Its day and count" },
         ],
       },

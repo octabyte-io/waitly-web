@@ -53,7 +53,7 @@ export const article: GuideArticle = {
       title: "The shopper sees they’re on the list",
       body: [
         "The form is replaced by “You are on the list. We will email you once this is back.”",
-        "If the address doesn’t look right, the form asks them to check it. If many signups come from the same place at once, it asks them to try again shortly.",
+        "If the address doesn’t look right, the form asks them to check it. If your store takes an unusual number of signups in an hour, or the same address signs up many times, it asks them to try again shortly.",
       ],
       shot: {
         src: "/guide/shopper-joins-waitlist/03-success.jpg",

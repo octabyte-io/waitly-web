@@ -27,7 +27,7 @@ export const article: GuideArticle = {
       title: "Work through the setup guide",
       body: [
         "The **Setup guide** at the top of Home shows how many of its two steps are done: add the Notify me block to your product page, then test the button on a sold-out product. Waitly ticks each step off by itself when it sees the block on your live theme and your first signup.",
-        "Use the arrow button to collapse the guide, or the X button to dismiss it. It disappears for good once both steps are done.",
+        "Use the arrow button to collapse the guide, or the X button to dismiss it. It disappears once both steps are done.",
       ],
       shot: {
         src: "/guide/find-your-way-around/02-setup-guide.jpg",
@@ -36,8 +36,8 @@ export const article: GuideArticle = {
         alt: "The Setup guide card on Home showing 0 of 2 steps completed, with its two steps: Add the Notify me block to your product page, and Test the button on a sold-out product.",
         frame: "admin",
         highlights: [
-          { x: 3.4, y: 22.1, w: 15.2, h: 4.9, label: "How many steps are done" },
-          { x: 5.1, y: 38.1, w: 90.0, h: 50.3, label: "The two steps" },
+          { x: 3.2, y: 21.6, w: 15.8, h: 5.8, label: "How many steps are done" },
+          { x: 3.7, y: 35.6, w: 92.6, h: 56.2, label: "The two steps" },
           { x: 89.5, y: 8.3, w: 6.9, h: 6.4, label: "Dismiss or collapse the guide" },
         ],
       },
@@ -49,7 +49,7 @@ export const article: GuideArticle = {
     {
       title: "Read your numbers",
       body: [
-        "Under the guide, **Shoppers waiting** counts everyone still waiting for a product, and **Live waitlists** counts the products and variants with at least one shopper waiting. Select either to open **Waitlists**.",
+        "Under the guide, **Shoppers waiting** counts everyone still waiting for a product, and **Live waitlists** counts the products and variants with at least one shopper waiting or still deciding after an alert. Select either to open **Waitlists**.",
         "**Recovered revenue** is the money from orders placed after a Waitly alert. It’s on Growth and Pro; on Free it shows **Growth** and an **Upgrade to Growth** link.",
       ],
       shot: {

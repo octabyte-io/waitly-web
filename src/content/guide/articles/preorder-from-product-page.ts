@@ -53,7 +53,7 @@ export const article: GuideArticle = {
       title: "Or start a new policy",
       body: [
         "Select **New policy**, type a **Name**, and on Growth or Pro pick a date in **Ships on (optional)**. Select **Create**.",
-        "The new policy holds just this product and starts off. Select **Turn on** in the window when you’re ready to sell.",
+        "The new policy holds just this product and starts off. Select the **Turn on** button that names the policy when you’re ready to sell.",
       ],
       shot: {
         src: "/guide/preorder-from-product-page/03-new-policy.jpg",

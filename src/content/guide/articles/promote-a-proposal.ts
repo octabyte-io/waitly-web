@@ -9,7 +9,7 @@ export const article: GuideArticle = {
   level: "pro",
   before: [
     "Your store is on the Pro plan.",
-    "The proposal is Open or Closed and has votes.",
+    "The proposal is Open or Closed. A Draft has to be opened first.",
   ],
   steps: [
     {
@@ -25,7 +25,7 @@ export const article: GuideArticle = {
         alt: "The Proposals table on the Voting page, ranked by votes, with votes in the last 7 days and potential revenue for each proposal.",
         frame: "admin",
         highlights: [
-          { x: 5.9, y: 34.2, w: 9.3, h: 5.6, label: "Select the title to open it" },
+          { x: 6.2, y: 34.6, w: 8.6, h: 4.3, label: "Select the title to open it" },
           { x: 57.9, y: 25.7, w: 40.2, h: 69.7, label: "Votes, last 7 days, potential revenue" },
         ],
       },
@@ -77,7 +77,7 @@ export const article: GuideArticle = {
       title: "Follow it in Promoted",
       body: [
         "Waitly takes you back to **Voting**. The proposal moves to **Promoted**, which shows the **Product**, **How** it was promoted (**Created** or **Linked**), **Votes moved** and **Promoted on**.",
-        "While Waitly works, the product reads “Creating the product in Shopify…”. If it’s not published yet, you’ll see “Publish in Shopify to show the Coming Soon form.”",
+        "While Waitly works, the product reads “Creating the product in Shopify…”, or “Moving the votes to the product…” for a linked one. If it’s not published yet, you’ll see “Publish in Shopify to show the Coming Soon form.”",
       ],
       shot: {
         src: "/guide/promote-a-proposal/04-promoted-section.jpg",

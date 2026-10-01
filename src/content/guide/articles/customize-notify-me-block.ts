@@ -34,8 +34,8 @@ export const article: GuideArticle = {
       title: "Change the words",
       body: [
         "Under **Text** you can change everything the form says: **Heading**, **Email field label**, **Email field placeholder**, **Consent checkbox** and **Button**.",
-        "You can also change the messages a shopper sees after pressing the button: **Signed up**, **Email rejected**, **Too many sign-ups**, **Something went wrong** and **No variant chosen**.",
-        "Every field starts empty. Leave a field empty to keep Waitly’s wording, which you can see in the preview. Waitly’s wording is translated into your store’s languages for you.",
+        "You can also change the messages a shopper sees after pressing the button: **Signed up**, **Email rejected**, **Too many sign-ups** and **Something went wrong**. **No variant chosen** shows in place of the form when the options a shopper picked don’t match a real variant.",
+        "Every field starts empty. Leave a field empty to keep Waitly’s wording, which you can see in the preview. Waitly’s own wording is in English.",
       ],
       shot: {
         src: "/guide/customize-notify-me-block/02-text-settings.jpg",
@@ -112,7 +112,7 @@ export const article: GuideArticle = {
     },
     {
       q: "When does the “Too many sign-ups” message show?",
-      a: "Only when your store has taken an unusual number of signups in the last hour. It protects the address every store’s email is sent from.",
+      a: "When your store has taken an unusual number of signups in the last hour, or when the same email address has signed up many times in an hour. It protects the address every store’s email is sent from.",
     },
     {
       q: "What is the Product setting at the top?",

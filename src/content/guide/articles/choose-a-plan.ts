@@ -11,7 +11,7 @@ export const article: GuideArticle = {
     {
       title: "Open Billing",
       body: [
-        "In Waitly, choose **Billing**, the last item in the menu on the left of your Shopify admin.",
+        "In the Waitly menu on the left of your Shopify admin, choose **Billing**. If it isn’t listed, select **View more**.",
       ],
       shot: {
         src: "/guide/choose-a-plan/01-billing.jpg",
@@ -118,7 +118,7 @@ export const article: GuideArticle = {
         frame: "admin",
         highlights: [
           { x: 18.2, y: 20.8, w: 10.2, h: 9.9, label: "**Confirming** badge" },
-          { x: 13.9, y: 36.4, w: 71.2, h: 18.4, label: "You keep your current allowance meanwhile" },
+          { x: 13.4, y: 35.3, w: 72.4, h: 20.5, label: "You keep your current allowance meanwhile" },
         ],
       },
       aside: {
@@ -134,7 +134,7 @@ export const article: GuideArticle = {
     },
     {
       q: "Is there annual billing?",
-      a: "Not yet. Every plan is billed monthly through Shopify.",
+      a: "Not yet. Growth and Pro are billed every 30 days through Shopify.",
     },
   ],
   related: ["allowances-and-usage", "install-waitly", "brand-your-emails"],

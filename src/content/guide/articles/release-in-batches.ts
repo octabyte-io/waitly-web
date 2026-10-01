@@ -77,7 +77,7 @@ export const article: GuideArticle = {
       title: "Follow the batches in Analytics",
       body: [
         "When the item comes back, open **Analytics** and scroll to **Restock alerts**. While batches are still going out, the **Status** column shows **Sending** with a line like **Batch 2 of 5 · next at 14:30**. Once the last batch is due, it shows only the batch, like **Batch 4 of 4**.",
-        "When the send ends, the status reads **Complete**. **Not sent** counts shoppers the batches never reached because the item sold out first. They’re still on the waitlist.",
+        "When the send ends, the status reads **Complete**. **Not sent** counts shoppers the batches never reached because the item sold out or the send ran out of time. They’re still on the waitlist.",
       ],
       shot: {
         src: "/guide/release-in-batches/04-send-log.jpg",

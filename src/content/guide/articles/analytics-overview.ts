@@ -32,7 +32,7 @@ export const article: GuideArticle = {
     {
       title: "Read Right now",
       body: [
-        "**Right now** shows **Shoppers waiting**, **Live waitlists** (items with at least one shopper waiting) and **Alerted, still deciding** (shoppers who got an alert and are still inside the time set by **Hold a restock alert for** in Settings).",
+        "**Right now** shows **Shoppers waiting**, **Live waitlists** (items with at least one shopper waiting or still deciding) and **Alerted, still deciding** (shoppers who got an alert and are still inside the time set by **Hold a restock alert for** in Settings).",
         "These describe this moment, so the date range doesn’t change them. Select **Shoppers waiting** or **Live waitlists** to open the **Waitlists** page.",
       ],
       shot: {

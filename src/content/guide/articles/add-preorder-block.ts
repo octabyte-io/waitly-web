@@ -81,7 +81,7 @@ export const article: GuideArticle = {
     {
       title: "Check a sold-out product",
       body: [
-        "Open a product your policy covers and pick a sold-out variant. You’ll see the “Pre-order” badge, “Pay in full today. This item ships later.” and “Cancel any time before it ships for a full refund.” On Growth, your ship estimate and message show too.",
+        "Open a product your policy covers and pick a sold-out variant. You’ll see the “Pre-order” badge, “Pay in full today. This item ships later.” and “Cancel any time before it ships for a full refund.” On Growth, the pay-in-full line gives your ship estimate instead, and your message shows under the terms.",
         "Pick an in-stock variant and the block hides, so that variant sells as usual.",
       ],
       shot: {
@@ -89,7 +89,7 @@ export const article: GuideArticle = {
         width: 1908,
         height: 914,
         alt: "A sold-out product page on a Horizon theme store, with Add to cart and Buy it now buttons and the Pre-order block: a Pre-order badge, Pay in full today. Ships around November 2, 2026, Cancel any time before it ships for a full refund, and the message Ships from our next delivery.",
-        caption: "This store is on a plan with a ship estimate and message, so both show in the block.",
+        caption: "This store is on a plan with a ship estimate and message, so both show in the block. Here the block sits below the buy buttons. Place yours above them, so shoppers read the terms first.",
         frame: "storefront",
         highlights: [
           { x: 4.7, y: 77.9, w: 90.6, h: 19.8, label: "The Pre-order block" },

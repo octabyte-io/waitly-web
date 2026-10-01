@@ -30,7 +30,7 @@ export const article: GuideArticle = {
       title: "Select Remove",
       body: [
         "Select **Remove** at the end of the shopper’s row. Nothing changes yet: Waitly asks you to confirm first.",
-        "Only shoppers still on the list have **Remove**. Rows that have already ended, for example **Bought after alert** or **Unsubscribed**, have nothing to remove.",
+        "Only shoppers who are **Waiting** or **Alerted, still deciding** have **Remove**. Rows that have already ended, for example **Bought after alert** or **Unsubscribed**, have nothing to remove.",
       ],
     },
     {
@@ -46,8 +46,8 @@ export const article: GuideArticle = {
         alt: "The Remove shopper? window: “bram.brooks@example.com won’t get an alert for this product. They can join again from your store.” with Cancel and Remove buttons.",
         frame: "admin",
         highlights: [
-          { x: 57.1, y: 55.4, w: 6.4, h: 4.9, label: "Confirm the removal" },
-          { x: 51.7, y: 55.4, w: 5.9, h: 4.9 },
+          { x: 57.4, y: 55.4, w: 6.1, h: 4.9, label: "Confirm the removal" },
+          { x: 51.7, y: 55.4, w: 5.5, h: 4.9 },
         ],
       },
     },

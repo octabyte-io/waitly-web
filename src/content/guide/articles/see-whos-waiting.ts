@@ -67,7 +67,7 @@ export const article: GuideArticle = {
         alt: "The Coming Soon card on a waitlist: a Form hidden badge (the product has stock for sale), the date it was marked, 22 waiting (14 I want this, 8 Notify me), and the Most wanted, Units wanted and Shopping country lists.",
         frame: "admin",
         highlights: [
-          { x: 3.5, y: 12.4, w: 41.9, h: 8.8, label: "When it was marked" },
+          { x: 31.4, y: 16.2, w: 13.6, h: 4.6, label: "When it was marked" },
           { x: 3.5, y: 40.9, w: 93.2, h: 51.3 },
         ],
       },
@@ -99,7 +99,7 @@ export const article: GuideArticle = {
       title: "See who holds a unit right now",
       body: [
         "If you reserve units for the first shoppers, a **Held now** card lists each shopper holding a unit, their **Place in line** and **Held until**. It only appears while a hold is running.",
-        "To end a hold early, select **Remove** on that shopper. The unit then goes to the next shopper in line.",
+        "To end a hold early, select **Remove** on that shopper. This also takes the shopper off the waitlist. The unit then goes to the next shopper in line.",
       ],
       shot: {
         src: "/guide/see-whos-waiting/05-held-now.jpg",
@@ -133,14 +133,14 @@ export const article: GuideArticle = {
       },
       aside: {
         kind: "note",
-        text: "Below Pro, the list is newest first and the Position column is empty. There’s no Sort button and no Why column.",
+        text: "Below Pro, the list is newest first and the Position column shows a dash on every row, with a Pro badge on its header. There’s no Sort button and no Why column.",
       },
     },
     {
       title: "Filter by what happened",
       body: [
         "Use the filters above the table to show one status at a time. Each shows how many shoppers it holds, and only statuses this waitlist has are listed. Type in **Search by email** and select **Search** to find one shopper.",
-        "The statuses are **Waiting**, **Alerted, still deciding**, **Bought after alert**, **Bought anyway** (bought without an alert that counts), **Unsubscribed** (the shopper stopped alerts), **Expired** (too old, or alerted as many times as your settings allow), **Cannot be emailed** (their address bounced or marked mail as spam) and **Removed by you**.",
+        "The statuses are **Waiting**, **Alerted, still deciding**, **Bought after alert**, **Bought anyway** (bought without an alert that counts), **Unsubscribed** (the shopper stopped alerts), **Expired** (too old, or alerted as many times as your settings allow), **Cannot be emailed** (their address bounced, or they reported an email as spam) and **Removed by you**.",
       ],
       shot: {
         src: "/guide/see-whos-waiting/07-filters.jpg",

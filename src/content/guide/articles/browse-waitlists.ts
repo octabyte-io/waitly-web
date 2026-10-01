@@ -41,7 +41,7 @@ export const article: GuideArticle = {
         highlights: [
           { x: 16.0, y: 72.9, w: 7.1, h: 7.1, label: "Variant or any variant" },
           { x: 35.3, y: 1.6, w: 5.4, h: 97.3, label: "Shoppers still due an alert" },
-          { x: 40.4, y: 1.6, w: 27.1, h: 97.3, label: "Pro columns" },
+          { x: 40.9, y: 1.6, w: 26.6, h: 97.3, label: "Pro columns" },
         ],
       },
       aside: {
@@ -73,8 +73,8 @@ export const article: GuideArticle = {
         alt: "The Waitlists page searched for “snowboard”, listing the matching snowboard waitlists.",
         frame: "admin",
         highlights: [
-          { x: 1.8, y: 3.7, w: 85.5, h: 5.5, label: "Search by product name" },
-          { x: 86.7, y: 3.7, w: 6.0, h: 5.5 },
+          { x: 1.8, y: 3.7, w: 85.0, h: 5.5, label: "Search by product name" },
+          { x: 87.0, y: 3.7, w: 5.6, h: 5.5 },
         ],
       },
     },

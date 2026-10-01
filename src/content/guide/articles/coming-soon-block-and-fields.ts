@@ -30,7 +30,7 @@ export const article: GuideArticle = {
     {
       title: "Place the block and save",
       body: [
-        "Put the **Coming soon** block next to the Buy button, just under where your theme shows **Sold out**. Then select **Save** in the theme editor.",
+        "In the sidebar, keep the **Coming soon** block in the same section as **Buy buttons** and below it, so the form shows under your theme’s sold-out button. Then select **Save** in the theme editor.",
         "The block only shows on products you mark in Waitly under **Coming Soon**. There it takes the place of **Notify me**, so you can keep both blocks on the page.",
       ],
       shot: {
@@ -50,7 +50,7 @@ export const article: GuideArticle = {
       title: "Change the wording and style if you like",
       body: [
         "Select the block to see its settings. Under **Text** you can change the **Badge**, **Heading**, **Chosen option**, **Any option checkbox**, **Quantity field label**, **Country line**, **Consent checkbox**, **Button** and the messages shoppers see after they sign up.",
-        "Leave a field empty to use Waitly’s wording, translated into your store’s languages. In **Chosen option**, **{variant}** stands for the size or color the shopper picked; in **Country line**, **{country}** stands for their country.",
+        "Leave a field empty to use Waitly’s wording, which is in English. In **Chosen option**, **{variant}** stands for the size or color the shopper picked; in **Country line**, **{country}** stands for their country.",
         "Under **Style**, set the **Button color**, **Button text color** and **Corner radius**. **Style (Growth)** adds **Background**, **Border**, **Button style** and **Full-width button**, which work on Growth and Pro.",
       ],
       shot: {
@@ -103,7 +103,7 @@ export const article: GuideArticle = {
     },
     {
       q: "What if a shopper signs up twice?",
-      a: "Their answers are updated rather than added again, and they see a “Signed up again” message you can reword in the block.",
+      a: "Their answers are updated rather than added again, and in the same browser they see a “Signed up again” message you can reword in the block.",
     },
   ],
   related: ["mark-coming-soon", "customize-notify-me-block", "add-notify-me-block"],

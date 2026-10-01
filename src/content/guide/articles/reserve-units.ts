@@ -102,7 +102,7 @@ export const article: GuideArticle = {
       title: "See who holds a unit right now",
       body: [
         "Open the product’s waitlist from **Waitlists**. While units are held, a **Held now** card lists each **Shopper**, their **Place in line** and **Held until**, in your store’s time zone.",
-        "To end a hold early, select **Remove** on the shopper’s row. The unit held for them goes to the next shopper in line.",
+        "To end a hold early, select **Remove** on the shopper’s row, then **Remove** again in the **Remove shopper?** window. This also takes the shopper off the waitlist. The unit held for them goes to the next shopper in line.",
       ],
       shot: {
         src: "/guide/reserve-units/05-held-now.jpg",
@@ -142,8 +142,8 @@ export const article: GuideArticle = {
       a: "They stay on the waitlist. That restock won’t call them again, but a later one can.",
     },
     {
-      q: "What if I never allowed draft orders?",
-      a: "The restock goes out all at once instead, and the send log says “Not reserved: draft-order access is missing”.",
+      q: "What if Waitly can’t create draft orders?",
+      a: "Reserve can’t be saved until you allow draft orders. If that permission is later taken away, the restock goes out all at once instead, and the send log says “Not reserved: draft-order access is missing”.",
     },
     {
       q: "Does a hold stop other people buying the item?",

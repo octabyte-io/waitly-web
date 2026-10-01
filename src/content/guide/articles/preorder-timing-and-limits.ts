@@ -83,7 +83,7 @@ export const article: GuideArticle = {
       title: "Save and check the list",
       body: [
         "Select **Save** in the bar at the top.",
-        "On the **Preorders** page, the **Status** column shows what each policy is doing: **On** with “Opens …” under it while it waits for its dates, **Ended** once they’ve passed, and “Limit reached on 2 of 12 products” when some products hit their cap.",
+        "On the **Preorders** page, the **Status** column shows what each policy is doing: **On** with “Opens …” under it while it waits for its dates, **On** with “Ended” under it once they’ve passed, and “Limit reached on 2 of 12 products” when some products hit their cap.",
       ],
       shot: {
         src: "/guide/preorder-timing-and-limits/04-status-column.jpg",

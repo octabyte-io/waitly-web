@@ -69,8 +69,8 @@ export const article: GuideArticle = {
         height: 276,
         alt: "An exported waitlist CSV shown as a spreadsheet grid, with the column headers email, state, item, product_id, variant_id, joined_at, last_notified_at, notify_count, ended_at, position, priority_reason, joined_by, quantity and shopping_country, and rows in the states waiting, notified, converted, fulfilled and unsubscribed.",
         highlights: [
-          { x: 11.9, y: 19.3, w: 6.1, h: 77.6, label: "Status as a short name" },
-          { x: 73.6, y: 19.3, w: 26.4, h: 77.6, label: "Added on Pro" },
+          { x: 12.4, y: 19.3, w: 5.1, h: 77.6, label: "Status as a short name" },
+          { x: 74.1, y: 19.3, w: 25.4, h: 77.6, label: "Added on Pro" },
         ],
       },
       aside: {
@@ -82,7 +82,7 @@ export const article: GuideArticle = {
   faqs: [
     {
       q: "Is there a limit to how many shoppers I can export?",
-      a: "A file holds the 50,000 most recent shoppers. If the list is longer, a line under the button says how many aren’t in it.",
+      a: "A file holds the first 50,000 shoppers, in the order the table shows them. If the list is longer, a line under the button says how many aren’t in it.",
     },
     {
       q: "Can I export who voted for a proposal?",

@@ -75,7 +75,7 @@ export const article: GuideArticle = {
       title: "Save your changes",
       body: [
         "Select **Save** in the bar at the top of the page. You’ll see **Settings saved**.",
-        "Priority applies to shoppers who join from now on. Shoppers who joined before your store was on Pro keep their place by the date they joined.",
+        "Switching a rule on or off reorders the shoppers who joined while your store was on Pro straight away, including those already waiting. Changing only the tag or the amount doesn’t reorder shoppers already waiting. Shoppers who joined before your store was on Pro keep their place by the date they joined.",
       ],
     },
     {
@@ -101,7 +101,7 @@ export const article: GuideArticle = {
     {
       title: "Check for a paused rule",
       body: [
-        "If Shopify stops letting Waitly read your customers, a rule you switched on shows **Paused** under it in Settings. You didn’t switch anything off: the rule simply isn’t applied to new sign-ups for now, and those shoppers read **Standard**.",
+        "If Shopify stops letting Waitly read your customers, a rule you switched on shows **Paused** under it in Settings. You didn’t switch anything off: the rule simply isn’t applied to new sign-ups for now. While a rule is paused, **Why** reads **Standard** for every waiting shopper, and shoppers already ranked keep their place.",
         "A paused rule starts again by itself once Shopify answers. You don’t need to do anything.",
       ],
     },

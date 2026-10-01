@@ -13,7 +13,7 @@ export const article: GuideArticle = {
     {
       title: "Select Add block in the setup guide",
       body: [
-        "Open Waitly. The **Setup guide** is the card at the top of **Home**, and it lists two steps. Open the first one, **Add the Notify me block to your product page**, and select its **Add block** button.",
+        "Open Waitly. The **Setup guide** is the card at the top of **Home**, and it lists two steps. Under the first one, **Add the Notify me block to your product page**, select the **Add block** button.",
         "Your theme editor opens in a new browser tab.",
       ],
       shot: {
@@ -79,7 +79,7 @@ export const article: GuideArticle = {
         alt: "The Setup guide on Waitly’s Home reading 1 of 2 steps completed, with a green tick beside Add the Notify me block to your product page and the second step, Test the button on a sold-out product, still open.",
         frame: "admin",
         highlights: [
-          { x: 3.4, y: 28.4, w: 14.9, h: 5.9, label: "**1 of 2 steps completed**" },
+          { x: 3.2, y: 27.9, w: 15.5, h: 6.9, label: "**1 of 2 steps completed**" },
           { x: 5.1, y: 48.8, w: 31.9, h: 7.3, label: "The first step is ticked off" },
         ],
       },

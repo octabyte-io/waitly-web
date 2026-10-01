@@ -88,7 +88,7 @@ export const article: GuideArticle = {
       },
       aside: {
         kind: "tip",
-        text: "The form only shows on a variant that tracks stock, stops selling at zero and has none. A variant a preorder policy covers keeps selling, so it shows the pre-order button instead.",
+        text: "The form only shows on a variant that tracks stock, stops selling at zero and has none. A variant a preorder policy covers takes preorders instead: the form is hidden for it, and the Pre-order panel shows there if the Pre-order block is on the page.",
       },
     },
     {

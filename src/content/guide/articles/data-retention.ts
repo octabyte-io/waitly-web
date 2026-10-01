@@ -34,11 +34,11 @@ export const article: GuideArticle = {
       title: "Know what gets removed",
       body: [
         "The same number of days works in two ways. A shopper who has been waiting with no activity for that long leaves the waitlist, and their status becomes **Expired**.",
-        "A signup that has ended, for example because the shopper bought or it expired, is deleted that many days after it ended. It then drops out of your waitlists and reports. Waitly checks once a day.",
+        "A signup that has ended, for example because the shopper bought or it expired, is deleted that many days after it ended. It then drops out of your waitlists, the shopper counts in Analytics and the charts under **Over time**. **Recovered revenue** and the totals for each restock alert you’ve sent stay as they were. Waitly checks once a day.",
       ],
       aside: {
         kind: "warning",
-        text: "A short window removes history sooner. Your waitlists and reports only count what’s still kept, and a deleted signup can’t be brought back.",
+        text: "A short window removes history sooner. Your waitlists, shopper counts and charts only count what’s still kept, and a deleted signup can’t be brought back.",
       },
     },
     {

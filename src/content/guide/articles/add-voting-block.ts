@@ -57,7 +57,7 @@ export const article: GuideArticle = {
       title: "Change the wording and style if you like",
       body: [
         "Select the block to see its settings. Under **Text** you can change the **Heading**, **Subheading**, **Email field label**, **Email field placeholder**, **Button** and the messages shoppers see: **Voted**, **Voted before**, **Voted tag** and **Nothing ticked**. In **Voted**, **{items}** stands for the names of the proposals the shopper voted for.",
-        "Leave a field empty to use Waitly’s wording, translated into your store’s languages. Under **Style**, set the **Button color**, **Button text color** and **Corner radius**; **Style (Growth)** adds four more settings.",
+        "Leave a field empty to use Waitly’s wording, which is in English. Under **Style**, set the **Button color**, **Button text color** and **Corner radius**; **Style (Growth)** adds four more settings.",
       ],
       shot: {
         src: "/guide/add-voting-block/03-block-settings.jpg",
@@ -78,7 +78,7 @@ export const article: GuideArticle = {
     {
       title: "Check it on your store",
       body: [
-        "Open the page on your store. The block lists your open proposals, the most recently opened first, each with its image, title, description and planned price.",
+        "Open the page on your store. The block lists your open proposals, the most recently opened first, each with its image, title, description and planned price. A proposal with no image shows a gray square, as here.",
         "Shoppers tick the ones they’d buy, enter their email and select **Vote**. They never see how many votes a proposal has.",
       ],
       shot: {

@@ -73,7 +73,7 @@ export const article: GuideArticle = {
         src: "/guide/install-waitly/04-billing.jpg",
         width: 1000,
         height: 420,
-        alt: "The Billing page, with the Your plan card and the Change plan button.",
+        alt: "The Billing page of a store on the Pro plan: the Your plan card with the plan name, an Active badge and the Change plan button, and the This billing cycle card below it.",
         frame: "admin",
         highlights: [
           { x: 17.9, y: 4.6, w: 64.1, h: 39.3, label: "The plan you’re on" },

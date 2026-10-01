@@ -45,7 +45,7 @@ export default function PreordersPage() {
       <JsonLd data={webPageJsonLd(pages.preorders)} />
       <PageHero
         title="Keep selling while the next batch is on its way"
-        intro="Waitly turns the Buy button into a Pre-order button for the products you choose. Shoppers pay in full at checkout, and Shopify holds the order until you ship."
+        intro="Waitly adds a Pre-order panel to the product page for the products you choose, and your theme’s own Add to cart and Buy it now buttons keep selling. Shoppers pay in full at checkout, and Shopify holds the order until you ship."
         aside={
           <ProductFrame
             title="Trail runner, low"
