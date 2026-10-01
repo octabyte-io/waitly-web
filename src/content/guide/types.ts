@@ -33,7 +33,7 @@ export type Highlight = {
 };
 
 export type Shot = {
-  /** Path under `public/`, e.g. `/guide/add-notify-me-block/01-setup-guide.png`. */
+  /** Path under `public/`, e.g. `/guide/add-notify-me-block/01-setup-guide.jpg`. */
   src: string;
   width: number;
   height: number;

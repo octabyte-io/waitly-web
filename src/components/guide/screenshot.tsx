@@ -1,3 +1,4 @@
+import ExportedImage from "next-image-export-optimizer";
 import { cn } from "@/lib/utils";
 import type { Shot } from "@/content/guide/types";
 import { RichText } from "./rich-text";
@@ -49,12 +50,20 @@ export function Screenshot({ shot, className }: { shot: Shot; className?: string
           )}
           <div className="relative">
             <a href={shot.src} target="_blank" rel="noopener" aria-label="Open the screenshot at full size">
-              {/* eslint-disable-next-line @next/next/no-img-element -- static export; files are pre-sized */}
-              <img
+              <ExportedImage
                 src={shot.src}
                 width={shot.width}
                 height={shot.height}
                 alt={shot.alt}
+                // The widest the article column gets is 804px; below `lg` the shot runs the full width.
+                sizes={
+                  phone
+                    ? "22rem"
+                    : `(min-width: 1024px) min(${shot.width}px, 804px), min(${shot.width}px, 100vw)`
+                }
+                placeholder="empty"
+                // The WebP variants only exist after a build.
+                unoptimized={process.env.NODE_ENV === "development"}
                 loading="lazy"
                 decoding="async"
                 className="block h-auto w-full"

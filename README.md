@@ -35,16 +35,15 @@ npx shadcn@latest add <component>
 
 ## Images
 
-`next/image` needs a server, so images use [`next-image-export-optimizer`](https://github.com/Niels-IO/next-image-export-optimizer). Put images in `public/images/` and render them with `ExportedImage`:
+`next/image` needs a server, so images use [`next-image-export-optimizer`](https://github.com/Niels-IO/next-image-export-optimizer). The guide screenshots live in `public/guide/<article-slug>/` and are rendered by `Screenshot` (`src/components/guide/screenshot.tsx`), which wraps `ExportedImage`:
 
 ```tsx
 import ExportedImage from "next-image-export-optimizer";
-import hero from "../../public/images/hero.jpg";
 
-<ExportedImage src={hero} alt="..." placeholder="blur" />;
+<ExportedImage src="/guide/install-waitly/01-app-store.jpg" width={1470} height={757} alt="..." placeholder="empty" />;
 ```
 
-`npm run build` generates resized WebP variants and blur placeholders.
+`npm run build` writes resized WebP variants next to each screenshot, in a git-ignored `nextImageExportOptimizer/` folder, and copies them to `out/`. Only `public/guide/` is scanned; the widths are set in `next.config.ts`. `npm run dev` serves the original files.
 
 ## Deployment
 
