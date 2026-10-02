@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container, PlanBadge } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
+import { SceneThumb } from "@/components/use-cases/scene-cover";
 import { pages } from "@/config/pages";
 import { POSTS, postPath } from "@/content/use-cases";
 import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
@@ -21,13 +22,14 @@ export default function UseCasesPage() {
             Sold out, on its way, running late. Each of these answers the question for any Shopify
             store first, with or without an app, and then shows how Waitly handles it.
           </p>
-          <ul className="mt-12 grid gap-4 md:grid-cols-2">
+          <ul className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
             {POSTS.map((post) => (
               <li key={post.slug}>
                 <Link
                   href={postPath(post.slug)}
                   className="group flex h-full flex-col glass rounded-[1.75rem] p-6 transition-colors hover:bg-white/70 sm:p-7"
                 >
+                  <SceneThumb scene={post.cover} zoom={0.8} className="mb-6" />
                   <h2 className="text-d3 font-bold tracking-[-0.02em] group-hover:underline group-hover:decoration-2 group-hover:underline-offset-4">
                     {post.title}
                   </h2>

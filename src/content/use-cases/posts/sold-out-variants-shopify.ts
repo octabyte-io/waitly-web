@@ -9,6 +9,7 @@ export const post: UseCasePost = {
   cardHeadline: "Hide sold-out sizes on Shopify, or let shoppers ask for them?",
   summary:
     "Hide a sold-out variant when it isn’t coming back, and show it crossed out when it is. Here’s how to do either in your theme, and how a visible sold-out size can collect the demand for it.",
+  cover: "sold-out-notify-me",
   published: "2026-10-02",
   answer: [
     "Hide a sold-out size or color when it isn’t coming back. Show it crossed out or greyed when it restocks, so the shopper can see that it exists and that it’s gone for now. Shopify’s Dawn theme already does the second with its pill picker. Hiding takes a deleted variant or a small theme edit.",

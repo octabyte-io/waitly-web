@@ -9,6 +9,7 @@ export const post: UseCasePost = {
   cardHeadline: "“Continue selling when out of stock”: what the box leaves out",
   summary:
     "Shopify’s checkbox lets shoppers buy at zero stock, but the page still looks in stock and nothing caps the orders. Here is how it compares with a preorder and a waitlist.",
+  cover: "continue-preorder-panel",
   published: "2026-10-02",
   answer: [
     "Ticking **Continue selling when out of stock** lets shoppers buy a variant at zero stock. That’s all it does. The product page looks the same as an in-stock one, the shopper isn’t told it ships later, and nothing stops the orders at the number of units you have coming.",

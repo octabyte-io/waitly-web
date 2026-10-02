@@ -9,6 +9,7 @@ export const post: UseCasePost = {
   cardHeadline: "How much to reorder after a product sells out",
   summary:
     "A sold-out product records no sales, so your sales history says to order too little. Here’s how to correct the number by hand, and how a waitlist fills in the part you can’t see.",
+  cover: "reorder-score-card",
   published: "2026-10-02",
   answer: [
     "The usual way to size a reorder is to multiply your average daily sales by the number of days the order has to last, then add a buffer. After a sellout that number comes out too low, because every sold-out day counts as a day when nobody wanted the product.",

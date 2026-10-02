@@ -9,6 +9,7 @@ export const post: UseCasePost = {
   cardHeadline: "Back in stock notifications on Shopify, with an app or without",
   summary:
     "Shopify doesn’t email shoppers when a sold-out product returns. Here are the ways to do it, with and without an app, and how to tell which one your store needs.",
+  cover: "restock-alert-email",
   published: "2026-10-02",
   answer: [
     "Shopify doesn’t have a built-in way to email a shopper when a sold-out product comes back. You can collect emails with a form and send the news yourself, keep selling while you’re out of stock, or add an app that does both steps for you.",

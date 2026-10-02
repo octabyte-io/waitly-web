@@ -9,6 +9,7 @@ export const post: UseCasePost = {
   cardHeadline: "When a restock sells out before your waitlist can buy",
   summary:
     "A small restock and a long waitlist turn one email into a race. Here is why it happens, what you can do by hand, and how batches and held units change who gets the stock.",
+  cover: "race-line-order",
   published: "2026-10-02",
   answer: [
     "A back-in-stock email doesn’t set anything aside. If ten units come back and forty people are waiting, all forty get the same email, the ten fastest buy, and the other thirty click through to a sold-out page. How long someone waited makes no difference.",

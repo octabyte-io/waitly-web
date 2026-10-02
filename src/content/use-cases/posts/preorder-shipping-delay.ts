@@ -13,6 +13,7 @@ export const post: UseCasePost = {
   cardHeadline: "Your preorder will ship late: what to tell customers",
   summary:
     "A supplier is late and orders you’ve already taken won’t ship on time. Here is what to tell customers, what the US FTC rule and UK law require, how to do it by hand in Shopify, and what Waitly does for its own preorders.",
+  cover: "delay-notice-email",
   published: "2026-10-02",
   answer: [
     "Tell every affected customer as soon as you know, and before the date you promised. Give a new ship date if you have one, and offer a plain choice: wait, or cancel for a full refund. For online orders in the US, that choice is required by an FTC rule.",

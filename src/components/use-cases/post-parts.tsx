@@ -6,6 +6,7 @@ import { LEVEL_NAMES } from "@/content/plans";
 import { postBySlug, postPath, type Block, type Figure, type Section, type UseCasePost } from "@/content/use-cases";
 import { Inline } from "@/lib/inline";
 import { cn } from "@/lib/utils";
+import { SceneCover } from "./scene-cover";
 import { SCENES } from "./scenes";
 
 /** The pieces every use-case post is built from. `PostLayout` arranges them. */
@@ -27,29 +28,37 @@ export const TAIL = {
 
 export function PostHeader({ post, className }: { post: UseCasePost; className?: string }) {
   return (
-    <header className={className}>
-      <nav aria-label="Breadcrumb" className="text-[0.9375rem] text-ink-soft">
-        <Link href="/use-cases/" className="hover:text-ink hover:underline">
-          Use cases
-        </Link>
-      </nav>
-      <h1 className="mt-4 max-w-4xl text-d2 font-bold tracking-[-0.03em]">{post.title}</h1>
-      <div className="mt-6 max-w-2xl space-y-3 text-lead text-ink/80">
-        {post.answer.map((p) => (
-          <p key={p}>
-            <Inline text={p} />
-          </p>
-        ))}
+    <header
+      className={cn(
+        "grid grid-cols-1 items-center gap-x-14 gap-y-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]",
+        className,
+      )}
+    >
+      <div>
+        <nav aria-label="Breadcrumb" className="text-[0.9375rem] text-ink-soft">
+          <Link href="/use-cases/" className="hover:text-ink hover:underline">
+            Use cases
+          </Link>
+        </nav>
+        <h1 className="mt-4 max-w-4xl text-d2 font-bold tracking-[-0.03em]">{post.title}</h1>
+        <div className="mt-6 max-w-2xl space-y-3 text-lead text-ink/80">
+          {post.answer.map((p) => (
+            <p key={p}>
+              <Inline text={p} />
+            </p>
+          ))}
+        </div>
+        <p className="mt-6 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[0.9375rem] text-ink-soft">
+          <PlanBadge level={post.level} />
+          <span>{planLine(post)}</span>
+          <span aria-hidden="true">·</span>
+          <span>
+            {post.updated ? "Updated " : ""}
+            <time dateTime={post.updated ?? post.published}>{formatDate(post.updated ?? post.published)}</time>
+          </span>
+        </p>
       </div>
-      <p className="mt-6 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[0.9375rem] text-ink-soft">
-        <PlanBadge level={post.level} />
-        <span>{planLine(post)}</span>
-        <span aria-hidden="true">·</span>
-        <span>
-          {post.updated ? "Updated " : ""}
-          <time dateTime={post.updated ?? post.published}>{formatDate(post.updated ?? post.published)}</time>
-        </span>
-      </p>
+      <SceneCover scene={post.cover} className="min-w-0" />
     </header>
   );
 }

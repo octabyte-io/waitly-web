@@ -55,6 +55,8 @@ export type UseCasePost = {
   cardHeadline?: string;
   /** One or two sentences for the hub card and llms.txt. */
   summary: string;
+  /** The mock that stands for the post: at its top, on its hub card and on links to it. */
+  cover: SceneId;
   /** ISO dates, e.g. "2026-10-12". */
   published: string;
   updated?: string;
