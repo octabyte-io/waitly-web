@@ -104,6 +104,7 @@ export const scenes = {
     render: () => <WaitsForSetting />,
   },
   "variants-waitlists": {
+    wide: true,
     alt: "Waitly’s Waitlists page for an example store. Harbor overshirt has three rows: size M with 64 shoppers waiting, size XL with 9, both badged Variant, and the product itself with 6, badged Any variant.",
     render: () => (
       <AdminFrame title="Waitlists">

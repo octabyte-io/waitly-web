@@ -18,6 +18,7 @@ import {
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { GuideLinks } from "@/components/guide/guide-links";
+import { UseCaseLinks } from "@/components/use-cases/use-case-links";
 import { pages } from "@/config/pages";
 import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -246,6 +247,7 @@ export default function AnalyticsPage() {
         </div>
       </Band>
 
+      <UseCaseLinks features={["analytics"]} />
       <GuideLinks sections={["analytics"]} />
       <ClosingCta
         title="Restock with numbers, not a hunch."

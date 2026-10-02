@@ -20,3 +20,18 @@ slug from `src/content/guide/articles/`.
   hub (the app links to `/guide/#emails-settings`).
 - After a change to the guide, run `npm run check:guide-links` in the `waitly`
   repo. It looks every address the app uses up in this site's sitemap.
+
+# Use-case posts keep their address
+
+Each post under `/use-cases/` is typed data in `src/content/use-cases/posts/`,
+listed in `src/content/use-cases/index.ts`. This site is a static export with
+no redirects.
+
+- Never rename or remove a post's `slug`, or a section's `id`, once it is
+  published. Other sites and search results link to them.
+- A post answers the merchant's question in general first (`voice: "neutral"`),
+  then shows what Waitly does (`voice: "waitly"`). What Waitly doesn't do goes
+  in `limits`.
+- Take facts about Waitly from the guide articles, not the feature pages. Check
+  a claim about Shopify or a law at its source and link it. No statistics from
+  other vendors, and no invented results.

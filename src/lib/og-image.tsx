@@ -60,7 +60,7 @@ export async function ogImage(page: PageEntry) {
           />
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             {isHome ? null : (
-              <div style={{ fontSize: 30, fontWeight: 500, color: "#48617e" }}>{page.title}</div>
+              <div style={{ fontSize: 30, fontWeight: 500, color: "#48617e" }}>{page.eyebrow ?? page.title}</div>
             )}
             <div
               style={{

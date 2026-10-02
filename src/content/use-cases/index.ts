@@ -5,7 +5,7 @@
  * A slug is permanent once published. The checks at the foot of this file
  * stop the build when a post points at something that doesn't exist.
  */
-import { pages } from "@/config/pages";
+import { pages, type PageEntry } from "@/config/pages";
 import { articleBySlug, guideEntries } from "@/content/guide";
 import { linksIn } from "@/lib/inline";
 import { post as backInStockNotificationsShopify } from "./posts/back-in-stock-notifications-shopify";
@@ -28,6 +28,19 @@ export const POSTS: UseCasePost[] = [
 ];
 
 export const postPath = (slug: string) => `/use-cases/${slug}/`;
+
+/** Each post as a site page, for metadata, share cards and the sitemap. */
+export const useCaseEntries: PageEntry[] = POSTS.map((p) => ({
+  path: postPath(p.slug),
+  title: p.metaTitle ?? p.title,
+  description: p.description,
+  headline: p.cardHeadline ?? p.title,
+  eyebrow: "Use case",
+  ogName: `use-case-${p.slug}`,
+  lastModified: p.updated ?? p.published,
+}));
+
+export const entryFor = (slug: string) => useCaseEntries.find((e) => e.path === postPath(slug))!;
 
 export const postBySlug = (slug: string) => POSTS.find((p) => p.slug === slug);
 
@@ -66,7 +79,6 @@ function check(posts: UseCasePost[]) {
   const known = new Set([
     ...Object.values(pages).map((p) => p.path),
     ...guideEntries.map((e) => e.path),
-    "/use-cases/",
     ...posts.map((p) => postPath(p.slug)),
   ]);
   const slugs = new Set<string>();

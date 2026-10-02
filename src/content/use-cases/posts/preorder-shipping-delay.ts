@@ -229,4 +229,5 @@ export const post: UseCasePost = {
       a: "For a Waitly preorder, the day after it passes Waitly sends a late notice to every shopper whose preorder hasn’t shipped, and asks those still waiting to keep or cancel. Set a new estimate to tell them when it ships. See [Change a ship date and notify shoppers](/guide/change-ship-date/).",
     },
   ],
+  related: ["continue-selling-when-out-of-stock"],
 };

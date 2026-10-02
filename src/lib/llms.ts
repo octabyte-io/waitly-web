@@ -5,7 +5,9 @@
 import { pages, type PageEntry } from "@/config/pages";
 import { siteConfig } from "@/config/site";
 import { FAQ } from "@/content/faq";
-import { GUIDE_SECTIONS, articlesIn, guidePath } from "@/content/guide";
+import { GUIDE_SECTIONS, articleBySlug, articlesIn, guidePath } from "@/content/guide";
+import { POSTS, postPath, type Block } from "@/content/use-cases";
+import { plainInline } from "@/lib/inline";
 import { plainText } from "@/components/guide/rich-text";
 import { COMPARISON, formatCount, LEVEL_NAMES, PLANS, type Level } from "@/content/plans";
 
@@ -47,6 +49,10 @@ ${[pages.backInStock, pages.preorders, pages.restockRelease, pages.analytics, pa
 ## Plans and setup
 
 ${[pages.pricing, pages.setup, pages.guide, pages.faq].map(link).join("\n")}
+
+## Use cases
+
+${postLinks()}
 
 ## User guide
 
@@ -114,10 +120,53 @@ ${comparison}
 
 ${faq}
 
+## Use cases
+
+${postsFull()}
+
 ## User guide
 
 ${guideFull()}
 `;
+}
+
+function postLinks() {
+  return POSTS.map((p) => `- [${p.title}](${url(postPath(p.slug))}): ${p.summary}`).join("\n");
+}
+
+function blockText(block: Block): string {
+  if (typeof block === "string") return plainInline(block);
+  if (block.type === "h3") return `##### ${block.text}`;
+  if (block.type === "list") {
+    return block.items.map((item, i) => `${block.ordered ? `${i + 1}.` : "-"} ${plainInline(item)}`).join("\n");
+  }
+  if (block.type === "table") {
+    return block.rows
+      .map((row) => `- ${row.map((value, i) => `${block.head[i]}: ${plainInline(value)}`).join(" ")}`)
+      .join("\n");
+  }
+  return plainInline(block.text);
+}
+
+function postsFull() {
+  return POSTS.map((p) => {
+    const sections = p.sections.map(
+      (section) => `#### ${section.heading}\n\n${section.blocks.map(blockText).join("\n\n")}`,
+    );
+    const setup = p.setup.map((step, i) => {
+      const article = articleBySlug(step.guide)!;
+      return `${i + 1}. ${article.title}: ${url(guidePath(article.slug))}`;
+    });
+    return [
+      `### ${p.title}${p.level === "free" ? "" : ` (${LEVEL_NAMES[p.level]})`}`,
+      `${p.summary} ${url(postPath(p.slug))}`,
+      p.answer.map(plainInline).join("\n\n"),
+      ...sections,
+      `#### Set it up in Waitly\n\n${setup.join("\n")}`,
+      `#### What Waitly doesn’t do here\n\n${p.limits.map((limit) => `- ${plainInline(limit)}`).join("\n")}`,
+      `#### Questions\n\n${p.faqs.map((faq) => `**${faq.q}**\n\n${plainInline(faq.a)}`).join("\n\n")}`,
+    ].join("\n\n");
+  }).join("\n\n");
 }
 
 function guideLinks() {

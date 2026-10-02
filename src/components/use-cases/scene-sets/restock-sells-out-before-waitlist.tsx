@@ -229,6 +229,7 @@ export const scenes = {
     ),
   },
   "race-held-now": {
+    wide: true,
     alt: "The Held now card on an example waitlist, just after a restock of 10 units. It lists ten shoppers, places 1 to 10 in line, each with a unit held until 14:30, and a Remove link on every row.",
     render: () => (
       <AdminFrame title={ITEM}>

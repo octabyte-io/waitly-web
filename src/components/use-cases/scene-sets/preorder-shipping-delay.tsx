@@ -254,6 +254,7 @@ export const scenes = {
     render: () => <KeepOrCancelPage />,
   },
   "delay-preorders-list": {
+    wide: true,
     alt: "Waitly’s Preorders list for an example store. Four waiting preorders: one with a “Waiting for the shopper” badge until Nov 14, one that reads “Delay notice sent Oct 30” and “Agreed to wait”, one with a “Refund due” badge, and one with a “Reaches 30 days” badge.",
     render: () => (
       <AdminFrame title="Preorders">

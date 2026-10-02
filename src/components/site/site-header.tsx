@@ -55,7 +55,7 @@ export function SiteHeader() {
           <Logo className="h-8" />
         </Link>
 
-        <nav aria-label="Main" className="ml-4 hidden items-center gap-1 md:flex">
+        <nav aria-label="Main" className="ml-4 hidden items-center gap-1 whitespace-nowrap lg:flex">
           <div ref={featuresRef} className="relative">
             <button
               type="button"
@@ -99,7 +99,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              aria-current={pathname === item.href ? "page" : undefined}
+              aria-current={pathname.startsWith(item.href) ? "page" : undefined}
               className="inline-flex h-10 items-center rounded-full px-3.5 font-medium hover:bg-white/60 aria-[current=page]:underline aria-[current=page]:decoration-signal aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-[6px]"
             >
               {item.label}
@@ -116,7 +116,7 @@ export function SiteHeader() {
           </a>
           <button
             type="button"
-            className="inline-flex size-11 items-center justify-center rounded-full hover:bg-white/60 md:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-full hover:bg-white/60 lg:hidden"
             aria-expanded={mobileOpen}
             aria-controls={mobileId}
             onClick={() => setMobileOpen((open) => !open)}
@@ -131,7 +131,7 @@ export function SiteHeader() {
         <nav
           id={mobileId}
           aria-label="Mobile"
-          className="glass mx-auto mt-2 max-h-[calc(100dvh-6rem)] max-w-[76rem] overflow-y-auto rounded-[1.75rem] bg-white/70 px-3 pt-3 pb-4 md:hidden"
+          className="glass mx-auto mt-2 max-h-[calc(100dvh-6rem)] max-w-[76rem] overflow-y-auto rounded-[1.75rem] bg-white/70 px-3 pt-3 pb-4 lg:hidden"
         >
           <p className="px-3 pt-2 pb-1 text-[0.9375rem] text-ink-soft">Features</p>
           <ul>

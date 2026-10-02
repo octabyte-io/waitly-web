@@ -178,4 +178,5 @@ export const post: UseCasePost = {
       a: "Then use a preorder instead of a waitlist. Waitly has [preorders](/features/preorders/) on every plan, paid in full at checkout.",
     },
   ],
+  related: ["sold-out-variants-shopify", "continue-selling-when-out-of-stock", "restock-sells-out-before-waitlist"],
 };

@@ -224,4 +224,5 @@ export const post: UseCasePost = {
       a: "With the plain checkbox, you find the orders and email each customer. In Waitly on Growth and Pro, you [change the ship estimate](/guide/change-ship-date/) and the affected shoppers are sent a delay notice with a link to keep or cancel.",
     },
   ],
+  related: ["preorder-shipping-delay", "back-in-stock-notifications-shopify"],
 };

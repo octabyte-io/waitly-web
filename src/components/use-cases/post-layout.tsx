@@ -1,14 +1,16 @@
 import { Band, Container } from "@/components/site/primitives";
 import type { UseCasePost } from "@/content/use-cases";
 import { cn } from "@/lib/utils";
-import { Blocks, PostHeader, PostTail, RelatedPosts, SceneFigure, SectionHeadingH2 } from "../post-parts";
+import { isWide } from "./scenes";
+import { Blocks, PostHeader, PostTail, RelatedPosts, SceneFigure, SectionHeadingH2 } from "./post-parts";
 
 /**
- * Layout B, in two parts: the general answer is plain prose on the page, and
- * each thing Waitly does is a pane of glass with its mock beside the words.
- * The change of surface marks where the advice ends and the product begins.
+ * A use-case post, in two parts: the general answer is plain prose on the
+ * page, and each thing Waitly does is a pane of glass with its mock beside
+ * the words. The change of surface marks where the advice ends and the
+ * product begins.
  */
-export function TwoPart({ post }: { post: UseCasePost }) {
+export function PostLayout({ post }: { post: UseCasePost }) {
   let panes = 0;
   return (
     <>
@@ -25,7 +27,7 @@ export function TwoPart({ post }: { post: UseCasePost }) {
               <Container
                 className={cn(
                   "grid grid-cols-1 items-start gap-10",
-                  section.figure && "lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)]",
+                  section.figure && !isWide(section.figure.scene) && "lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)]",
                 )}
               >
                 <div className="measure">
@@ -38,15 +40,11 @@ export function TwoPart({ post }: { post: UseCasePost }) {
           );
         }
         const flip = panes++ % 2 === 1;
+        const beside = section.figure !== undefined && !isWide(section.figure.scene);
         return (
           <Band key={section.id} tone={flip ? "sky" : "mist"}>
-            <div
-              className={cn(
-                "grid grid-cols-1 items-center gap-10 lg:gap-14",
-                section.figure && "lg:grid-cols-2",
-              )}
-            >
-              <div className={cn("measure", flip && section.figure && "lg:order-2")}>
+            <div className={cn("grid grid-cols-1 items-center gap-10 lg:gap-14", beside && "lg:grid-cols-2")}>
+              <div className={cn("measure", flip && beside && "lg:order-2")}>
                 <SectionHeadingH2 section={section} />
                 <Blocks blocks={section.blocks} className="mt-5" />
               </div>

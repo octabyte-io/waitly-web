@@ -8,16 +8,20 @@ const absolute = (path: string) => new URL(path, siteConfig.url).toString();
 
 /** The file name of a page's share card: `home.png`, `preorders.png`, … */
 export const ogImageName = (page: PageEntry) =>
-  `${page.path === "/" ? "home" : page.path.split("/").filter(Boolean).at(-1)}.png`;
+  `${page.ogName ?? (page.path === "/" ? "home" : page.path.split("/").filter(Boolean).at(-1))}.png`;
+
+/** When an article was first published and last changed, as YYYY-MM-DD. */
+export type ArticleDates = { published: string; modified: string };
 
 /**
  * Title, description, canonical, Open Graph and share card for one page.
  *
  * Open Graph is written out in full on every page because Next.js replaces,
  * rather than merges, a parent segment's `openGraph`. Its title and
- * description are filled in by Next.js from the page's own.
+ * description are filled in by Next.js from the page's own. Pass `article`
+ * for a dated post, so it is shared as an article with its dates.
  */
-export function pageMetadata(page: PageEntry): Metadata {
+export function pageMetadata(page: PageEntry, article?: ArticleDates): Metadata {
   const isHome = page.path === "/";
   const image = {
     url: `/og/${ogImageName(page)}`,
@@ -32,7 +36,9 @@ export function pageMetadata(page: PageEntry): Metadata {
     // Allow large image previews and full-length snippets in search and AI answers.
     robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
     openGraph: {
-      type: "website",
+      ...(article
+        ? { type: "article", publishedTime: article.published, modifiedTime: article.modified }
+        : { type: "website" }),
       siteName: siteConfig.name,
       locale: "en_US",
       url: page.path,
@@ -106,8 +112,11 @@ export const appJsonLd = {
   })),
 };
 
-/** The page itself, with its breadcrumb trail back to the home page. */
-export function webPageJsonLd(page: PageEntry, type: string = "WebPage") {
+/**
+ * The page itself, with its breadcrumb trail back to the home page.
+ * `parents` are the pages between the two, outermost first.
+ */
+export function webPageJsonLd(page: PageEntry, type: string = "WebPage", parents: PageEntry[] = []) {
   const url = absolute(page.path);
   const isHome = page.path === "/";
   return {
@@ -126,10 +135,47 @@ export function webPageJsonLd(page: PageEntry, type: string = "WebPage") {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: siteConfig.name, item: absolute("/") },
-              { "@type": "ListItem", position: 2, name: page.title, item: url },
+              ...parents.map((parent, i) => ({
+                "@type": "ListItem",
+                position: i + 2,
+                name: parent.title,
+                item: absolute(parent.path),
+              })),
+              { "@type": "ListItem", position: parents.length + 2, name: page.title, item: url },
             ],
           },
         }),
+  };
+}
+
+/** A dated post on the page. Waitly's maker is its author; no person is named. */
+export function articleJsonLd(page: PageEntry, headline: string, dates: ArticleDates) {
+  const url = absolute(page.path);
+  return {
+    "@type": "Article",
+    "@id": `${url}#article`,
+    headline,
+    description: page.description,
+    image: absolute(`/og/${ogImageName(page)}`),
+    datePublished: dates.published,
+    dateModified: dates.modified,
+    inLanguage: "en",
+    author: { "@id": ids.organization },
+    publisher: { "@id": ids.organization },
+    mainEntityOfPage: { "@id": url },
+  };
+}
+
+/** The questions answered on a page. Answers are plain text. */
+export function faqJsonLd(page: PageEntry, faqs: { q: string; a: string }[]) {
+  return {
+    "@type": "FAQPage",
+    "@id": `${absolute(page.path)}#questions`,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
   };
 }
 

@@ -21,6 +21,7 @@ The site markets only what the Waitly app actually ships. When the app changes, 
 | Domain, install link, support email, legal details | `src/config/site.ts` |
 | Plans, limits and the feature comparison | `src/content/plans.ts` (mirrors `waitly/app/domain/billing/plan.ts`) |
 | FAQ | `src/content/faq.ts` |
+| Use-case posts | `src/content/use-cases/posts/<slug>.ts`, listed in `src/content/use-cases/index.ts`; their mocks in `src/components/use-cases/` |
 | Privacy policy and DPA | `src/content/legal/*.md` (from `waitly/docs/legal/`) |
 
 `installUrl` points at an App Store search until the listing is live. Legal fields left as `null` render as highlighted placeholders, and a draft notice appears on both legal pages until every field is filled in.

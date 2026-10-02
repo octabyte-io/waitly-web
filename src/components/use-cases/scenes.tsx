@@ -15,7 +15,12 @@ import { scenes as howMuchToReorder } from "./scene-sets/how-much-to-reorder-aft
  *
  * The scenes here are shared. A post's own scenes live in `scene-sets/<slug>.tsx`.
  */
-export type Scene = { alt: string; render: () => ReactNode };
+export type Scene = {
+  alt: string;
+  render: () => ReactNode;
+  /** A mock too wide to sit beside the text, such as a table. It goes under it instead. */
+  wide?: boolean;
+};
 
 const OVERSHIRT_SIZES = {
   label: "Size",
@@ -77,5 +82,7 @@ export const SCENES = {
   ...restockSellsOut,
   ...howMuchToReorder,
 } satisfies Record<string, Scene>;
+
+export const isWide = (id: SceneId) => (SCENES[id] as Scene).wide === true;
 
 export type SceneId = keyof typeof SCENES;

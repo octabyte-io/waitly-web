@@ -190,4 +190,5 @@ export const post: UseCasePost = {
       a: "Yes, if you set **What a shopper waits for** to **The whole product**. They’re then emailed when any variant comes back. See [Wait for a variant or the whole product](/guide/variant-or-whole-product/).",
     },
   ],
+  related: ["back-in-stock-notifications-shopify", "how-much-to-reorder-after-selling-out"],
 };

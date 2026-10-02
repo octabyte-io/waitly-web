@@ -7,6 +7,7 @@ import { AsideNote } from "@/components/guide/aside-note";
 import { GuideSidebar } from "@/components/guide/guide-sidebar";
 import { plainText, RichText } from "@/components/guide/rich-text";
 import { Screenshot } from "@/components/guide/screenshot";
+import { UseCasesForGuide } from "@/components/use-cases/use-case-links";
 import { ARTICLES, ORDERED_ARTICLES, articleBySlug, guideEntries, guidePath, sectionOf } from "@/content/guide";
 import { LEVEL_NAMES } from "@/content/plans";
 import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
@@ -154,6 +155,8 @@ export default async function GuideArticlePage({ params }: PageProps<"/guide/[sl
               </ul>
             </section>
           ) : null}
+
+          <UseCasesForGuide guide={slug} className="mt-14 max-w-3xl" />
 
           <nav aria-label="Previous and next" className="mt-16 grid max-w-3xl gap-3 border-t border-line pt-8 sm:grid-cols-2">
             {prev ? (

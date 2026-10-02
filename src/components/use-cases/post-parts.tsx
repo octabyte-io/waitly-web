@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Info, Lightbulb, TriangleAlert } from "lucide-react";
-import { InstallLink, PlanBadge } from "@/components/site/primitives";
-import { pages } from "@/config/pages";
+import { PlanBadge } from "@/components/site/primitives";
 import { articleBySlug, guidePath } from "@/content/guide";
 import { LEVEL_NAMES } from "@/content/plans";
 import { postBySlug, postPath, type Block, type Figure, type Section, type UseCasePost } from "@/content/use-cases";
@@ -9,10 +8,7 @@ import { Inline } from "@/lib/inline";
 import { cn } from "@/lib/utils";
 import { SCENES } from "./scenes";
 
-/**
- * The pieces every use-case post is built from. A layout decides where they
- * go; the words and their order are the same in all of them.
- */
+/** The pieces every use-case post is built from. `PostLayout` arranges them. */
 
 const formatDate = (iso: string) =>
   new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" }).format(new Date(iso));
@@ -22,19 +18,12 @@ const planLine = (post: UseCasePost) =>
     ? "Works on the Free plan."
     : `Needs the ${LEVEL_NAMES[post.level]} plan${post.level === "growth" ? " or Pro" : ""}.`;
 
-/** The sections after the post's own, in reading order, for a contents list. */
+/** The sections that close every post, after its own. */
 export const TAIL = {
   setup: { id: "set-it-up", heading: "Set it up in Waitly" },
   limits: { id: "limits", heading: "What Waitly doesn’t do here" },
   faqs: { id: "questions", heading: "Questions" },
 } as const;
-
-export const contentsOf = (post: UseCasePost) => [
-  ...post.sections.map(({ id, heading }) => ({ id, heading })),
-  ...(post.setup.length ? [TAIL.setup] : []),
-  ...(post.limits.length ? [TAIL.limits] : []),
-  ...(post.faqs.length ? [TAIL.faqs] : []),
-];
 
 export function PostHeader({ post, className }: { post: UseCasePost; className?: string }) {
   return (
@@ -227,66 +216,6 @@ export function Faqs({ post, className }: { post: UseCasePost; className?: strin
         </div>
       ))}
     </dl>
-  );
-}
-
-export function ContentsList({ post, className }: { post: UseCasePost; className?: string }) {
-  return (
-    <nav aria-label="On this page" className={className}>
-      <p className="text-[0.8125rem] font-semibold text-ink-soft">On this page</p>
-      <ol className="mt-3 space-y-1.5 text-[0.9375rem]">
-        {contentsOf(post).map((item) => (
-          <li key={item.id}>
-            <a href={`#${item.id}`} className="text-ink-soft underline-offset-4 hover:text-ink hover:underline">
-              {item.heading}
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
-  );
-}
-
-/** What the post needs, in one card: the plan, the features and where to start. */
-export function GlanceCard({ post, className }: { post: UseCasePost; className?: string }) {
-  return (
-    <div className={cn("glass rounded-[1.75rem] p-5 sm:p-6", className)}>
-      <p className="font-semibold">At a glance</p>
-      <dl className="mt-4 space-y-4 text-[0.9375rem]">
-        <div>
-          <dt className="text-ink-soft">Plan</dt>
-          <dd className="mt-1 flex flex-wrap items-center gap-2">
-            <PlanBadge level={post.level} />
-            {planLine(post)}
-          </dd>
-        </div>
-        <div>
-          <dt className="text-ink-soft">Uses</dt>
-          <dd className="mt-1">
-            <ul className="space-y-1">
-              {post.features.map((key) => (
-                <li key={key}>
-                  <Link href={pages[key].path} className="font-semibold underline-offset-4 hover:underline">
-                    {pages[key].title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </dd>
-        </div>
-        {post.setup.length ? (
-          <div>
-            <dt className="text-ink-soft">Setup</dt>
-            <dd className="mt-1">
-              <a href={`#${TAIL.setup.id}`} className="font-semibold underline-offset-4 hover:underline">
-                {post.setup.length} {post.setup.length === 1 ? "guide" : "guides"} to follow
-              </a>
-            </dd>
-          </div>
-        ) : null}
-      </dl>
-      <InstallLink className="mt-6 w-full" />
-    </div>
   );
 }
 

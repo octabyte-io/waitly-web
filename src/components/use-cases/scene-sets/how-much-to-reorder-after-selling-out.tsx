@@ -36,6 +36,7 @@ const pill = "inline-flex h-5 items-center rounded-full bg-[#0b2545]/8 px-2 text
 
 export const scenes = {
   "reorder-waitlists": {
+    wide: true,
     alt: "Waitly’s Waitlists page for an example store, sorted by Waiting. Each size is its own row: Trail runner / 9 has 142 shoppers waiting, Harbor overshirt / M has 64 and Harbor overshirt / L has 29.",
     render: () => (
       <AdminFrame title="Waitlists">
@@ -122,6 +123,7 @@ export const scenes = {
     ),
   },
   "reorder-planner": {
+    wide: true,
     alt: "Waitly’s Restock planner for an example store, one row per product: Trail runner, Critical 91, “Restock now.”, suggested restock 180, 153 waiting. Harbor overshirt, Very high 76, suggested restock 110. One product reads “Not enough data yet” and one “Covered by stock”.",
     render: () => (
       <AdminFrame title="Restock planner">

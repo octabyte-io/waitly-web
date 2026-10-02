@@ -14,6 +14,12 @@ export type PageEntry = {
   description: string;
   /** The heading on the share card, when it should read differently from the title. */
   headline?: string;
+  /** The small line above the share card's heading, in place of the title. */
+  eyebrow?: string;
+  /** The share card's file name, for a page whose last path segment isn't unique on the site. */
+  ogName?: string;
+  /** The day the page last changed, as YYYY-MM-DD, for the sitemap. Only set it from a real date. */
+  lastModified?: string;
 };
 
 export const pages = {
@@ -78,6 +84,13 @@ export const pages = {
     headline: "How to use every part of Waitly",
     description:
       "Step-by-step guides with screenshots for every Waitly feature: Notify me, waitlists, preorders, restock release, Coming Soon, voting, analytics, emails, settings and billing.",
+  },
+  useCases: {
+    path: "/use-cases/",
+    title: "Use cases",
+    headline: "What to do when a product is sold out, late or not launched yet",
+    description:
+      "Practical answers for Shopify stores: back in stock notifications, sold-out sizes, selling while out of stock, late preorders, small restocks and how much to reorder.",
   },
   faq: {
     path: "/faq/",

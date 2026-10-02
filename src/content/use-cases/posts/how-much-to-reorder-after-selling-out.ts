@@ -199,4 +199,5 @@ export const post: UseCasePost = {
       a: "No. The count of shoppers waiting for each variant is on every plan, including Free, and you can do the rest of the sum by hand. Pro adds the Demand Score, the suggested restock and the planner. See [pricing](/pricing/).",
     },
   ],
+  related: ["restock-sells-out-before-waitlist", "sold-out-variants-shopify"],
 };

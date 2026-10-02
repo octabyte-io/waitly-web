@@ -225,4 +225,5 @@ export const post: UseCasePost = {
       a: "Not in Waitly. Batch size, the gap between batches and the hold time are set once under **Settings** and apply to every restock.",
     },
   ],
+  related: ["back-in-stock-notifications-shopify", "how-much-to-reorder-after-selling-out"],
 };
