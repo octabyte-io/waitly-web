@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Check } from "lucide-react";
 import { AdminFrame, Panel } from "@/components/mocks/admin";
-import { PoweredBy, ProductFrame } from "@/components/mocks/storefront";
+import { PreorderBlock, ProductFrame, ThemeBuyButtons } from "@/components/mocks/storefront";
 import { PlanBadge } from "@/components/site/primitives";
 import { cn } from "@/lib/utils";
 import type { Scene } from "../scenes";
@@ -11,39 +11,6 @@ const SIZES = {
   value: "M",
   values: [{ name: "S" }, { name: "M" }, { name: "L" }, { name: "XL" }],
 };
-
-/** The merchant theme's own buy buttons. Waitly's Pre-order block never draws these. */
-function ThemeButtons() {
-  return (
-    <div className="space-y-2">
-      <p className="flex min-h-11 items-center justify-center rounded-md border border-[#1a1a1a] px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold">
-        Add to cart
-      </p>
-      <p className="flex min-h-11 items-center justify-center rounded-md bg-[#1a1a1a] px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold text-white">
-        Buy it now
-      </p>
-    </div>
-  );
-}
-
-/**
- * The Pre-order block as the guide describes it: a badge and the fixed terms,
- * with no button of its own. The theme's buttons sit under it and buy the
- * preorder. `PreorderBlock` in `mocks/storefront.tsx` draws a button, so it
- * isn't used here.
- */
-function PreorderPanel() {
-  return (
-    <div className="space-y-2 rounded-lg border border-[#e6e9ee] p-4">
-      <span className="inline-flex h-6 items-center rounded-full bg-[#1a1a1a] px-2.5 text-[0.75rem] font-semibold text-white">
-        Pre-order
-      </span>
-      <p className="text-[0.9375rem]">Pay in full today. This item ships later.</p>
-      <p className="text-[0.875rem]">Cancel any time before it ships for a full refund.</p>
-      <PoweredBy />
-    </div>
-  );
-}
 
 /** A plain white card in the mock bezel, for a piece of the Shopify admin. */
 function ShopifyCard({ children, className }: { children: ReactNode; className?: string }) {
@@ -76,7 +43,7 @@ export const scenes = {
     render: () => (
       <div className="space-y-2.5">
         <ProductFrame title="Harbor overshirt" price="$68.00" options={SIZES}>
-          <ThemeButtons />
+          <ThemeBuyButtons />
         </ProductFrame>
         <ShopifyCard>
           <p className="text-[0.8125rem] text-[#5c6570]">Harbor overshirt / M in your Shopify admin</p>
@@ -103,8 +70,8 @@ export const scenes = {
     alt: "The same product page with Waitly’s Pre-order block above the buttons: a Pre-order badge, “Pay in full today. This item ships later.” and “Cancel any time before it ships for a full refund.” Under it are the theme’s own Add to cart and Buy it now buttons, with their usual labels.",
     render: () => (
       <ProductFrame title="Harbor overshirt" price="$68.00" options={SIZES}>
-        <PreorderPanel />
-        <ThemeButtons />
+        <PreorderBlock />
+        <ThemeBuyButtons />
       </ProductFrame>
     ),
   },

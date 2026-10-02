@@ -24,7 +24,7 @@ export default function BackInStockPage() {
       <JsonLd data={webPageJsonLd(pages.backInStock)} />
       <PageHero
         title="A Notify me button on every sold-out variant"
-        intro="When a size or color runs out, the Add to cart button can’t help. Waitly’s Notify me block takes its place, collects an email, and sends one alert when Shopify says it’s back."
+        intro="When a size or color runs out, the Add to cart button can’t help. Waitly’s Notify me block appears on the page, collects an email, and sends an alert when Shopify says it’s back."
         aside={
           <ProductFrame
             title="Harbor overshirt"
@@ -48,7 +48,7 @@ export default function BackInStockPage() {
       <Band tone="paper">
         <SectionHeading
           title="What shoppers see"
-          intro="The block only appears when the selected variant is sold out. Choose another size that’s in stock and it steps aside for your normal Add to cart button."
+          intro="The block only appears when the selected variant is sold out. Choose another size that’s in stock and it hides again, leaving your normal Add to cart button."
         />
         <div className="mt-14 space-y-14">
           <Explainer title="Wait for a variant, or the whole product">
@@ -72,9 +72,10 @@ export default function BackInStockPage() {
           </Explainer>
           <Explainer title="Protected from abuse">
             <p>
-              Waitly limits how many signups can arrive from one place in a short time, and shows a
-              polite “Too many sign-ups from here just now” message instead of filling your waitlist
-              with junk. Invalid addresses are caught before they’re saved.
+              Waitly limits how often one email address can sign up in an hour, and pauses signups if
+              your store takes an unusual number in an hour. Shoppers see a polite “Too many sign-ups
+              from here just now” message instead of your waitlist filling with junk. Invalid addresses
+              are caught before they’re saved.
             </p>
           </Explainer>
         </div>
@@ -85,7 +86,7 @@ export default function BackInStockPage() {
           <div>
             <SectionHeading
               title="Make the block match your theme"
-              intro="Everything is set in the theme editor, on the block itself. The block takes its fonts and spacing from your theme."
+              intro="Everything is set in the theme editor, on the block itself. The block takes its fonts from your theme."
             />
             <SettingList
               className="mt-10"
@@ -111,10 +112,10 @@ export default function BackInStockPage() {
           </div>
           <div className="space-y-6 lg:pt-4">
             <ProductFrame title="Harbor overshirt" price="$68.00" compact>
-              <NotifyMeBlock buttonColor="#2f5d50" radius={24} powered={false} />
+              <NotifyMeBlock buttonColor="#2f5d50" radius={24} powered={false} panel />
             </ProductFrame>
             <ProductFrame title="Harbor overshirt" price="$68.00" compact>
-              <NotifyMeBlock state="success" powered={false} />
+              <NotifyMeBlock state="success" powered={false} panel />
             </ProductFrame>
           </div>
         </div>
@@ -170,7 +171,7 @@ export default function BackInStockPage() {
                 {
                   name: "Your own words",
                   detail:
-                    "Rewrite the subject, heading, message and button label of the restock alert, the launch alert and the signup confirmation. Placeholders like {item} fill in the product.",
+                    "Rewrite the subject, heading and message of the restock alert, the launch alert and the signup confirmation, and the button label of the two alerts. Type {item} where the item’s name should go.",
                   level: "growth",
                 },
               ]}
@@ -181,37 +182,37 @@ export default function BackInStockPage() {
               subject="Harbor overshirt is back in stock"
               heading="Harbor overshirt is back"
               button="Buy it now"
+              after={<p className={muted}>This alert does not hold one for you, so it is first come, first served.</p>}
               item="Harbor overshirt / M"
             >
               <p>
                 <strong>Harbor overshirt / M</strong> is available again at Harbor Supply.
               </p>
               <p className={muted}>You were number 3 in line for this one.</p>
-              <p className={muted}>This alert does not hold one for you, so it is first come, first served.</p>
             </EmailMock>
           </div>
         </div>
 
         <div className="mt-20">
-          <h3 className="text-d3 font-bold tracking-[-0.02em]">Every email Waitly sends</h3>
+          <h3 className="text-d3 font-bold tracking-[-0.02em]">Every waitlist email Waitly sends</h3>
           <div className="mt-6 relative overflow-x-auto">
             <table className="w-full min-w-[36rem] text-left">
               <thead className="text-ink-soft">
                 <tr className="border-b border-line">
                   <th scope="col" className="py-3 pr-6 font-medium">Email</th>
                   <th scope="col" className="py-3 pr-6 font-medium">When it’s sent</th>
-                  <th scope="col" className="py-3 font-medium">Default subject</th>
+                  <th scope="col" className="py-3 font-medium">Default subject, for example</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ["Signup confirmation", "Right after a shopper joins a waitlist", "You are on the list for {item}"],
-                  ["Coming Soon confirmation", "Right after a shopper asks for a Coming Soon product (Pro)", "We’ll email you when {item} goes on sale"],
-                  ["Restock alert", "When the item they wait for is back", "{product} is back in stock"],
-                  ["Held-unit alert", "When a unit is held for them (Pro)", "{product}: one is held for you for {time}"],
-                  ["Launch alert", "When a Coming Soon product first goes on sale (Pro)", "{product} is now available"],
-                  ["Vote confirmation", "After a shopper votes on your ideas (Pro)", "Thanks for voting at {shop}"],
-                  ["Vote launch", "When an idea they voted for becomes a product (Pro)", "The {product} you voted for is now available"],
+                  ["Signup confirmation", "Right after a shopper joins a waitlist", "You are on the list for Harbor overshirt / M"],
+                  ["Coming Soon confirmation", "Right after a shopper asks for a Coming Soon product (Pro)", "We’ll email you when Oat fleece goes on sale"],
+                  ["Restock alert", "When the item they wait for is back", "Harbor overshirt is back in stock"],
+                  ["Held-unit alert", "When a unit is held for them (Pro)", "Harbor overshirt: one is held for you for 30 minutes"],
+                  ["Launch alert", "When a Coming Soon product first goes on sale (Pro)", "Oat fleece is now available"],
+                  ["Vote confirmation", "After a shopper votes on your ideas (Pro)", "Thanks for voting at Harbor Supply"],
+                  ["Vote launch", "When an idea they voted for becomes a product (Pro)", "Waxed canvas tote, which you voted for, is now available"],
                 ].map(([name, when, subject]) => (
                   <tr key={name} className="border-b border-line">
                     <th scope="row" className="py-4 pr-6 font-semibold">{name}</th>
@@ -259,7 +260,7 @@ export default function BackInStockPage() {
             {
               name: "Unsubscribe",
               detail:
-                "Every email has a one-click link to stop alerts for that item, and an option to stop every waitlist email from your store.",
+                "Every waitlist email has a link to stop alerts for that item, confirmed on a short page, with an option there to stop every waitlist email from your store. A mail app’s own Unsubscribe button works in one step.",
             },
             {
               name: "Bounces and complaints",
@@ -271,10 +272,10 @@ export default function BackInStockPage() {
 
       <Band tone="paper">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          <Explainer title="In every language you sell in" className="md:grid-cols-1">
+          <Explainer title="Translate it into the languages you sell in" className="md:grid-cols-1">
             <p>
-              The block’s default words ship with Waitly’s theme translations, and anything you change
-              in the block can be translated per language in Shopify’s Translate &amp; Adapt app.
+              The block’s default words are in English. Type your own wording in the block and you can
+              translate it per language in Shopify’s Translate &amp; Adapt app.
             </p>
           </Explainer>
           <Explainer title="Waitlists you can act on" className="md:grid-cols-1">

@@ -55,7 +55,7 @@ export const FAQ: FaqGroup[] = [
         q: "What stops a shopper being emailed over and over?",
         a: [
           "After an alert, Waitly gives a shopper 48 hours by default to buy (you can set 1 to 168). If they don’t, they go back on the waitlist and keep their original place in the queue. Once a shopper has had 3 alerts for the same product without buying (you can set 1 to 10), they leave the waitlist.",
-          "Every email has a one-click unsubscribe, and addresses that bounce or mark mail as spam are stopped automatically.",
+          "Every waitlist email has a link to stop alerts, and addresses that bounce or mark mail as spam are stopped automatically.",
         ],
       },
       {
@@ -98,13 +98,13 @@ export const FAQ: FaqGroup[] = [
         q: "What happens if a ship date slips?",
         a: [
           "When you save a later ship estimate, Waitly emails each affected shopper a Delay notice about 30 minutes after your last save, so a quick correction doesn’t send anything. A shopper whose promised date passes is told too.",
-          "If the new date is more than 30 days past what the shopper was promised, or there’s no date at all, the notice asks them to agree to wait. Anyone who doesn’t agree by the deadline, at least 7 days after the notice, is refunded automatically. A preorder with no ship estimate is promised within 30 days of the order.",
+          "If the new date is more than 30 days past what the shopper was promised, or there’s no date at all, the notice asks them to agree to wait. Anyone who doesn’t agree by the deadline, at least 7 days after the notice, is cancelled and refunded automatically, unless part of their preorder has already shipped. A preorder with no ship estimate is promised within 30 days of the order.",
         ],
       },
       {
         q: "Can I stop overselling a preorder?",
         a: [
-          "Yes. Set a maximum number of units per product on any policy. Cancelled or refunded preorders give their units back. You can also offer preorder only while a variant is sold out, so it turns itself off the moment stock arrives.",
+          "Yes. Set a maximum number of units per product on any policy. Cancelled or refunded preorders give their units back. You can also offer preorder only while a variant is sold out, so it turns itself off when stock arrives.",
         ],
       },
     ],

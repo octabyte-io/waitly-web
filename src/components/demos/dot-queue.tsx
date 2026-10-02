@@ -82,17 +82,20 @@ export function DotLegend({
   states,
   tone = "light",
   className,
+  labels,
 }: {
   states: DotState[];
   tone?: Tone;
   className?: string;
+  /** Words for a state that means something else in this view. */
+  labels?: Partial<Record<DotState, string>>;
 }) {
   return (
     <ul className={cn("flex flex-wrap gap-x-5 gap-y-2 text-[0.9375rem]", className)}>
       {states.map((state) => (
         <li key={state} className="flex items-center gap-2">
           <Dot state={state} tone={tone} className="size-3.5" />
-          {DOT_LABELS[state]}
+          {labels?.[state] ?? DOT_LABELS[state]}
         </li>
       ))}
     </ul>

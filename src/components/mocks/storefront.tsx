@@ -142,22 +142,22 @@ export function NotifyMeBlock({
   buttonColor = "#1a1a1a",
   radius = 6,
   powered = true,
+  panel = false,
 }: {
   state?: "form" | "success";
   buttonColor?: string;
   radius?: number;
   powered?: boolean;
+  /** The background and border around the form, a Growth setting. */
+  panel?: boolean;
 }) {
   return (
-    <div className="space-y-3 rounded-lg border border-[#e6e9ee] p-4">
-      <p className="font-semibold">Out of stock</p>
+    <div className={cn("space-y-3", panel && "rounded-lg border border-[#e6e9ee] p-4")}>
       {state === "success" ? (
-        <p className="flex gap-2 text-[0.9375rem]">
-          <Check aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
-          You are on the list. We will email you once this is back.
-        </p>
+        <p className="text-[0.9375rem]">You are on the list. We will email you once this is back.</p>
       ) : (
         <>
+          <p className="font-semibold">Out of stock</p>
           <div>
             <p className="text-[0.8125rem] text-[#5c6570]">Email</p>
             <p
@@ -186,6 +186,25 @@ export function NotifyMeBlock({
   );
 }
 
+/** The merchant theme's own buy buttons. Waitly's blocks never draw these. */
+export function ThemeBuyButtons() {
+  return (
+    <div className="space-y-2">
+      <p className="flex min-h-11 items-center justify-center rounded-md border border-[#1a1a1a] px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold">
+        Add to cart
+      </p>
+      <p className="flex min-h-11 items-center justify-center rounded-md bg-[#1a1a1a] px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold text-white">
+        Buy it now
+      </p>
+    </div>
+  );
+}
+
+/**
+ * The Pre-order block: a badge and the terms, with no button of its own. The
+ * theme's Add to cart and Buy it now buy the preorder, so show
+ * `ThemeBuyButtons` under it.
+ */
 export function PreorderBlock({
   fact = "Pay in full today. This item ships later.",
   message,
@@ -196,16 +215,13 @@ export function PreorderBlock({
   powered?: boolean;
 }) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-2 rounded-lg border border-[#e6e9ee] p-4">
       <span className="inline-flex h-6 items-center rounded-full bg-[#1a1a1a] px-2.5 text-[0.75rem] font-semibold text-white">
         Pre-order
       </span>
       <p className="text-[0.9375rem]">{fact}</p>
       <p className="text-[0.875rem]">Cancel any time before it ships for a full refund.</p>
       {message ? <p className="text-[0.875rem] text-[#5c6570]">{message}</p> : null}
-      <p className="flex min-h-11 items-center justify-center rounded-md bg-[#1a1a1a] px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold text-white">
-        Pre-order
-      </p>
       {powered ? <PoweredBy /> : null}
     </div>
   );
@@ -229,6 +245,12 @@ export function ComingSoonBlock({
         <span aria-hidden="true" className="size-4 shrink-0 rounded-[3px] border border-[#8a939c]" />
         Any size or color is fine
       </p>
+      <div>
+        <p className="text-[0.8125rem] text-[#5c6570]">Email</p>
+        <p className="mt-1 flex h-10 items-center rounded-md border border-[#c5ccd4] px-3 text-[0.9375rem] text-[#9aa2ab]">
+          you@example.com
+        </p>
+      </div>
       {quantity ? (
         <div className="flex items-center justify-between gap-3 text-[0.875rem]">
           <span>How many?</span>
@@ -237,10 +259,13 @@ export function ComingSoonBlock({
           </span>
         </div>
       ) : null}
-      <p className="flex h-10 items-center rounded-md border border-[#c5ccd4] px-3 text-[0.9375rem] text-[#9aa2ab]">
-        you@example.com
-      </p>
       {country ? <p className="text-[0.8125rem] text-[#5c6570]">Shopping from Canada</p> : null}
+      <p className="flex items-start gap-2 text-[0.875rem]">
+        <span aria-hidden="true" className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-[3px] bg-[#1a1a1a] text-white">
+          <Check className="size-3" />
+        </span>
+        Email me once when this goes on sale.
+      </p>
       <p className="flex min-h-11 items-center justify-center rounded-md bg-[#1a1a1a] px-4 py-2 text-center text-[0.9375rem] leading-tight font-semibold text-white">
         I want this
       </p>
@@ -250,9 +275,9 @@ export function ComingSoonBlock({
 
 export function VotingBlock() {
   const proposals = [
-    { title: "Waxed canvas tote", text: "Our harbor bag, in a size for groceries.", price: "$84", checked: true, art: "bag" as const },
-    { title: "Brass reading lamp", text: "A clamp-on lamp for small desks.", price: "$120", checked: false, art: "lamp" as const },
-    { title: "Trail runner, low", text: "The runner, in a lighter everyday cut.", price: "$140", checked: true, art: "sneaker" as const },
+    { title: "Waxed canvas tote", text: "Our harbor bag, in a size for groceries.", price: "About $84", checked: true, art: "bag" as const },
+    { title: "Brass reading lamp", text: "A clamp-on lamp for small desks.", price: "About $120", checked: false, art: "lamp" as const },
+    { title: "Trail runner, low", text: "The runner, in a lighter everyday cut.", price: "About $140", checked: true, art: "sneaker" as const },
   ];
   return (
     <figure className="glass rounded-[1.75rem] p-2 sm:p-2.5">
@@ -288,7 +313,8 @@ export function VotingBlock() {
             </li>
           ))}
         </ul>
-        <p className="mt-4 flex h-10 items-center rounded-md border border-[#c5ccd4] px-3 text-[0.9375rem] text-[#9aa2ab]">
+        <p className="mt-4 text-[0.8125rem] text-[#5c6570]">Email</p>
+        <p className="mt-1 flex h-10 items-center rounded-md border border-[#c5ccd4] px-3 text-[0.9375rem] text-[#9aa2ab]">
           you@example.com
         </p>
         <p className="mt-3 text-[0.75rem] text-[#5c6570]">

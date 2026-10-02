@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EmailMock, muted } from "@/components/mocks/email";
-import { PreorderBlock, ProductFrame, ComingSoonBlock } from "@/components/mocks/storefront";
+import { PreorderBlock, ProductFrame, ComingSoonBlock, ThemeBuyButtons } from "@/components/mocks/storefront";
 import { AdminFrame, DemandScoreScale, Figure, Panel } from "@/components/mocks/admin";
 import {
   Band,
@@ -190,7 +190,7 @@ export default function Home() {
             />
             <ul className="mt-8 space-y-3 text-ink/85">
               <li>Wait for one exact variant, or for any variant of the product.</li>
-              <li>A one-click unsubscribe in every email. Bounces and spam complaints stop automatically.</li>
+              <li>A link to stop alerts in every waitlist email. Bounces and spam complaints stop automatically.</li>
               <li>Every word on the storefront can be translated with Translate &amp; Adapt.</li>
             </ul>
             <CtaLink href="/features/back-in-stock/" variant="quiet" className="mt-9">
@@ -221,7 +221,8 @@ export default function Home() {
             options={{ label: "Size", value: "9", values: [{ name: "8" }, { name: "9" }, { name: "10" }, { name: "11" }] }}
             className="order-last lg:order-first"
           >
-            <PreorderBlock fact="Pay in full today. Ships around Nov 14." powered={false} />
+            <PreorderBlock fact="Pay in full today. Ships around November 14, 2026." powered={false} />
+            <ThemeBuyButtons />
           </ProductFrame>
           <div>
             <SectionHeading

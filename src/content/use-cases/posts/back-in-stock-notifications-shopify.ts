@@ -134,11 +134,11 @@ export const post: UseCasePost = {
       voice: "waitly",
       blocks: [
         "Each product and variant has a waitlist in Waitly, with every shopper and their status: waiting, alerted, bought, unsubscribed. The busiest ones are listed on the home page, so you can see what to reorder first.",
-        "After a restock, the send log shows how many alerts were queued and delivered. On Growth and Pro it also shows how many of those shoppers bought, and the revenue that came back.",
+        "After a restock, **Restock alerts** on the Analytics page shows how many alerts were queued and delivered. On Growth and Pro it also shows how many of those shoppers bought, and Analytics shows the revenue that came back.",
       ],
       figure: {
         scene: "send-log",
-        caption: "Example figures. The **Bought** column is on the Growth and Pro plans.",
+        caption: "Example figures. The **Bought** and **Rate** columns are on the Growth and Pro plans.",
       },
     },
   ],

@@ -1,13 +1,7 @@
-import { AdminFrame, DemandScoreScale, Panel } from "@/components/mocks/admin";
+import { AdminFrame, DemandScoreScale, Panel, RestockPlannerMock } from "@/components/mocks/admin";
 import type { Scene } from "../scenes";
 
-/**
- * The mocks for the “how-much-to-reorder-after-selling-out” post.
- *
- * The restock planner here lists whole products, as the app and the guide do
- * (`demand-score`). `RestockPlannerMock` in `mocks/admin.tsx` lists variants
- * and has no “What to do” column, so it isn’t used.
- */
+/** The mocks for the “how-much-to-reorder-after-selling-out” post. */
 
 const WAITLISTS = [
   { item: "Trail runner / 9", kind: "Variant", waiting: 142, bought: 31, joined: "Today" },
@@ -22,14 +16,6 @@ const WORKING = [
   { label: "Preordered, not shipped", value: "0" },
   { label: "Sales in 30 days", note: "1.5 a day while in stock", value: "45" },
   { label: "In stock", value: "− 0" },
-];
-
-const PLANNER = [
-  { product: "Trail runner", band: "Critical", score: 91, action: "Restock now.", suggest: "180", waiting: 153 },
-  { product: "Harbor overshirt", band: "Very high", score: 76, action: "Restock soon.", suggest: "110", waiting: 101 },
-  { product: "Brass lamp", band: "Medium", score: 33, action: "Restock when convenient.", suggest: "15", waiting: 11 },
-  { product: "Field cap", band: "Medium", score: 31, action: "No action needed.", suggest: "Not enough data yet", waiting: 6 },
-  { product: "Canvas tote", band: "Low", score: 18, action: "No action needed.", suggest: "Covered by stock", waiting: 4 },
 ];
 
 const pill = "inline-flex h-5 items-center rounded-full bg-[#0b2545]/8 px-2 text-[0.75rem] font-medium text-ink";
@@ -128,42 +114,7 @@ export const scenes = {
     render: () => (
       <AdminFrame title="Restock planner">
         <Panel>
-          <div className="relative overflow-x-auto">
-            <table className="w-full min-w-[36rem] text-left text-[0.875rem]">
-              <caption className="sr-only">Restock planner, example store</caption>
-              <thead className="text-ink-soft">
-                <tr className="border-b border-line">
-                  <th scope="col" className="py-2 pr-3 font-medium">Product</th>
-                  <th scope="col" className="py-2 pr-3 font-medium">Demand Score</th>
-                  <th scope="col" className="py-2 pr-3 font-medium">What to do</th>
-                  <th scope="col" className="py-2 pr-3 text-right font-medium">Suggested restock</th>
-                  <th scope="col" className="py-2 text-right font-medium">Waiting</th>
-                </tr>
-              </thead>
-              <tbody className="tnum">
-                {PLANNER.map((r) => (
-                  <tr key={r.product} className="border-b border-line last:border-0">
-                    <th scope="row" className="py-2.5 pr-3 font-medium">{r.product}</th>
-                    <td className="py-2.5 pr-3 whitespace-nowrap">
-                      <span className={pill}>{r.band}</span> <span className="font-semibold">{r.score}</span>
-                    </td>
-                    <td className="py-2.5 pr-3">{r.action}</td>
-                    <td
-                      className={
-                        /^\d/.test(r.suggest)
-                          ? "py-2.5 pr-3 text-right font-semibold"
-                          : "py-2.5 pr-3 text-right text-ink-soft"
-                      }
-                    >
-                      {r.suggest}
-                    </td>
-                    <td className="py-2.5 text-right">{r.waiting}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-3 text-[0.8125rem] text-ink-soft">Suggested restocks are estimates.</p>
+          <RestockPlannerMock />
         </Panel>
       </AdminFrame>
     ),

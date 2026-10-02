@@ -82,13 +82,13 @@ export const article: GuideArticle = {
     {
       title: "The shopper can take a vote back",
       body: [
-        "**Remove my vote** opens the same **Email preferences** page shoppers use to stop alerts. They confirm with **Stop alerts for this item**, and the vote no longer counts.",
+        "**Remove my vote** opens the same **Email preferences** page shoppers use to stop alerts. It asks **Remove your vote?** They confirm with **Remove my vote**, and the vote no longer counts.",
       ],
     },
     {
       title: "When you make it, voters hear first",
       body: [
-        "When you promote a proposal into a real product and it goes on sale, everyone who voted for it gets an alert: “The” product “you voted for is now available”, with a **Buy it now** button.",
+        "When you promote a proposal into a real product and it goes on sale, everyone who voted for it gets an alert: the product’s name, then “, which you voted for, is now available”, with a **Buy it now** button.",
       ],
     },
   ],

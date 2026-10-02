@@ -76,7 +76,7 @@ export default function RestockReleasePage() {
       <Band tone="paper">
         <SectionHeading
           title="The three modes, in full"
-          intro="Chosen under Settings, Restock release. They apply to every restock in your store."
+          intro="Chosen under Settings, Restock release, once for the whole store. One exception: an item on preorder is never reserved, so its restock goes out all at once."
         />
         <div className="mt-14 space-y-14">
           <Explainer title="All at once">
@@ -96,7 +96,7 @@ export default function RestockReleasePage() {
             <SettingList
               settings={[
                 { name: "Shoppers per batch", detail: "How many are alerted each time.", value: "1 to 1,000, default 20" },
-                { name: "Time between batches", detail: "The gap before the next batch goes out.", value: "15, 30, 60 or 120 minutes, default 60" },
+                { name: "Time between batches", detail: "The gap before the next batch goes out.", value: "15 minutes, 30 minutes, 1 hour or 2 hours, default 1 hour" },
                 { name: "Most batches", detail: "The last batch alerts everyone still waiting.", value: "2 to 10, default 5" },
               ]}
             />
@@ -159,15 +159,15 @@ export default function RestockReleasePage() {
               })}
             </ol>
             <p className="text-ink/80">
-              Every rule starts switched off, and priority applies to shoppers who join from the moment
-              you turn it on.
+              Every rule starts switched off. Switching one on or off reorders the line straight away,
+              including shoppers already waiting, as long as they joined while your store was on Pro.
             </p>
           </div>
           <div className="lg:pt-24">
             <h3 className="text-d3 font-bold tracking-[-0.02em]">Tell shoppers their place</h3>
             <p className="mt-3 text-ink/80">
               Turn on “tell each shopper their place in the line” and the confirmation email says where
-              they stand. The restock alert later says where they were.
+              they stand. The restock alert says where they were in line either way.
             </p>
             <EmailMock
               className="mt-8"
@@ -193,14 +193,14 @@ export default function RestockReleasePage() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <Explainer title="See holds as they happen" level="pro" className="md:grid-cols-1">
             <p>
-              Each waitlist shows who holds a unit right now and when the hold ends. The send log
-              records every hold alongside sent, delivered and bought.
+              Each waitlist shows who holds a unit right now and when the hold ends. The Restock
+              alerts log counts every hold alongside queued, delivered and bought.
             </p>
           </Explainer>
           <Explainer title="Nothing to set up per product" className="md:grid-cols-1">
             <p>
-              Priority and release settings apply to every waitlist. New products and variants inherit
-              them the first time a shopper joins.
+              Priority and release settings are set once for the whole store, so there is nothing to
+              configure per product or variant. Release settings take effect from the next restock.
             </p>
             <CtaLink href="/features/analytics/" variant="quiet" className="mt-2">
               See how results are measured

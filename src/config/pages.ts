@@ -41,7 +41,7 @@ export const pages = {
     title: "Preorders",
     headline: "Full-payment preorders for Shopify",
     description:
-      "Take full-payment preorders on Shopify with Waitly. Rule-based policies, sold-out-only or date windows, unit limits, ship estimates and automatic order tags.",
+      "Take full-payment preorders on Shopify with Waitly. Rule-based policies, a sold-out switch, date windows, unit limits, ship estimates and automatic order tags.",
   },
   restockRelease: {
     path: "/features/restock-release/",

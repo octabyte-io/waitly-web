@@ -87,7 +87,7 @@ export function inBatches(
     const end = last ? shoppers : Math.min(next + perBatch, shoppers);
     const members = Array.from({ length: end - next }, (_, k) => next + k);
     members.forEach((i) => (states[i] = "alerted"));
-    const when = batch === 1 ? "At the restock" : `+${(batch - 1) * minutesBetween} minutes`;
+    const when = batch === 1 ? "At the restock" : after((batch - 1) * minutesBetween);
     frames.push({
       states: [...states],
       when,
@@ -149,7 +149,9 @@ export function reserve(
     states: [...states],
     when: "At the restock",
     step: "Units held",
-    caption: `Waitly holds one unit each for the first ${holding.size} shoppers and sends each a link only they can use, good for ${holdLabel}.`,
+    caption: `Waitly holds one unit each for the first ${holding.size} shoppers and sends each a link only they can use, good for ${holdLabel}.${
+      units > holding.size ? ` The other ${units - holding.size} stay on sale to everyone.` : ""
+    }`,
   });
 
   for (let round = 1; round <= 12 && sold < units && holding.size > 0; round++) {
@@ -170,17 +172,25 @@ export function reserve(
     const passed = next - before;
     frames.push({
       states: [...states],
-      when: `+${round * 30} minutes`,
+      when: after(round * 30),
       step: sold >= units ? "All sold" : `Holds, round ${round + 1}`,
       caption:
         sold >= units
-          ? `All ${units} units sold to shoppers near the front of the line. Nobody raced for them.`
+          ? `All ${units} units sold. Each held unit went to a shopper near the front of the line, with no race for it.`
           : `${plural(bought.length, "shopper")} bought${
               lapsed.length ? `, ${plural(lapsed.length, "hold")} lapsed` : ""
             }. ${passed ? `The next ${plural(passed, "shopper")} in line get a hold.` : ""}`,
     });
   }
   return frames;
+}
+
+/** A time after the restock, as Waitly's own preview writes it: "+30 minutes", "+1 hour". */
+function after(minutes: number) {
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  const parts = [hours ? plural(hours, "hour") : "", rest ? `${rest} minutes` : ""].filter(Boolean);
+  return `+${parts.join(" ")}`;
 }
 
 export const tally = (states: DotState[]) => ({

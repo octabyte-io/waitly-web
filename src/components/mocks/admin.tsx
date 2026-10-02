@@ -144,22 +144,27 @@ export function DemandScoreScale({ score = 78, className }: { score?: number; cl
   );
 }
 
+/**
+ * The Restock alerts log on Analytics: one row per alert, with a count in each
+ * column. Bought and Rate are on Growth and Pro; Rate is bought ÷ delivered.
+ */
 export function SendLogMock() {
   const rows = [
-    { item: "Harbor overshirt / M", when: "Today", sent: 24, delivered: 24, bought: 12 },
-    { item: "Trail runner / 9", when: "Yesterday", sent: 120, delivered: 118, bought: 31 },
-    { item: "Brass lamp", when: "Mar 2", sent: 16, delivered: 16, bought: 5 },
+    { item: "Harbor overshirt / M", sent: "Today", queued: 24, delivered: 24, bought: 12, rate: "50%" },
+    { item: "Trail runner / 9", sent: "Yesterday", queued: 120, delivered: 118, bought: 31, rate: "26%" },
+    { item: "Brass lamp", sent: "Mar 2", queued: 16, delivered: 16, bought: 5, rate: "31%" },
   ];
   return (
     <div className="relative overflow-x-auto">
-      <table className="w-full min-w-[26rem] text-left text-[0.875rem]">
-        <caption className="sr-only">Send log, example store</caption>
+      <table className="w-full min-w-[28rem] text-left text-[0.875rem]">
+        <caption className="sr-only">Restock alerts, example store</caption>
         <thead className="text-ink-soft">
           <tr className="border-b border-line">
-            <th scope="col" className="py-2 pr-3 font-medium">Restock</th>
-            <th scope="col" className="py-2 pr-3 text-right font-medium">Sent</th>
+            <th scope="col" className="py-2 pr-3 font-medium">Item</th>
+            <th scope="col" className="py-2 pr-3 text-right font-medium">Queued</th>
             <th scope="col" className="py-2 pr-3 text-right font-medium">Delivered</th>
-            <th scope="col" className="py-2 text-right font-medium">Bought</th>
+            <th scope="col" className="py-2 pr-3 text-right font-medium">Bought</th>
+            <th scope="col" className="py-2 text-right font-medium">Rate</th>
           </tr>
         </thead>
         <tbody className="tnum">
@@ -167,11 +172,12 @@ export function SendLogMock() {
             <tr key={r.item} className="border-b border-line last:border-0">
               <th scope="row" className="py-2.5 pr-3 font-medium">
                 {r.item}
-                <span className="block text-[0.8125rem] font-normal text-ink-soft">{r.when}</span>
+                <span className="block text-[0.8125rem] font-normal text-ink-soft">Sent {r.sent}</span>
               </th>
-              <td className="py-2.5 pr-3 text-right">{r.sent}</td>
+              <td className="py-2.5 pr-3 text-right">{r.queued}</td>
               <td className="py-2.5 pr-3 text-right">{r.delivered}</td>
-              <td className="py-2.5 text-right font-semibold">{r.bought}</td>
+              <td className="py-2.5 pr-3 text-right font-semibold">{r.bought}</td>
+              <td className="py-2.5 text-right">{r.rate}</td>
             </tr>
           ))}
         </tbody>
@@ -180,40 +186,57 @@ export function SendLogMock() {
   );
 }
 
+const PLANNER = [
+  { product: "Trail runner", band: "Critical", score: 91, action: "Restock now.", suggest: "180", waiting: 153 },
+  { product: "Harbor overshirt", band: "Very high", score: 76, action: "Restock soon.", suggest: "110", waiting: 101 },
+  { product: "Brass lamp", band: "Medium", score: 33, action: "Restock when convenient.", suggest: "15", waiting: 11 },
+  { product: "Field cap", band: "Medium", score: 31, action: "No action needed.", suggest: "Not enough data yet", waiting: 6 },
+  { product: "Canvas tote", band: "Low", score: 18, action: "No action needed.", suggest: "Covered by stock", waiting: 4 },
+];
+
+/** The restock planner: one row per product, never per variant. */
 export function RestockPlannerMock() {
-  const rows = [
-    { item: "Trail runner / 9", score: 91, band: "Critical", waiting: 142, suggest: 180 },
-    { item: "Harbor overshirt / M", score: 78, band: "Very high", waiting: 64, suggest: 70 },
-    { item: "Harbor overshirt / L", score: 55, band: "High", waiting: 29, suggest: 35 },
-    { item: "Brass lamp", score: 33, band: "Medium", waiting: 11, suggest: 15 },
-  ];
   return (
-    <div className="relative overflow-x-auto">
-      <table className="w-full min-w-[30rem] text-left text-[0.875rem]">
-        <caption className="sr-only">Restock planner, example store</caption>
-        <thead className="text-ink-soft">
-          <tr className="border-b border-line">
-            <th scope="col" className="py-2 pr-3 font-medium">Variant</th>
-            <th scope="col" className="py-2 pr-3 font-medium">Demand Score</th>
-            <th scope="col" className="py-2 pr-3 text-right font-medium">Waiting</th>
-            <th scope="col" className="py-2 text-right font-medium">Suggested restock</th>
-          </tr>
-        </thead>
-        <tbody className="tnum">
-          {rows.map((r) => (
-            <tr key={r.item} className="border-b border-line last:border-0">
-              <th scope="row" className="py-2.5 pr-3 font-medium">{r.item}</th>
-              <td className="py-2.5 pr-3">
-                <span className="font-semibold">{r.score}</span>{" "}
-                <span className="text-ink-soft">{r.band}</span>
-              </td>
-              <td className="py-2.5 pr-3 text-right">{r.waiting}</td>
-              <td className="py-2.5 text-right font-semibold">about {r.suggest}</td>
+    <>
+      <div className="relative overflow-x-auto">
+        <table className="w-full min-w-[36rem] text-left text-[0.875rem]">
+          <caption className="sr-only">Restock planner, example store</caption>
+          <thead className="text-ink-soft">
+            <tr className="border-b border-line">
+              <th scope="col" className="py-2 pr-3 font-medium">Product</th>
+              <th scope="col" className="py-2 pr-3 font-medium">Demand Score</th>
+              <th scope="col" className="py-2 pr-3 font-medium">What to do</th>
+              <th scope="col" className="py-2 pr-3 text-right font-medium">Suggested restock</th>
+              <th scope="col" className="py-2 text-right font-medium">Waiting</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody className="tnum">
+            {PLANNER.map((r) => (
+              <tr key={r.product} className="border-b border-line last:border-0">
+                <th scope="row" className="py-2.5 pr-3 font-medium">{r.product}</th>
+                <td className="py-2.5 pr-3 whitespace-nowrap">
+                  <span className="inline-flex h-5 items-center rounded-full bg-[#0b2545]/8 px-2 text-[0.75rem] font-medium text-ink">
+                    {r.band}
+                  </span>{" "}
+                  <span className="font-semibold">{r.score}</span>
+                </td>
+                <td className="py-2.5 pr-3">{r.action}</td>
+                <td
+                  className={cn(
+                    "py-2.5 pr-3 text-right",
+                    /^\d/.test(r.suggest) ? "font-semibold" : "text-ink-soft",
+                  )}
+                >
+                  {r.suggest}
+                </td>
+                <td className="py-2.5 text-right">{r.waiting}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-3 text-[0.8125rem] text-ink-soft">Suggested restocks are estimates.</p>
+    </>
   );
 }
 

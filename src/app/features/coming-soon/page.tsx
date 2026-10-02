@@ -1,4 +1,4 @@
-import { EmailMock } from "@/components/mocks/email";
+import { EmailMock, muted } from "@/components/mocks/email";
 import { ComingSoonBlock, ProductFrame, VotingBlock } from "@/components/mocks/storefront";
 import {
   Band,
@@ -21,7 +21,7 @@ const PROPOSAL_STATES = [
   { name: "Draft", detail: "Only you can see it while you write it." },
   { name: "Open", detail: "On your storefront, collecting votes. Up to 50 can be open at once." },
   { name: "Closed", detail: "Taken off your storefront. No more votes come in." },
-  { name: "Promoted", detail: "It became a real product, and the voters were told." },
+  { name: "Promoted", detail: "It became a real product. Its voters are emailed when it comes into stock." },
 ];
 
 export default function ComingSoonPage() {
@@ -78,7 +78,8 @@ export default function ComingSoonPage() {
             </p>
             <p>
               Each Coming Soon product’s page in Waitly shows the most wanted option, the units asked
-              for and where shoppers are from. Past launches are kept in a Launched list.
+              for and where shoppers are from. Launches from the last 90 days are shown in a Launched
+              list.
             </p>
           </Explainer>
         </div>
@@ -100,11 +101,14 @@ export default function ComingSoonPage() {
             subject="Oat fleece, heavyweight is now available"
             heading="Oat fleece, heavyweight is now available"
             button="Buy it now"
-            item="Oat fleece, heavyweight"
+            after={<p className={muted}>This alert does not hold one for you, so it is first come, first served.</p>}
+            item="Oat fleece, heavyweight / Medium"
+            joinedBy="coming_soon"
           >
             <p>
               <strong>Oat fleece, heavyweight / Medium</strong> is now available at Harbor Supply.
             </p>
+            <p className={muted}>You were number 12 in line for this one.</p>
           </EmailMock>
         </div>
       </Band>
@@ -136,7 +140,7 @@ export default function ComingSoonPage() {
                   name: "Voters hear about their picks only",
                   detail: "“We’ll only email you about those.” Nobody is emailed about ideas they didn’t tick.",
                 },
-                { name: "Export", detail: "Download any proposal’s voters as CSV." },
+                { name: "Export", detail: "Download a proposal’s voters as CSV." },
               ]}
             />
           </div>
@@ -166,7 +170,7 @@ export default function ComingSoonPage() {
             already made. Every vote moves onto it as demand.
           </p>
           <p>
-            When it goes on sale, each voter gets “The waxed canvas tote you voted for is now
+            When it goes on sale, each voter gets “Waxed canvas tote, which you voted for, is now
             available”, with a link to buy.
           </p>
         </div>

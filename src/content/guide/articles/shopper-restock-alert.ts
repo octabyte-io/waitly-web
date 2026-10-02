@@ -12,7 +12,7 @@ export const article: GuideArticle = {
       title: "The shopper gets the alert",
       body: [
         "When the item is back in stock, Waitly emails the shoppers waiting for it. The subject reads “The Complete Snowboard is back in stock”.",
-        "Shoppers who joined through a Coming Soon page get “is now available” instead, and shoppers who voted for a product get “The … you voted for is now available”.",
+        "Shoppers who joined through a Coming Soon page get “is now available” instead, and shoppers who voted for a product get the product’s name and “, which you voted for, is now available”.",
       ],
     },
     {

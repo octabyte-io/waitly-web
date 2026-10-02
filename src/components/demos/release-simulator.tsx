@@ -33,6 +33,9 @@ const LEGENDS: Record<Mode, DotState[]> = {
   reserve: ["waiting", "held", "bought", "missed"],
 };
 
+/** In Reserve mode a hollow dot is a hold that ran out, not a lost race: the shopper still waits. */
+const RESERVE_LABELS = { missed: "Hold lapsed, still waiting" } as const;
+
 export function ReleaseSimulator() {
   const [mode, setMode] = useState<Mode>("batches");
   const [perBatch, setPerBatch] = useState(10);
@@ -76,12 +79,17 @@ export function ReleaseSimulator() {
           options={[3, 5, 10]}
           value={maxHeld}
           onChange={setMaxHeld}
-          note="Each hold lasts 30 minutes."
+          note="Each hold lasts 30 minutes. Units not held stay on sale to everyone."
         />
       ) : null}
 
       {/* Remount the player whenever the scenario changes so it starts fresh. */}
-      <Player key={`${mode}-${perBatch}-${maxHeld}`} frames={frames} legend={LEGENDS[mode]} />
+      <Player
+        key={`${mode}-${perBatch}-${maxHeld}`}
+        frames={frames}
+        legend={LEGENDS[mode]}
+        labels={mode === "reserve" ? RESERVE_LABELS : undefined}
+      />
     </div>
   );
 }
@@ -130,7 +138,15 @@ function Choice({
   );
 }
 
-function Player({ frames, legend }: { frames: Frame[]; legend: DotState[] }) {
+function Player({
+  frames,
+  legend,
+  labels,
+}: {
+  frames: Frame[];
+  legend: DotState[];
+  labels?: Partial<Record<DotState, string>>;
+}) {
   const { frame, index, playing, play, seek } = useFrames(frames, 1000);
   const t = tally(frame.states);
 
@@ -154,7 +170,7 @@ function Player({ frames, legend }: { frames: Frame[]; legend: DotState[] }) {
           </p>
         </div>
         <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-          <DotLegend states={legend} />
+          <DotLegend states={legend} labels={labels} />
           <button
             type="button"
             onClick={play}

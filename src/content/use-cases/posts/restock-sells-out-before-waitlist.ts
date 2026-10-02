@@ -195,7 +195,7 @@ export const post: UseCasePost = {
     "Batches reserve nothing. Only **Reserve for the first shoppers** holds stock, and it holds one unit per shopper.",
     "Batches, held units and priority rules are on Pro. On Free and Growth, everyone waiting is alerted at once, in the order they joined.",
     "There’s no bot protection, no purchase limit per customer and no raffle or draw. Shopify’s own [bot protection](https://help.shopify.com/en/manual/checkout-settings/bot-protection) is for stores on Shopify Plus.",
-    "The release settings apply to every restock in your store. You can’t set a different batch size or hold time for one product or variant.",
+    "The release settings are set once for the whole store. You can’t set a different batch size or hold time for one product or variant. An item on preorder is never reserved, so its restock goes out all at once.",
     "A batched send ends when the restock is more than 24 hours old, or when a newer restock happens. Anyone it didn’t reach stays on the waitlist.",
     "Items on preorder are never reserved. They keep selling, so their restock goes out all at once.",
     "It sends email only. There’s no SMS or push notification.",

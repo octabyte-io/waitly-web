@@ -1,4 +1,4 @@
-import { PreorderBlock, ProductFrame } from "@/components/mocks/storefront";
+import { PreorderBlock, ProductFrame, ThemeBuyButtons } from "@/components/mocks/storefront";
 import {
   Band,
   CtaLink,
@@ -19,12 +19,12 @@ export const metadata = pageMetadata(pages.preorders);
 
 const WHEN = [
   {
-    title: "Only while a variant is sold out",
-    body: "Preorder switches on for a variant when its stock reaches zero, and off again the moment stock arrives. Your normal Add to cart comes back by itself.",
+    title: "Offer preorder only while a variant is sold out",
+    body: "A tick box, on for new policies, that works with either date choice. Preorder switches on for a variant when its stock reaches zero, and off again when stock arrives. Your normal Add to cart comes back by itself.",
   },
   {
     title: "Whenever this policy is on",
-    body: "For products you only ever sell ahead, like made-to-order pieces. Preorder runs until you switch the policy off.",
+    body: "Preorder runs until you switch the policy off, with no opening or closing date. The Pre-order block still shows only on a variant that tracks stock and has none left.",
   },
   {
     title: "Between these dates",
@@ -35,8 +35,8 @@ const WHEN = [
 
 const ESTIMATES = [
   { kind: "None", shows: "Pay in full today. This item ships later." },
-  { kind: "A date", shows: "Pay in full today. Ships around Nov 14." },
-  { kind: "A range of dates", shows: "Pay in full today. Ships Nov 14 – Nov 28." },
+  { kind: "A date", shows: "Pay in full today. Ships around November 14, 2026." },
+  { kind: "A range of dates", shows: "Pay in full today. Ships November 14, 2026 – November 28, 2026." },
   { kind: "A time after the order", shows: "Pay in full today. Ships 3 weeks after you order." },
 ];
 
@@ -55,9 +55,11 @@ export default function PreordersPage() {
             options={{ label: "Size", value: "9", values: [{ name: "8" }, { name: "9" }, { name: "10" }, { name: "11" }] }}
           >
             <PreorderBlock
-              fact="Pay in full today. Ships around Nov 14."
+              fact="Pay in full today. Ships around November 14, 2026."
               message="Hand-finished in small runs. We’ll email tracking as soon as yours leaves the workshop."
+              powered={false}
             />
+            <ThemeBuyButtons />
           </ProductFrame>
         }
       >
@@ -97,9 +99,9 @@ export default function PreordersPage() {
               shipped or cancelled. Filter it by status.
             </p>
             <p>
-              Beside the status, a mark tells you what needs attention: a Delay notice sent, a shopper
-              who agreed to wait or hasn’t yet, an undated preorder about to reach 30 days, or a refund
-              Shopify couldn’t make.
+              Under the status, a line shows what the shopper has been told: Delay notice sent, or
+              Agreed to wait. A second badge marks what needs you: Waiting for the shopper, Reaches 30
+              days, or Refund due when Shopify couldn’t make a refund.
             </p>
           </Explainer>
         </div>
@@ -140,7 +142,7 @@ export default function PreordersPage() {
             },
             {
               name: "Products this policy covers",
-              detail: "A live count and list of exactly which products and variants the rules reach, so there are no surprises.",
+              detail: "A live count of the variants and products the rules reach, and a list of the first products with how many of their variants are in, so there are no surprises.",
             },
             {
               name: "Overlapping policies",
@@ -150,7 +152,7 @@ export default function PreordersPage() {
             {
               name: "From the product page",
               detail:
-                "Open More actions → Pre-order with Waitly, or the Purchase options card, on any product in Shopify. Add it to a policy, create a new one, remove it, or switch its policy on or off without leaving the product.",
+                "Open More actions → Pre-order with Waitly on any product in Shopify, or the Purchase options card once the product has a Pre-order option. Add it to a policy, create a new one, remove it, or switch its policy on or off without leaving the product.",
             },
             {
               name: "Theme check",
@@ -164,7 +166,7 @@ export default function PreordersPage() {
       <Band tone="paper">
         <SectionHeading
           title="When preorder runs"
-          intro="Each policy has a switch to offer preorder, and a choice of when it applies."
+          intro="Each policy has a switch to offer preorder, a choice of dates, and a sold-out setting."
         />
         <ol className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
           {WHEN.map((w) => (
@@ -226,9 +228,11 @@ export default function PreordersPage() {
                 message="Each one is cut and sewn after you order."
                 powered={false}
               />
+              <ThemeBuyButtons />
             </ProductFrame>
             <ProductFrame title="Brass reading lamp" price="$120.00" compact>
               <PreorderBlock powered />
+              <ThemeBuyButtons />
             </ProductFrame>
           </div>
         </div>
@@ -256,8 +260,9 @@ export default function PreordersPage() {
           <Explainer title="Told when a date moves">
             <p>
               Save a later ship estimate and your editor shows how many shoppers it affects before you
-              do. Each one gets a Delay notice 30 minutes after your last save, so a quick fix sends
-              nothing. A shopper whose date passes with nothing shipped hears from you too.
+              do. Each one gets a Delay notice 30 minutes after your last save, so if you correct it in
+              that time they get one notice with the final date, or none if you put the date back. A
+              shopper whose date passes with nothing shipped hears from you too.
             </p>
             <p>
               A preorder with no ship estimate is promised within 30 days of the order, and is told so
@@ -268,8 +273,8 @@ export default function PreordersPage() {
             <p>
               If the new date is more than 30 days past what a shopper was promised, or there’s no
               date at all, the notice asks them to keep their preorder. They get at least 7 days to
-              answer. Anyone who doesn’t agree by the deadline is refunded automatically, so no one is
-              left waiting on something they never agreed to.
+              answer. Anyone who doesn’t agree by the deadline is cancelled and refunded in full
+              automatically, unless part of their preorder has already shipped.
             </p>
           </Explainer>
         </div>

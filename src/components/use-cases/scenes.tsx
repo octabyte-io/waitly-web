@@ -38,7 +38,7 @@ export const SCENES = {
     ),
   },
   "notify-me-joined": {
-    alt: "The same form after the shopper signs up. It says “You are on the list. We will email you once this is back.”",
+    alt: "The same page after the shopper signs up. The form is replaced by “You are on the list. We will email you once this is back.”",
     render: () => (
       <ProductFrame title="Harbor overshirt" price="$68.00" options={OVERSHIRT_SIZES}>
         <NotifyMeBlock state="success" />
@@ -52,13 +52,13 @@ export const SCENES = {
         subject="Harbor overshirt is back in stock"
         heading="Harbor overshirt is back"
         button="Buy it now"
+        after={<p className={muted}>This alert does not hold one for you, so it is first come, first served.</p>}
         item="Harbor overshirt / M"
       >
         <p>
           <strong>Harbor overshirt / M</strong> is available again at Harbor Supply.
         </p>
         <p className={muted}>You were number 3 in line for this one.</p>
-        <p className={muted}>This alert does not hold one for you, so it is first come, first served.</p>
       </EmailMock>
     ),
   },
@@ -67,7 +67,7 @@ export const SCENES = {
     render: () => <OrderCard />,
   },
   "send-log": {
-    alt: "Waitly’s send log for an example store: three restocks, each with the number of alerts sent, delivered and followed by a purchase.",
+    alt: "Waitly’s Restock alerts log for an example store: three alerts, each with how many were queued and delivered, how many shoppers bought, and the rate.",
     render: () => (
       <AdminFrame title="Restock alerts">
         <Panel>

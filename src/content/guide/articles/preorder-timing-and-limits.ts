@@ -29,7 +29,7 @@ export const article: GuideArticle = {
     {
       title: "Choose the dates",
       body: [
-        "**Whenever this policy is on** runs preorder for as long as the **Offer preorder** switch is on. Good for products you always sell ahead, like made-to-order pieces.",
+        "**Whenever this policy is on** runs preorder for as long as the **Offer preorder** switch is on. Good for products you always sell ahead, like made-to-order pieces. The Pre-order block still shows only on a variant that tracks stock and has none left.",
         "**Between these dates** opens and closes preorder at a set time. Fill in **Opens on** and **Opens at**, and **Closes on** and **Closes at**. Times are 24-hour, in your store’s time zone. Leave the opening empty to start now, or the closing empty to run until you turn the policy off. **Clear** empties one end.",
         "Once saved, the card says how the policy reads, for example “This policy is on, and opens on …”.",
       ],

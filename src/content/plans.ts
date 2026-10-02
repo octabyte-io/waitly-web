@@ -143,7 +143,7 @@ export const COMPARISON: ComparisonGroup[] = [
       from("growth", "Remove “Powered by Waitly”"),
       from("free", "Logo and brand color in every email"),
       from("growth", "Write your own email subject, heading, message and button"),
-      from("free", "One-click unsubscribe and bounce protection"),
+      from("free", "Unsubscribe link in every waitlist email, and bounce protection"),
       from("free", "Storefront text translated with Translate & Adapt"),
     ],
   },
