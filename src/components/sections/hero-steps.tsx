@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ProductArt } from "@/components/mocks/storefront";
 import { useReducedMotion } from "@/components/demos/use-frames";
@@ -60,6 +61,12 @@ export function HeroSteps({ className }: { className?: string }) {
               <p className="flex h-9 items-center rounded-md border border-[#c5ccd4] px-3 text-[0.875rem] text-[#9aa2ab]">
                 you@example.com
               </p>
+              <p className="flex items-start gap-2 text-[0.8125rem]">
+                <span aria-hidden="true" className="mt-0.5 flex size-3.5 shrink-0 items-center justify-center rounded-[3px] bg-[#1a1a1a] text-white">
+                  <Check className="size-2.5" />
+                </span>
+                Email me once when this is back in stock.
+              </p>
               <p className="flex h-10 items-center justify-center rounded-md bg-[#1a1a1a] text-[0.875rem] font-semibold text-white">
                 Notify me when available
               </p>
@@ -77,7 +84,8 @@ export function HeroSteps({ className }: { className?: string }) {
             <div className="space-y-2.5 p-4">
               <p className="text-[1.125rem] font-bold leading-tight">Harbor overshirt is back</p>
               <p className="text-[0.9375rem] text-[#5c6570]">
-                Size M is available again. You were number 3 in line.
+                Harbor overshirt / M is available again at Harbor Supply. You were number 3 in line for
+                this one.
               </p>
               <p className="inline-flex h-10 items-center rounded-md bg-[#2f5d50] px-4 text-[0.875rem] font-semibold text-white">
                 Buy it now
@@ -90,7 +98,7 @@ export function HeroSteps({ className }: { className?: string }) {
           <div className="space-y-3">
             <OrderCard className="shadow-none" />
             <div className="rounded-[1rem] bg-white/80 p-4 ring-1 ring-[#0b2545]/8">
-              <p className="text-[0.8125rem] text-ink-soft">Recovered this month</p>
+              <p className="text-[0.8125rem] text-ink-soft">Recovered revenue</p>
               <p className="font-display text-[1.75rem] font-bold leading-tight tracking-[-0.02em] tnum">$4,912</p>
             </div>
           </div>

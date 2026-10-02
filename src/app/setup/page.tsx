@@ -33,7 +33,7 @@ const BLOCKS: { name: string; where: string; what: string; level?: Level }[] = [
   {
     name: "Pre-order",
     where: "Product page",
-    what: "The Pre-order badge, ship estimate, cancellation terms and your message, for products a preorder policy covers.",
+    what: "The Pre-order badge, the pay-in-full line and cancellation terms, for products a preorder policy covers. On Growth and Pro it also shows your ship estimate and message.",
   },
   {
     name: "Coming soon",
@@ -42,8 +42,8 @@ const BLOCKS: { name: string; where: string; what: string; level?: Level }[] = [
     level: "pro",
   },
   {
-    name: "Vote for what we make next",
-    where: "Home page or any page",
+    name: "Product voting",
+    where: "Home page or a page of its own",
     what: "Your open product ideas, for shoppers to vote on.",
     level: "pro",
   },
@@ -137,7 +137,7 @@ export default function SetupPage() {
       <Band tone="mist">
         <SectionHeading
           title="Waitly’s theme blocks"
-          intro="Add them in the theme editor like any other block. Each one’s text and style is set on the block itself."
+          intro="Add them in the theme editor like any other block. The text and style of the three forms are set on the block itself. The Pre-order block’s words come from your preorder policy in Waitly."
         />
         <div className="mt-12 relative overflow-x-auto">
           <table className="w-full min-w-[40rem] text-left">
@@ -175,7 +175,7 @@ export default function SetupPage() {
           <Explainer title="Light on your pages">
             <p>
               The blocks are plain Liquid and small scripts of about 10 KB each, with no framework to
-              download. They take their fonts and spacing from your theme.
+              download. They take their font and text size from your theme.
             </p>
           </Explainer>
           <Explainer title="Then make it yours">
@@ -195,7 +195,7 @@ export default function SetupPage() {
       <Band tone="paper" id="privacy">
         <SectionHeading
           title="Data and privacy"
-          intro="Waitly keeps as little as it can. The only customer detail it asks Shopify for is an email address."
+          intro="Waitly keeps as little as it can. An email address is the only protected customer detail it asks Shopify for: no name, address or phone. On Pro, waitlist priority also reads a customer’s tags, order count and total spend, and doesn’t store them."
         />
         <div className="mt-14 space-y-14">
           <Explainer title="What’s stored">
@@ -208,7 +208,9 @@ export default function SetupPage() {
           <Explainer title="Shopify privacy requests">
             <p>
               Waitly answers Shopify’s privacy requests automatically. A customer data request is
-              emailed to you as an export. A customer erasure request removes that shopper. When you
+              emailed to you as an export. A customer erasure request strips that shopper’s email and
+              every other identifier. Their signups stay in your totals, with nothing that names
+              them. When you
               uninstall, your store’s data is erased 48 hours later.
             </p>
           </Explainer>

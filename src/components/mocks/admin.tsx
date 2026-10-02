@@ -262,7 +262,7 @@ export function OrderCard({ className }: { className?: string }) {
       </div>
       <p className="mt-3 flex items-center gap-2 border-t border-[#e6e9ee] pt-3 text-[0.8125rem] text-[#5c6570]">
         <span aria-hidden="true" className="size-2.5 rounded-full bg-signal" />
-        Bought 4 minutes after a Waitly alert
+        Counted in Waitly as Bought after alert
       </p>
     </div>
   );

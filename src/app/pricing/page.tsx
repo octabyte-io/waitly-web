@@ -92,8 +92,9 @@ export default function PricingPage() {
           </Explainer>
           <Explainer title="What counts">
             <p>
-              <strong>Restock alerts</strong> are the emails sent to waiting shoppers when stock returns. <strong>Preorders</strong> are orders placed through a
-              Waitly preorder policy. Signup confirmations have their own, much higher safety cap that
+              <strong>Restock alerts</strong> are the emails sent to waiting shoppers when stock returns. <strong>Preorders</strong> are counted per order line: each
+              product on an order placed through a Waitly preorder policy uses one, whatever its
+              quantity. Signup confirmations have their own, much higher safety cap that
               ordinary stores never reach.
             </p>
           </Explainer>

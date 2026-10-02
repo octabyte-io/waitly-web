@@ -108,7 +108,7 @@ ${Object.values(pages).map(link).join("\n")}
 
 ## Plans
 
-Prices are in US dollars, billed monthly through Shopify. Allowances reset every billing cycle. At 100% of an allowance, further restock alerts are held back rather than sent, and shoppers stay on the waitlist.
+Prices are in US dollars, billed monthly through Shopify. Allowances reset every billing cycle. At 100% of the restock alert allowance, further alerts are held back and are not sent later; those shoppers stay on the waitlist for the next restock. At 100% of the preorder allowance, preorder pauses on every product until the cycle resets. At 100% of the signup confirmation cap, shoppers still join the waitlist and only the confirmation email is skipped.
 
 ${plans}
 

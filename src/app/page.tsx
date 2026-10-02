@@ -73,7 +73,7 @@ const LOOP = [
   },
   {
     title: "The sale is counted",
-    body: "Orders within 7 days of an alert count as recovered revenue. Refunds and unpaid cancellations are taken back out.",
+    body: "By default, orders within 7 days of an alert count as recovered revenue. Refunds and unpaid cancellations are taken back out.",
   },
 ];
 
@@ -149,7 +149,7 @@ export default function Home() {
         <SectionHeading
           id="loop-title"
           title="What happens between “sold out” and “sold”"
-          intro="Once the Notify me block is on your product page, this runs on its own for every product and variant in your store."
+          intro="Once the Notify me block is on your product template, this runs on its own for every product that uses that template."
         />
         <ol className="mt-14 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
           {LOOP.map((step, i) => (
@@ -186,12 +186,12 @@ export default function Home() {
           <div>
             <SectionHeading
               title="Back in stock alerts that sound like your store"
-              intro="The email comes from your store’s name, replies go to your inbox, and the bar and button take your brand color. Shoppers never need to know Waitly exists."
+              intro="The email comes from your store’s name, replies go to your inbox, and the bar and button take your brand color. On Free, the form and each email carry a small Waitly line. Growth and Pro remove it."
             />
             <ul className="mt-8 space-y-3 text-ink/85">
               <li>Wait for one exact variant, or for any variant of the product.</li>
               <li>A link to stop alerts in every waitlist email. Bounces and spam complaints stop automatically.</li>
-              <li>Every word on the storefront can be translated with Translate &amp; Adapt.</li>
+              <li>The forms’ own words are in English. Type your own in the block and you can translate them with Translate &amp; Adapt.</li>
             </ul>
             <CtaLink href="/features/back-in-stock/" variant="quiet" className="mt-9">
               Explore back in stock
@@ -201,6 +201,7 @@ export default function Home() {
             subject="Harbor overshirt is back in stock"
             heading="Harbor overshirt is back"
             button="Buy it now"
+            after={<p className={muted}>This alert does not hold one for you, so it is first come, first served.</p>}
             item="Harbor overshirt / M"
           >
             <p>
@@ -233,7 +234,7 @@ export default function Home() {
               <li>Offer preorder only while a variant is sold out, and it turns off when stock arrives.</li>
               <li>Cap the units per product so you never promise more than you can ship.</li>
               <li>Shoppers get a receipt, can cancel for a full refund before it ships, and hear from you if a ship date slips.</li>
-              <li>Every preorder order is tagged <code className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9375rem] ring-1 ring-ink/10">waitly-preorder</code> for fulfilment.</li>
+              <li>Every preorder order is tagged <code className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9375rem] ring-1 ring-ink/10">waitly-preorder</code> for fulfillment.</li>
             </ul>
             <CtaLink href="/features/preorders/" variant="quiet" className="mt-9">
               Explore preorders
@@ -267,17 +268,18 @@ export default function Home() {
                   <Figure label="Live waitlists" value="37" />
                 </div>
               </Panel>
-              <Panel title="Last 30 days" level="growth">
+              <Panel title="Results" level="growth">
                 <div className="grid gap-3">
                   <Figure label="Recovered revenue" value="$4,912" />
-                  <Figure label="Bought after alert" value="23%" />
+                  <Figure label="Bought after alert" value="296" />
                 </div>
               </Panel>
             </div>
             <Panel title="Demand Score, Harbor overshirt / M" level="pro">
               <DemandScoreScale score={78} />
               <p className="mt-4 text-[0.9375rem]">
-                <span className="font-semibold">Restock suggestion:</span> about 70 units
+                <span className="font-semibold">Restock suggestion:</span> Order 70 units{" "}
+                <span className="text-ink-soft">(Estimate)</span>
               </p>
             </Panel>
           </AdminFrame>

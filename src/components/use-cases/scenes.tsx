@@ -63,7 +63,7 @@ export const SCENES = {
     ),
   },
   "order-after-alert": {
-    alt: "A paid Shopify order for Harbor overshirt in size M, marked as bought 4 minutes after a Waitly alert.",
+    alt: "A paid Shopify order for Harbor overshirt in size M, with a line under it saying Waitly counts it as Bought after alert.",
     render: () => <OrderCard />,
   },
   "send-log": {

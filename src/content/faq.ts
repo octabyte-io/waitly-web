@@ -17,7 +17,7 @@ export const FAQ: FaqGroup[] = [
       {
         q: "Does it work with my theme?",
         a: [
-          "Waitly uses Shopify theme app blocks, so it works with any Online Store 2.0 theme. The blocks take their spacing from your theme, and you can set the button color, text color and corner radius to match.",
+          "Waitly uses Shopify theme app blocks, so it works with any Online Store 2.0 theme. The blocks take their font and text size from your theme. On the Notify me, Coming soon and voting blocks you can set the button color, button text color and corner radius to match.",
         ],
       },
       {
@@ -29,7 +29,7 @@ export const FAQ: FaqGroup[] = [
       {
         q: "Can I show Waitly in other languages?",
         a: [
-          "Yes. Every word shoppers see can be translated per language in Shopify’s Translate & Adapt app, including any text you change in the block settings.",
+          "Partly. Waitly’s own wording is in English. On the Notify me, Coming soon and voting blocks you can type your own words in the block settings, and translate what you type per language in Shopify’s Translate & Adapt app. The Pre-order block’s fixed lines can’t be changed or translated.",
         ],
       },
     ],
@@ -61,7 +61,7 @@ export const FAQ: FaqGroup[] = [
       {
         q: "Does an alert reserve the item for the shopper?",
         a: [
-          "A normal alert doesn’t. The email says so plainly: first come, first served. On Pro you can choose “Reserve for the first shoppers”, which holds one unit for each shopper at the front of the line for 10 minutes to 24 hours.",
+          "A normal alert doesn’t. The email says so plainly: first come, first served. On Pro you can choose “Reserve for the first shoppers”, which holds one unit for each shopper at the front of the line for 10 minutes, 30 minutes, 1 hour or 24 hours.",
         ],
       },
       {
@@ -79,13 +79,13 @@ export const FAQ: FaqGroup[] = [
         q: "How do shoppers pay for a preorder?",
         home: true,
         a: [
-          "In full, at checkout, through Shopify’s own selling plans. The product page says “Pay in full today. This item ships later.” and Shopify holds the order for fulfilment until you ship it.",
+          "In full, at checkout, through Shopify’s own selling plans. The product page says “Pay in full today. This item ships later.” and Shopify holds the order for fulfillment until you ship it.",
         ],
       },
       {
         q: "Can I take a deposit or partial payment?",
         a: [
-          "Not today. Waitly preorders are paid in full. We chose that because it keeps refunds, taxes and fulfilment inside Shopify’s normal order flow.",
+          "Not today. Waitly preorders are paid in full. We chose that because it keeps refunds, taxes and fulfillment inside Shopify’s normal order flow.",
         ],
       },
       {
@@ -97,7 +97,7 @@ export const FAQ: FaqGroup[] = [
       {
         q: "What happens if a ship date slips?",
         a: [
-          "When you save a later ship estimate, Waitly emails each affected shopper a Delay notice about 30 minutes after your last save, so a quick correction doesn’t send anything. A shopper whose promised date passes is told too.",
+          "When you save a later ship estimate, Waitly emails each affected shopper a Delay notice 30 minutes after your last save. If you correct the date in that time, shoppers get one notice with the final date, or none if you move it back. A shopper whose promised date passes is told too.",
           "If the new date is more than 30 days past what the shopper was promised, or there’s no date at all, the notice asks them to agree to wait. Anyone who doesn’t agree by the deadline, at least 7 days after the notice, is cancelled and refunded automatically, unless part of their preorder has already shipped. A preorder with no ship estimate is promised within 30 days of the order.",
         ],
       },
