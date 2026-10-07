@@ -8,6 +8,7 @@
 import { pages, type PageEntry } from "@/config/pages";
 import { articleBySlug, guideEntries } from "@/content/guide";
 import { linksIn } from "@/lib/inline";
+import { post as backInStockEmailConversionRate } from "./posts/back-in-stock-email-conversion-rate";
 import { post as preorderWindowAndLimit } from "./posts/preorder-window-and-limit";
 import { post as backInStockNotificationsShopify } from "./posts/back-in-stock-notifications-shopify";
 import { post as soldOutVariantsShopify } from "./posts/sold-out-variants-shopify";
@@ -20,6 +21,7 @@ import type { FeatureKey, UseCasePost } from "./types";
 export type { Block, FeatureKey, Figure, Inline, Section, UseCasePost } from "./types";
 
 export const POSTS: UseCasePost[] = [
+  backInStockEmailConversionRate,
   preorderWindowAndLimit,
   backInStockNotificationsShopify,
   soldOutVariantsShopify,
