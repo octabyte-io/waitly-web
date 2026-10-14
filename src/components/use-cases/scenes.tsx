@@ -10,6 +10,7 @@ import { scenes as howMuchToReorder } from "./scene-sets/how-much-to-reorder-aft
 import { scenes as preorderWindow } from "./scene-sets/preorder-window-and-limit";
 import { scenes as conversionRate } from "./scene-sets/back-in-stock-email-conversion-rate";
 import { scenes as comingSoonProduct } from "./scene-sets/coming-soon-product-waitlist";
+import { scenes as voteNextProduct } from "./scene-sets/customers-vote-on-next-product";
 
 /**
  * The mocks a use-case post can show, by name. A post's data holds only the
@@ -87,6 +88,7 @@ export const SCENES = {
   ...preorderWindow,
   ...conversionRate,
   ...comingSoonProduct,
+  ...voteNextProduct,
 } satisfies Record<string, Scene>;
 
 export const isWide = (id: SceneId) => (SCENES[id] as Scene).wide === true;

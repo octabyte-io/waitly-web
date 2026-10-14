@@ -8,6 +8,7 @@
 import { pages, type PageEntry } from "@/config/pages";
 import { articleBySlug, guideEntries } from "@/content/guide";
 import { linksIn } from "@/lib/inline";
+import { post as customersVoteOnNextProduct } from "./posts/customers-vote-on-next-product";
 import { post as comingSoonProductWaitlist } from "./posts/coming-soon-product-waitlist";
 import { post as backInStockEmailConversionRate } from "./posts/back-in-stock-email-conversion-rate";
 import { post as preorderWindowAndLimit } from "./posts/preorder-window-and-limit";
@@ -22,6 +23,7 @@ import type { FeatureKey, UseCasePost } from "./types";
 export type { Block, FeatureKey, Figure, Inline, Section, UseCasePost } from "./types";
 
 export const POSTS: UseCasePost[] = [
+  customersVoteOnNextProduct,
   comingSoonProductWaitlist,
   backInStockEmailConversionRate,
   preorderWindowAndLimit,
