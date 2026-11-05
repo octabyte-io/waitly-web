@@ -3,9 +3,11 @@ import { ArrowRight } from "lucide-react";
 import { Container, PlanBadge } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { SceneThumb } from "@/components/use-cases/scene-cover";
+import { STRETCHED } from "@/components/use-cases/use-case-links";
 import { pages } from "@/config/pages";
 import { POSTS, postPath } from "@/content/use-cases";
 import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 export const metadata = pageMetadata(pages.useCases);
 
@@ -24,24 +26,24 @@ export default function UseCasesPage() {
           </p>
           <ul className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
             {POSTS.map((post) => (
-              <li key={post.slug}>
-                <Link
-                  href={postPath(post.slug)}
-                  className="group flex h-full flex-col glass rounded-[1.75rem] p-6 transition-colors hover:bg-white/70 sm:p-7"
-                >
-                  <SceneThumb scene={post.cover} zoom={0.8} className="mb-6" />
-                  <h2 className="text-d3 font-bold tracking-[-0.02em] group-hover:underline group-hover:decoration-2 group-hover:underline-offset-4">
+              <li
+                key={post.slug}
+                className="group relative flex h-full flex-col glass rounded-[1.75rem] p-6 transition-colors hover:bg-white/70 sm:p-7"
+              >
+                <SceneThumb scene={post.cover} zoom={0.8} className="mb-6" />
+                <h2 className="text-d3 font-bold tracking-[-0.02em] group-hover:underline group-hover:decoration-2 group-hover:underline-offset-4">
+                  <Link href={postPath(post.slug)} className={cn(STRETCHED, "after:rounded-[1.75rem]")}>
                     {post.title}
-                  </h2>
-                  <p className="mt-3 text-ink/80">{post.summary}</p>
-                  <p className="mt-auto flex items-center justify-between gap-3 pt-6 text-[0.9375rem] text-ink-soft">
-                    <span className="flex items-center gap-2">
-                      <PlanBadge level={post.level} />
-                      {post.level === "free" ? "Works on the Free plan" : null}
-                    </span>
-                    <ArrowRight aria-hidden="true" className="size-4 shrink-0" />
-                  </p>
-                </Link>
+                  </Link>
+                </h2>
+                <p className="mt-3 text-ink/80">{post.summary}</p>
+                <p className="mt-auto flex items-center justify-between gap-3 pt-6 text-[0.9375rem] text-ink-soft">
+                  <span className="flex items-center gap-2">
+                    <PlanBadge level={post.level} />
+                    {post.level === "free" ? "Works on the Free plan" : null}
+                  </span>
+                  <ArrowRight aria-hidden="true" className="size-4 shrink-0" />
+                </p>
               </li>
             ))}
           </ul>

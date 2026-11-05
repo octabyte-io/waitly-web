@@ -1,9 +1,19 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { ArrowRight, Info, Lightbulb, TriangleAlert } from "lucide-react";
 import { PlanBadge } from "@/components/site/primitives";
+import { pages } from "@/config/pages";
 import { articleBySlug, guidePath } from "@/content/guide";
 import { LEVEL_NAMES } from "@/content/plans";
-import { postBySlug, postPath, type Block, type Figure, type Section, type UseCasePost } from "@/content/use-cases";
+import {
+  postBySlug,
+  postPath,
+  type Block,
+  type FeatureKey,
+  type Figure,
+  type Section,
+  type UseCasePost,
+} from "@/content/use-cases";
 import { Inline } from "@/lib/inline";
 import { cn } from "@/lib/utils";
 import { SceneCover } from "./scene-cover";
@@ -164,6 +174,40 @@ export function SectionHeadingH2({ section, className }: { section: Pick<Section
   );
 }
 
+/**
+ * The words each feature page is linked with from a post: the search phrase
+ * that feature page answers, so a post points up to it by name.
+ */
+const FEATURE_ANCHORS: Record<FeatureKey, string> = {
+  backInStock: "Back in stock alerts for Shopify",
+  preorders: "Full-payment preorders for Shopify",
+  restockRelease: "Waitlist priority and restock release",
+  comingSoon: "Coming soon products and product voting",
+  analytics: "Waitlist demand analytics",
+};
+
+const LINK = "font-semibold underline decoration-signal decoration-2 underline-offset-4";
+
+/** The feature pages a post's Waitly sections describe, as links to them. */
+export function FeatureLinks({ post, className }: { post: UseCasePost; className?: string }) {
+  if (post.features.length === 0) return null;
+  const last = post.features.length - 1;
+  return (
+    <p className={cn("text-ink/85", className)}>
+      {last === 0 ? "The Waitly feature in this post: " : "The Waitly features in this post: "}
+      {post.features.map((key, i) => (
+        <Fragment key={key}>
+          {i === 0 ? null : i === last ? " and " : ", "}
+          <Link href={pages[key].path} className={LINK}>
+            {FEATURE_ANCHORS[key]}
+          </Link>
+        </Fragment>
+      ))}
+      .
+    </p>
+  );
+}
+
 /** The guide articles to follow, in order. */
 export function SetupSteps({ post, className }: { post: UseCasePost; className?: string }) {
   if (post.setup.length === 0) return null;
@@ -247,6 +291,11 @@ export function RelatedPosts({ post, className }: { post: UseCasePost; className
           </li>
         ))}
       </ul>
+      <p className="mt-5">
+        <Link href="/use-cases/" className={LINK}>
+          All use cases
+        </Link>
+      </p>
     </section>
   );
 }
@@ -258,6 +307,7 @@ export function PostTail({ post, className }: { post: UseCasePost; className?: s
       {post.setup.length ? (
         <section>
           <SectionHeadingH2 section={TAIL.setup} />
+          <FeatureLinks post={post} className="mt-5" />
           <SetupSteps post={post} className="mt-5" />
         </section>
       ) : null}

@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { pages } from "@/config/pages";
 import { siteConfig } from "@/config/site";
-import { appJsonLd, JsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
+import { appJsonLd, JsonLd, organizationJsonLd, seoTitle, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 const mona = Mona_Sans({
@@ -16,7 +16,7 @@ const mona = Mona_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: pages.home.title,
+    default: seoTitle(pages.home),
     template: "%s | Waitly",
   },
   description: siteConfig.description,

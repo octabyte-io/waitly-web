@@ -3,7 +3,7 @@ import type { UseCasePost } from "../types";
 export const post: UseCasePost = {
   slug: "made-to-order-production-time",
   title: "Made-to-order products on Shopify: how to show the production time",
-  metaTitle: "Made-to-order products on Shopify: show the production time",
+  metaTitle: "Made-to-order on Shopify: show the production time",
   description:
     "Shopify has no made-to-order setting. How to sell an item you make after the order, show how long it takes, and keep each order’s promise.",
   cardHeadline: "Made-to-order products: show the production time",
@@ -90,7 +90,7 @@ export const post: UseCasePost = {
       heading: "With Waitly: “Ships 3–4 weeks after you order” on the product page",
       voice: "waitly",
       blocks: [
-        "In Waitly, a preorder policy covers the products, variants, collections or tags you choose. A “made-to-order” product tag is a good rule: every product you tag later is covered too. Choose **Whenever this policy is on** under **When preorder runs**, and the policy offers preorder for as long as it’s switched on.",
+        "In Waitly, a [full-payment preorder](/features/preorders/) policy covers the products, variants, collections or tags you choose. A “made-to-order” product tag is a good rule: every product you tag later is covered too. Choose **Whenever this policy is on** under **When preorder runs**, and the policy offers preorder for as long as it’s switched on.",
         "On the Growth and Pro plans, set **Ship estimate** to **A time after the order**: a number in **From**, an optional one in **To (optional)**, and **days after the order** or **weeks after the order**. Add a **Message** of up to 200 characters, such as what the shopper is waiting for.",
         "Keep inventory tracked on each covered variant, at zero for a piece you make only to order. Waitly’s Pre-order block shows only on a variant that tracks stock and has none left. A variant that doesn’t track stock never counts as sold out.",
       ],
@@ -147,7 +147,7 @@ export const post: UseCasePost = {
     "Waitly adds no fields for engraving, measurements or other personal details, and no option to charge for them.",
     "Payment is in full at checkout. There are no deposits, part payments or balances due on shipping.",
     "One ship estimate per policy. Products with different production times need a policy each, and a variant takes preorder from one policy only.",
-    "Every made-to-order order is a preorder, counted one per order line against your plan’s allowance: 20 each billing cycle on Free and 500 on Growth. When they’re used up, preorder pauses on every product until the cycle resets. Pro is unlimited. See [pricing](/pricing/).",
+    "Every made-to-order order is a preorder, counted one per order line against your plan’s allowance: 20 each billing cycle on Free and 500 on Growth. When they’re used up, preorder pauses on every product until the cycle resets. Pro is unlimited. See [preorder allowances by plan](/pricing/).",
     "On the Free plan there is no ship estimate. Shoppers read “This item ships later.”, and Waitly treats each order as promised 30 days after it was placed.",
     "A Waitly preorder is a Shopify pre-order purchase option. Shopify says customers [can’t buy pre-orders with the Shop Pay, Apple Pay or Google Pay accelerated checkouts, or with local payment methods such as Klarna](https://help.shopify.com/en/manual/products/purchase-options/pre-orders/setup).",
     "The block needs an Online Store 2.0 theme and goes on product pages.",
@@ -178,5 +178,5 @@ export const post: UseCasePost = {
       a: "With Waitly on Growth or Pro, yes: the item carries a **Ships** line in the cart and at checkout. Shopify’s own delivery dates show only for products with inventory above zero.",
     },
   ],
-  related: ["continue-selling-when-out-of-stock", "preorder-shipping-delay"],
+  related: ["continue-selling-when-out-of-stock", "preorder-window-and-limit", "preorder-shipping-delay"],
 };

@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "preorder-timing-and-limits",
   section: "preorders",
   title: "Set when preorder runs and how many",
+  metaTitle: "Set preorder timing and unit limits in a Waitly policy",
   summary:
     "Run preorder only while a variant is sold out, open and close it on set dates, and cap the units each product can take.",
+  metaDescription:
+    "Run a Waitly preorder only while a variant is sold out, open and close it on set dates, and cap the units each product can take. Dates need Growth.",
+  updated: "2026-11-05",
   before: ["You have a preorder policy. Setting dates needs the Growth plan or higher."],
   steps: [
     {

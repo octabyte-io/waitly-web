@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "shopper-cancels-preorder",
   section: "shoppers",
   title: "Keeping or cancelling a preorder",
+  metaTitle: "How shoppers keep or cancel a Waitly preorder",
   summary:
     "How your shoppers cancel a preorder for a full refund, and how they answer when you move a ship date later.",
+  about:
+    "The feature behind this: [Waitly preorders for Shopify](/features/preorders/).",
+  updated: "2026-11-05",
   before: ["A shopper has placed an order that holds a preorder, and got the Preorder receipt."],
   steps: [
     {

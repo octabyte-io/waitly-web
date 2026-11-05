@@ -5,6 +5,7 @@ export const article: GuideArticle = {
   section: "getting-started",
   title: "Install Waitly",
   summary: "Install Waitly from the Shopify App Store, approve its permissions and open it in your Shopify admin.",
+  updated: "2026-11-05",
   before: [
     "A Shopify store with an Online Store 2.0 theme, such as Dawn or any theme from the Shopify Theme Store.",
     "You’re the store owner, or a staff member allowed to install apps.",
@@ -93,4 +94,5 @@ export const article: GuideArticle = {
     },
   ],
   related: ["find-your-way-around", "add-notify-me-block", "choose-a-plan"],
+  useCases: ["back-in-stock-notifications-shopify"],
 };

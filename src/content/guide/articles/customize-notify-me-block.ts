@@ -5,6 +5,7 @@ export const article: GuideArticle = {
   section: "back-in-stock",
   title: "Change the Notify me block’s words and style",
   summary: "Edit the Notify me block’s text, button colors and corners in the theme editor, and on Growth its background, border and button style.",
+  updated: "2026-11-05",
   before: ["The Notify me block is on your product page."],
   steps: [
     {

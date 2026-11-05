@@ -4,8 +4,14 @@ export const article: GuideArticle = {
   slug: "create-a-proposal",
   section: "coming-soon",
   title: "Let shoppers vote on a product idea",
+  metaTitle: "Create a product proposal for voting in Waitly",
   summary:
     "Describe a product that doesn’t exist yet, open it for votes, and close, reopen or delete it later.",
+  metaDescription:
+    "Describe a product that doesn’t exist yet as a Waitly proposal, open it for votes, and close, reopen or delete it later. Needs the Waitly Pro plan.",
+  about:
+    "What the feature does: [product voting for Shopify](/features/coming-soon/#voting).",
+  updated: "2026-11-05",
   level: "pro",
   before: [
     "Your store is on the Pro plan.",

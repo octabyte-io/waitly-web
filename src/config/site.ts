@@ -9,11 +9,13 @@
 export const siteConfig = {
   name: "Waitly",
   company: "OctaByte",
+  /** The maker's own site, as the privacy policy and DPA name it. */
+  companyUrl: "https://octabyte.io",
   url: "https://waitly.octabyte.io",
   installUrl: "https://apps.shopify.com/search?q=waitly",
   supportEmail: "support@octabyte.io",
   description:
-    "Waitly adds Notify me, preorders, Coming Soon pages and product voting to your Shopify store, emails shoppers the moment stock returns, and shows you what to restock next.",
+    "Waitly adds Notify me, preorders, Coming soon products and product voting to Shopify, emails shoppers the moment stock returns, and shows what to restock next.",
   legal: {
     legalName: "OctaByte" as string | null,
     lastUpdated: "29 September 2026" as string | null,

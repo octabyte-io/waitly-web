@@ -3,8 +3,18 @@ import { cn } from "@/lib/utils";
 import { PLANS, formatCount } from "@/content/plans";
 import { InstallLink } from "@/components/site/primitives";
 
-/** The three plans side by side. Pro is smoked glass to mark it as the full kit. */
-export function PlanColumns({ className }: { className?: string }) {
+/**
+ * The three plans side by side. Pro is smoked glass to mark it as the full kit.
+ * `headingLevel` keeps the outline in order: `h2` straight under a page's h1
+ * (pricing), `h3` inside a section that has its own h2 (home). The look is the same.
+ */
+export function PlanColumns({
+  className,
+  headingLevel: Heading = "h2",
+}: {
+  className?: string;
+  headingLevel?: "h2" | "h3";
+}) {
   return (
     <div className={cn("grid grid-cols-1 gap-4 lg:grid-cols-3", className)}>
       {PLANS.map((plan, i) => {
@@ -17,7 +27,7 @@ export function PlanColumns({ className }: { className?: string }) {
               dark ? "on-ink glass-smoke text-paper" : "glass text-ink",
             )}
           >
-            <h3 className="text-d3 font-semibold tracking-[-0.02em]">{plan.name}</h3>
+            <Heading className="text-d3 font-semibold tracking-[-0.02em]">{plan.name}</Heading>
             <p className="mt-4 flex items-baseline gap-1.5">
               <span className="font-display text-[3.25rem] leading-none font-bold tracking-[-0.04em] tnum">
                 ${plan.price}

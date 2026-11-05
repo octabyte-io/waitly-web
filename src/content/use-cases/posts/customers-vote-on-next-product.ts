@@ -110,7 +110,7 @@ export const post: UseCasePost = {
       heading: "With Waitly: a voting block on your store",
       voice: "waitly",
       blocks: [
-        "On the Pro plan, Waitly’s **Voting** page holds your ideas, called proposals. Each one has a **Title** of up to 80 characters, a **Description** of up to 300, one image and, if you like, a **Planned price**, which shoppers see as a rough figure such as “About $150”. A proposal starts as a **Draft**, and shoppers see it once you select **Open**. Up to 50 can be open at once.",
+        "[Product voting](/features/coming-soon/#voting) is on Waitly’s Pro plan. Its **Voting** page holds your ideas, called proposals. Each one has a **Title** of up to 80 characters, a **Description** of up to 300, one image and, if you like, a **Planned price**, which shoppers see as a rough figure such as “About $150”. A proposal starts as a **Draft**, and shoppers see it once you select **Open**. Up to 50 can be open at once.",
         "The **Product voting** block goes on your home page or on a page of its own, through the theme editor. It is headed “Vote for what we make next” and lists every open proposal, most recently opened first. The shopper ticks the ones they’d buy, enters their email and selects **Vote**. The line under the email field, which you can’t change, says they agree to get emails about these products and can unsubscribe at any time.",
         "Shoppers never see how many votes a proposal has. One email address has one vote per proposal, so voting again with the same address adds nothing. Each voter gets an email with the subject “Thanks for voting at” your shop, listing what they voted for with a **Remove my vote** link beside each one.",
         {
@@ -172,7 +172,7 @@ export const post: UseCasePost = {
     "Waitly doesn’t give voters a discount, early access or a reserved unit. The launch email is first come, first served.",
     "A vote that sits unchanged for longer than your data retention setting, 365 days at most, expires like any signup. See [how long Waitly keeps waitlist data](/guide/data-retention/).",
     "Waitly sends email only, no SMS, and doesn’t pass voters to Klaviyo or Mailchimp. Voters agreed to emails about the products they voted for, not to marketing.",
-    "The block needs an Online Store 2.0 theme. Each launch email uses one of your plan’s restock alerts; the thank-you email doesn’t. See [pricing](/pricing/).",
+    "The block needs an Online Store 2.0 theme. Each launch email uses one of your plan’s restock alerts; the thank-you email doesn’t. See [restock alert allowances by plan](/pricing/).",
   ],
   faqs: [
     {

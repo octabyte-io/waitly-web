@@ -6,11 +6,21 @@ import { Container, PlanBadge } from "@/components/site/primitives";
 import { AsideNote } from "@/components/guide/aside-note";
 import { GuideSidebar } from "@/components/guide/guide-sidebar";
 import { plainText, RichText } from "@/components/guide/rich-text";
+import { GuideUseCases } from "@/components/guide/guide-use-cases";
 import { Screenshot } from "@/components/guide/screenshot";
-import { UseCasesForGuide } from "@/components/use-cases/use-case-links";
-import { ARTICLES, ORDERED_ARTICLES, articleBySlug, guideEntries, guidePath, sectionOf } from "@/content/guide";
+import {
+  ARTICLES,
+  ORDERED_ARTICLES,
+  aboutOf,
+  articleBySlug,
+  guideEntries,
+  guidePath,
+  sectionOf,
+} from "@/content/guide";
+import "@/content/guide/check";
 import { LEVEL_NAMES } from "@/content/plans";
 import { JsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
+import { pages } from "@/config/pages";
 import { siteConfig } from "@/config/site";
 
 export const dynamicParams = false;
@@ -52,7 +62,7 @@ export default async function GuideArticlePage({ params }: PageProps<"/guide/[sl
 
   return (
     <>
-      <JsonLd data={[webPageJsonLd(entryFor(slug)), howTo]} />
+      <JsonLd data={[webPageJsonLd(entryFor(slug), "WebPage", [pages.guide]), howTo]} />
       <Container className="grid grid-cols-1 gap-8 pt-8 pb-20 sm:pt-12 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-14">
         <aside>
           <GuideSidebar current={slug} />
@@ -72,6 +82,9 @@ export default async function GuideArticlePage({ params }: PageProps<"/guide/[sl
           <header className="mt-4 max-w-3xl">
             <h1 className="text-d2 font-bold tracking-[-0.025em]">{article.title}</h1>
             <p className="mt-5 text-lead text-ink/80">{article.summary}</p>
+            <p className="mt-4 text-[0.9375rem] text-ink-soft">
+              <RichText text={aboutOf(article)} />
+            </p>
             {article.level ? (
               <p className="mt-5 flex items-center gap-2.5 text-[0.9375rem] text-ink-soft">
                 <PlanBadge level={article.level} />
@@ -156,7 +169,7 @@ export default async function GuideArticlePage({ params }: PageProps<"/guide/[sl
             </section>
           ) : null}
 
-          <UseCasesForGuide guide={slug} className="mt-14 max-w-3xl" />
+          <GuideUseCases article={article} className="mt-14 max-w-3xl" />
 
           <nav aria-label="Previous and next" className="mt-16 grid max-w-3xl gap-3 border-t border-line pt-8 sm:grid-cols-2">
             {prev ? (

@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "demand-score",
   section: "analytics",
   title: "Plan restocks with Demand Score",
+  metaTitle: "Use Waitly’s Demand Score and restock suggestion",
   summary:
     "See which products shoppers want most, what Waitly suggests you do, and roughly how many units to restock.",
+  metaDescription:
+    "See which products shoppers want most in Waitly, what the Demand Score suggests you do next, and roughly how many units to restock. Needs Waitly Pro.",
+  updated: "2026-11-05",
   level: "pro",
   before: [
     "You’re on the Pro plan.",

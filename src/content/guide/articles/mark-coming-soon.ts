@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Mark a product Coming Soon",
   summary:
     "Mark a sold-out product so its page takes “I want this” signups, then email everyone waiting when you add stock.",
+  updated: "2026-11-05",
   level: "pro",
   before: [
     "Your store is on the Pro plan.",

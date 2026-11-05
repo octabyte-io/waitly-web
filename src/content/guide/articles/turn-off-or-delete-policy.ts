@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Turn off or delete a policy",
   summary:
     "Stop taking preorders on a policy’s products, either by turning it off to use again later or by deleting it for good.",
+  updated: "2026-11-05",
   before: ["You have a preorder policy."],
   steps: [
     {
@@ -86,4 +87,5 @@ export const article: GuideArticle = {
     },
   ],
   related: ["manage-preorders", "preorder-from-product-page", "create-preorder-policy"],
+  useCases: ["preorder-window-and-limit"],
 };

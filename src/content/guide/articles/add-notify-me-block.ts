@@ -4,7 +4,13 @@ export const article: GuideArticle = {
   slug: "add-notify-me-block",
   section: "getting-started",
   title: "Add the Notify me block",
+  metaTitle: "Add Waitly’s Notify me block to your theme",
   summary: "Put the Notify me button on your product page from the setup guide, or add it yourself in the theme editor.",
+  metaDescription:
+    "Put Waitly’s Notify me button on your Shopify product page from the in-app setup guide, or add the block yourself in the theme editor.",
+  about:
+    "What the feature does: [back in stock alerts for Shopify](/features/back-in-stock/). Both setup steps on one page: [the Waitly setup guide](/setup/).",
+  updated: "2026-11-05",
   before: [
     "Waitly is installed.",
     "Your store uses an Online Store 2.0 theme, such as Dawn.",

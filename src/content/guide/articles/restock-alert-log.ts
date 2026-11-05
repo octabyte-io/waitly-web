@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Check how a restock alert went",
   summary:
     "Find each restock alert Waitly sent, see how many went out, and what happened to the rest.",
+  updated: "2026-11-05",
   before: ["At least one item shoppers were waiting for has come back in stock."],
   steps: [
     {

@@ -133,7 +133,7 @@ export const post: UseCasePost = {
       heading: "With Waitly: the page says it ships later",
       voice: "waitly",
       blocks: [
-        "In Waitly you make a preorder policy and choose the products, variants, collections or tags it covers. While it’s on, Waitly sets the covered variants to keep selling when out of stock, so you don’t tick the box yourself, and adds Shopify’s Pre-order purchase option to them.",
+        "With [Waitly preorders](/features/preorders/) you make a preorder policy and choose the products, variants, collections or tags it covers. While it’s on, Waitly sets the covered variants to keep selling when out of stock, so you don’t tick the box yourself, and adds Shopify’s Pre-order purchase option to them.",
         "The **Pre-order** block goes on your product page, above the buy buttons. On a sold-out variant it shows a “Pre-order” badge, “Pay in full today. This item ships later.” and “Cancel any time before it ships for a full refund.” In the cart and at checkout, Shopify shows “Pre-order” under the item.",
         "The block has no button of its own. Your theme’s **Add to cart** and **Buy it now** keep their labels and buy the preorder. The block’s text is fixed. On Growth and Pro you can add a ship estimate, such as “Ships around November 2, 2026”, and a message of up to 200 characters.",
         {
@@ -196,7 +196,7 @@ export const post: UseCasePost = {
     "With no ship estimate, which is every policy on Free, a preorder counts as promised within 30 days of the order. If it hasn’t shipped by then, Waitly asks the shopper to keep or cancel it, and refunds it if they don’t answer. On Free, use it for stock that’s less than 30 days away.",
     "The unit cap is per product, across all its variants. You can’t cap each size separately.",
     "Shoppers can cancel a preorder themselves before it ships, and the refund doesn’t wait for your approval.",
-    "The Free plan takes 20 preorders each billing cycle, counted per order line. When they’re used up, preorder pauses on every product until the cycle resets. Growth has 500 and Pro is unlimited. See [pricing](/pricing/).",
+    "The Free plan takes 20 preorders each billing cycle, counted per order line. When they’re used up, preorder pauses on every product until the cycle resets. Growth has 500 and Pro is unlimited. See [preorder allowances by plan](/pricing/).",
     "The block needs an Online Store 2.0 theme and goes on product pages.",
   ],
   faqs: [
@@ -225,5 +225,5 @@ export const post: UseCasePost = {
       a: "With the plain checkbox, you find the orders and email each customer. In Waitly on Growth and Pro, you [change the ship estimate](/guide/change-ship-date/) and the affected shoppers are sent a delay notice with a link to keep or cancel.",
     },
   ],
-  related: ["preorder-shipping-delay", "back-in-stock-notifications-shopify"],
+  related: ["made-to-order-production-time", "preorder-shipping-delay", "back-in-stock-notifications-shopify"],
 };

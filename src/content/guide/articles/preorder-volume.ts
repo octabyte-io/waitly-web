@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "See preorder volume by variant",
   summary:
     "See how many units shoppers have preordered on each variant, and for how much, over any date range.",
+  updated: "2026-11-05",
   level: "pro",
   before: ["You’re on the Pro plan.", "Shoppers have placed at least one preorder."],
   steps: [

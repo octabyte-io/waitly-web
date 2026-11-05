@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Add a message and ship estimate",
   summary:
     "Tell shoppers when their preorder ships, add a short message of your own, and tag preorder orders by policy.",
+  updated: "2026-11-05",
   level: "growth",
   before: [
     "You’re on the Growth or Pro plan.",

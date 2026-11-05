@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "notification-rules",
   section: "emails-settings",
   title: "Set alert and attribution rules",
+  metaTitle: "Set alert limits and attribution rules in Waitly",
   summary:
     "Choose how long an alert holds a shopper’s place, how many alerts one shopper gets, and how long a sale counts as recovered.",
+  metaDescription:
+    "Choose how long a Waitly alert holds a shopper’s place, how many alerts one shopper gets, and how long after an alert a sale counts as recovered.",
+  updated: "2026-11-05",
   before: ["Waitly is installed. These settings are on every plan."],
   steps: [
     {
@@ -53,6 +57,7 @@ export const article: GuideArticle = {
       body: [
         "**Count a sale as recovered for** sets how many days after an alert a purchase is credited to Waitly, from 1 to 30. The default is 7 days.",
         "A shopper who buys within that time shows as **Bought after alert**, and on Growth and Pro the order counts toward **Recovered revenue** in your reports. A shopper who buys later, or without an alert, shows as **Bought anyway**.",
+        "To turn these counts into a rate, see [how to measure a back in stock conversion rate](/use-cases/back-in-stock-email-conversion-rate/).",
       ],
     },
     {

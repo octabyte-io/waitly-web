@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "See who’s waiting for a product",
   summary:
     "Open one product’s waitlist, read its totals and cards, and see every shopper on it and what happened to them.",
+  updated: "2026-11-05",
   before: ["Waitly is installed and at least one shopper has signed up with Notify me."],
   steps: [
     {

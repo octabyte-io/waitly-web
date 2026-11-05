@@ -9,6 +9,7 @@ import {
   InstallLink,
   PlanBadge,
   SectionHeading,
+  TextLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { HeroSteps } from "@/components/sections/hero-steps";
@@ -92,8 +93,9 @@ export default function Home() {
             </h1>
             <div className="lg:pb-2">
               <p className="max-w-[31rem] text-lead text-ink/80">
-                Shoppers leave their email on sold-out products. When you restock, Waitly tells them,
-                and they come back to buy.
+                Waitly is a Shopify app for back in stock alerts and preorders. Shoppers leave their
+                email on sold-out products. When you restock, Waitly tells them, and they come back to
+                buy.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <InstallLink />
@@ -142,6 +144,12 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <p className="mt-10 max-w-3xl text-ink/80">
+          When a restock is smaller than the line,{" "}
+          <TextLink href="/features/restock-release/">waitlist priority and restock release</TextLink>{" "}
+          decide who hears first. For each situation, with Waitly or without, read{" "}
+          <TextLink href="/use-cases/">what to do when a Shopify product isn’t available</TextLink>.
+        </p>
       </Band>
 
       {/* The loop */}
@@ -194,7 +202,7 @@ export default function Home() {
               <li>The forms’ own words are in English. Type your own in the block and you can translate them with Translate &amp; Adapt.</li>
             </ul>
             <CtaLink href="/features/back-in-stock/" variant="quiet" className="mt-9">
-              Explore back in stock
+              Explore back in stock alerts
             </CtaLink>
           </div>
           <EmailMock
@@ -257,7 +265,7 @@ export default function Home() {
               <li className="flex flex-wrap items-center gap-2">A restock planner sorted by what’s most wanted <PlanBadge level="pro" /></li>
             </ul>
             <CtaLink href="/features/analytics/" variant="quiet" className="mt-9">
-              Explore analytics
+              Explore demand analytics
             </CtaLink>
           </div>
           <AdminFrame title="Analytics">
@@ -319,7 +327,7 @@ export default function Home() {
             Full plan comparison
           </CtaLink>
         </div>
-        <PlanColumns className="mt-12" />
+        <PlanColumns className="mt-12" headingLevel="h3" />
       </Band>
 
       {/* Setup */}
@@ -355,7 +363,7 @@ export default function Home() {
                 <NotifyDotRow />
               </span>
               <p className="self-center text-ink/80">
-                Want more? <Link href="/setup/" className="font-semibold underline decoration-signal decoration-2 underline-offset-4">See the full setup guide</Link>, including preorders, Coming Soon and voting blocks, or <Link href="/setup/#walkthrough" className="font-semibold underline decoration-signal decoration-2 underline-offset-4">watch the setup video</Link>.
+                Want more? <Link href="/setup/" className="font-semibold underline decoration-signal decoration-2 underline-offset-4">See the full setup guide</Link>, including preorders, Coming Soon and voting blocks, or <Link href="/setup/#walkthrough" className="font-semibold underline decoration-signal decoration-2 underline-offset-4">watch the setup video</Link>. For each task in the app, see <TextLink href="/guide/">the step-by-step Waitly user guide</TextLink>.
               </p>
             </li>
           </ol>

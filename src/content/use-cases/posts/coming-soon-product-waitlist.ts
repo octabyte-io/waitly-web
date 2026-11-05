@@ -3,7 +3,7 @@ import type { UseCasePost } from "../types";
 export const post: UseCasePost = {
   slug: "coming-soon-product-waitlist",
   title: "A “coming soon” product with a waitlist on a live Shopify store",
-  metaTitle: "A coming soon product with a waitlist on Shopify",
+  metaTitle: "How to add a coming soon product on Shopify",
   description:
     "Put one unreleased product on your live Shopify store, take emails from shoppers who want it, and tell them all on launch day. With an app or without.",
   cardHeadline: "A coming soon product with a waitlist",
@@ -102,7 +102,7 @@ export const post: UseCasePost = {
       heading: "With Waitly: an “I want this” form on the product page",
       voice: "waitly",
       blocks: [
-        "On the Pro plan, Waitly’s **Coming Soon** page has **Mark a product**. Pick the product in Shopify’s product picker, and its page shows the **Coming soon** block in place of the usual **Notify me** form. By default it reads “Coming soon” and “Want this when it launches?”, names the option the shopper picked, and asks for an email with an **I want this** button. The shopper ticks “Email me once when this goes on sale.” to agree to one email.",
+        "On the Pro plan, Waitly can mark [coming soon products](/features/coming-soon/). Its **Coming Soon** page has **Mark a product**. Pick the product in Shopify’s product picker, and its page shows the **Coming soon** block in place of the usual **Notify me** form. By default it reads “Coming soon” and “Want this when it launches?”, names the option the shopper picked, and asks for an email with an **I want this** button. The shopper ticks “Email me once when this goes on sale.” to agree to one email.",
         "Only a product with no stock for sale can be marked, because stock arriving is what launches it. The form shows on a variant that tracks stock, stops selling at zero and has none, on a product published to the Online Store. If a form is hidden, the **Form** column on the **Coming Soon** page says why.",
         "Every form asks which option the shopper wants, and offers “Any size or color is fine” on a product with more than one variant. Under **Form fields** you can also ask how many they want, from 1 to 10, and show the shopper’s country. You can reword everything in the block’s settings in the theme editor. The shopper gets a confirmation email headed “Coming soon, and you’re on the list”.",
         {
@@ -165,7 +165,7 @@ export const post: UseCasePost = {
     "Your theme’s own button still says **Sold out** above the form. Waitly doesn’t change the theme’s buttons.",
     "Signups are for one email about this product. They don’t join your marketing list, and Waitly doesn’t pass them to Klaviyo or Mailchimp. Waitly sends email only, no SMS.",
     "The block needs an Online Store 2.0 theme and goes on product pages. There is no countdown and no public count of signups.",
-    "Each launch email uses one of your plan’s restock alerts. Pro has 20,000 each billing cycle. See [pricing](/pricing/).",
+    "Each launch email uses one of your plan’s restock alerts. Pro has 20,000 each billing cycle. See [restock alert allowances by plan](/pricing/).",
   ],
   faqs: [
     {
@@ -193,5 +193,5 @@ export const post: UseCasePost = {
       a: "Shoppers agreed to one email when the product goes on sale, not to marketing. Ask them separately, for example in your store’s newsletter sign-up.",
     },
   ],
-  related: ["back-in-stock-notifications-shopify", "preorder-window-and-limit"],
+  related: ["customers-vote-on-next-product", "back-in-stock-notifications-shopify", "preorder-window-and-limit"],
 };

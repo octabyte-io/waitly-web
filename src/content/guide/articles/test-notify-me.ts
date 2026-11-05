@@ -6,6 +6,9 @@ export const article: GuideArticle = {
   title: "Test it on a sold-out product",
   summary:
     "Sell out a variant, join its waitlist with your own email, see the signup in Waitly, then restock it and get the alert.",
+  about:
+    "What the feature does: [back in stock alerts for Shopify](/features/back-in-stock/). Both setup steps on one page: [the Waitly setup guide](/setup/).",
+  updated: "2026-11-05",
   before: [
     "The Notify me block is on your live theme’s product page.",
     "A product you can change the stock of. A test product is best, because restocking it emails everyone waiting.",

@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Choose products with rules and exceptions",
   summary:
     "Cover products by tag, product, variant or collection, leave some out, and check exactly what the policy reaches before you save.",
+  updated: "2026-11-05",
   before: ["You have a preorder policy, or you’re creating one."],
   steps: [
     {
@@ -128,4 +129,5 @@ export const article: GuideArticle = {
     },
   ],
   related: ["create-preorder-policy", "preorder-from-product-page", "preorder-timing-and-limits"],
+  useCases: ["continue-selling-when-out-of-stock", "preorder-window-and-limit"],
 };

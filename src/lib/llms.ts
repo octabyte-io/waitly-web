@@ -42,6 +42,10 @@ ${siteConfig.name} is a Shopify app made by ${siteConfig.company}. Key facts:
 export function llmsTxt() {
   return `${header()}
 
+## Overview
+
+${link(pages.home)}
+
 ## Features
 
 ${[pages.backInStock, pages.preorders, pages.restockRelease, pages.analytics, pages.comingSoon].map(link).join("\n")}
@@ -52,6 +56,7 @@ ${[pages.pricing, pages.setup, pages.guide, pages.faq].map(link).join("\n")}
 
 ## Use cases
 
+${link(pages.useCases)}
 ${postLinks()}
 
 ## User guide

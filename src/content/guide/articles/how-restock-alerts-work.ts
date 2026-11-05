@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "how-restock-alerts-work",
   section: "back-in-stock",
   title: "How restock alerts are sent",
+  metaTitle: "How Waitly sends restock alerts",
   summary:
     "Understand when Waitly sends a restock alert, who gets it, how long an alert holds a shopper, and when an alert is held back.",
+  metaDescription:
+    "When Waitly sends a restock alert, who gets it, how long an alert holds a shopper’s place, and when an alert is held back. Part of the Waitly user guide.",
+  updated: "2026-11-05",
   before: ["The Notify me block is on your product page and shoppers are waiting."],
   steps: [
     {
@@ -24,7 +28,7 @@ export const article: GuideArticle = {
       ],
       aside: {
         kind: "note",
-        text: "Alerts go out in line order. By default everyone is alerted at once. On Pro you can send them in batches or hold a unit for the first shoppers instead, under **Settings** › **Restock release**.",
+        text: "Alerts go out in line order. By default everyone is alerted at once. On Pro you can [send them in batches](/guide/release-in-batches/) or [hold a unit for the first shoppers](/guide/reserve-units/) instead, under **Settings** › **Restock release**.",
       },
     },
     {

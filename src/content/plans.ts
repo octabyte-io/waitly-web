@@ -74,7 +74,7 @@ export const PLANS: Plan[] = [
       "Hold a unit for the first shoppers in line",
       "Demand by variant, trends and potential revenue",
       "Demand Score, restock suggestions and the restock planner",
-      "Coming Soon pages with launch alerts",
+      "Coming soon products with launch alerts",
       "Let shoppers vote on your next products",
     ],
   },
@@ -190,7 +190,7 @@ export const COMPARISON: ComparisonGroup[] = [
   {
     title: "Launch",
     rows: [
-      from("pro", "Coming Soon pages with launch alerts"),
+      from("pro", "Coming soon products with launch alerts"),
       from("pro", "Product voting, promoted into real products"),
     ],
   },

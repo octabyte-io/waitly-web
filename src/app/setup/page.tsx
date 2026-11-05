@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Band, Container, CtaLink, Explainer, InstallLink, PlanBadge, SectionHeading } from "@/components/site/primitives";
+import { Band, Container, CtaLink, Explainer, InstallLink, PlanBadge, SectionHeading, TextLink } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { WALKTHROUGH, WalkthroughVideo } from "@/components/sections/walkthrough-video";
 import { siteConfig } from "@/config/site";
@@ -13,14 +13,17 @@ const STEPS = [
   {
     title: "Install Waitly from the Shopify App Store",
     body: "Approve the permissions Shopify shows you. Waitly opens inside your Shopify admin, with a setup guide on its home page.",
+    guide: { href: "/guide/install-waitly/", label: "how to install Waitly and approve its permissions" },
   },
   {
     title: "Add the Notify me block to your product page",
     body: "Press the button in the setup guide. Your theme editor opens on your product template with the Notify me block already added. Move it where you want it, usually just under the price or the Add to cart button, and save.",
+    guide: { href: "/guide/add-notify-me-block/", label: "how to add the Notify me block to your theme" },
   },
   {
     title: "Test the button on a sold-out product",
     body: "Open a product with a sold-out variant, choose that variant and sign up with your own email. You’ll get a confirmation email and the waitlist appears in Waitly. When that variant is restocked, you’ll get the alert too.",
+    guide: { href: "/guide/test-notify-me/", label: "how to test Notify me on a sold-out product" },
   },
 ];
 
@@ -89,7 +92,7 @@ export default function SetupPage() {
         <Container className="grid grid-cols-1 gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <div>
             <h1 className="text-d1 font-bold tracking-[-0.03em]">
-              Set up in two steps, no code
+              Set up Waitly in two steps, no code
             </h1>
             <p className="mt-6 max-w-[34rem] text-lead text-ink/80">
               Waitly uses Shopify’s theme app blocks, so it works with any Online Store 2.0 theme.
@@ -119,6 +122,9 @@ export default function SetupPage() {
                 <div>
                   <h2 className="text-[1.375rem] font-semibold tracking-[-0.01em]">{step.title}</h2>
                   <p className="mt-2 text-ink/80">{step.body}</p>
+                  <p className="mt-2 text-[0.9375rem] text-ink/80">
+                    Full steps with screenshots: <TextLink href={step.guide.href}>{step.guide.label}</TextLink>
+                  </p>
                 </div>
               </li>
             ))}
@@ -164,12 +170,20 @@ export default function SetupPage() {
             </tbody>
           </table>
         </div>
+        <p className="mt-6 max-w-3xl text-ink/80">
+          The guide has the steps for each one:{" "}
+          <TextLink href="/guide/add-notify-me-block/">the Notify me block</TextLink>,{" "}
+          <TextLink href="/guide/add-preorder-block/">the Pre-order block</TextLink>,{" "}
+          <TextLink href="/guide/coming-soon-block-and-fields/">the Coming soon form</TextLink> and{" "}
+          <TextLink href="/guide/add-voting-block/">the Product voting block</TextLink>.
+        </p>
         <div className="mt-16 space-y-14">
           <Explainer title="A built-in connection check">
             <p>
               Waitly checks that it can reach your storefront. If it can’t, Settings says so plainly,
               “Waitly could not confirm the connection to your storefront”, so you’re not left
-              guessing why signups aren’t arriving.
+              guessing why signups aren’t arriving. See how to{" "}
+              <TextLink href="/guide/check-storefront-connection/">check the storefront connection</TextLink>.
             </p>
           </Explainer>
           <Explainer title="Light on your pages">
@@ -180,12 +194,14 @@ export default function SetupPage() {
           </Explainer>
           <Explainer title="Then make it yours">
             <p>
-              Once the button works, open Waitly’s settings to add your logo and brand color to emails,
-              set your sender name, and adjust the notification rules.
+              Once the button works, open Waitly’s settings to{" "}
+              <TextLink href="/guide/brand-your-emails/">add your logo and brand color to emails</TextLink>,
+              set your sender name, and adjust the{" "}
+              <TextLink href="/guide/notification-rules/">alert and attribution rules</TextLink>.
             </p>
             <p>
               <CtaLink href="/features/back-in-stock/" variant="quiet" className="mt-2">
-                See every setting
+                See every back in stock setting
               </CtaLink>
             </p>
           </Explainer>

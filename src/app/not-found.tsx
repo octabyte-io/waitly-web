@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import { Container, CtaLink } from "@/components/site/primitives";
 import { DotQueue } from "@/components/demos/dot-queue";
+
+/** Its own title, so a missing page never reads as the home page. Next.js marks a 404 noindex too. */
+export const metadata: Metadata = {
+  title: "Page not found",
+  description:
+    "This page isn’t on the Waitly site. The link may be old or the page may have moved. Start from the home page, or see what Waitly does for sold-out products.",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

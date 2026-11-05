@@ -4,7 +4,9 @@ export const article: GuideArticle = {
   slug: "find-your-way-around",
   section: "getting-started",
   title: "Find your way around",
+  metaTitle: "Find your way around the Waitly app",
   summary: "Learn what’s on Waitly’s Home page and where each page in the Waitly menu takes you.",
+  updated: "2026-11-05",
   before: ["Waitly is installed."],
   steps: [
     {
@@ -128,4 +130,5 @@ export const article: GuideArticle = {
     },
   ],
   related: ["add-notify-me-block", "see-whos-waiting", "analytics-overview"],
+  useCases: ["how-much-to-reorder-after-selling-out"],
 };

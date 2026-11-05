@@ -8,6 +8,7 @@ import {
   PlanBadge,
   SectionHeading,
   SettingList,
+  TextLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { GuideLinks } from "@/components/guide/guide-links";
@@ -45,7 +46,7 @@ export default function PreordersPage() {
     <>
       <JsonLd data={webPageJsonLd(pages.preorders)} />
       <PageHero
-        title="Keep selling while the next batch is on its way"
+        title="Shopify preorders that sell while you restock"
         intro="Waitly adds a Pre-order panel to the product page for the products you choose, and your theme’s own Add to cart and Buy it now buttons keep selling. Shoppers pay in full at checkout, and Shopify holds the order until you ship."
         aside={
           <ProductFrame
@@ -81,6 +82,22 @@ export default function PreordersPage() {
               preorder is paid in full, at the normal price.
             </p>
           </Explainer>
+          <Explainer title="Preorder, backorder or waitlist?">
+            <p>
+              Shopify’s own setting to{" "}
+              <TextLink href="/use-cases/continue-selling-when-out-of-stock/">
+                continue selling when out of stock
+              </TextLink>{" "}
+              is one answer, a preorder is another, and a waitlist is a third. For a product you make
+              after it’s ordered, see{" "}
+              <TextLink href="/use-cases/made-to-order-production-time/">
+                how to show the production time on made-to-order products
+              </TextLink>
+              . For products you don’t sell on preorder, Waitly’s{" "}
+              <TextLink href="/features/back-in-stock/">back in stock alerts</TextLink> collect emails
+              instead.
+            </p>
+          </Explainer>
           <Explainer title="Order tags for your team">
             <p>
               Every order that contains a preorder is tagged{" "}
@@ -90,6 +107,13 @@ export default function PreordersPage() {
             <p className="flex flex-wrap items-center gap-2">
               Add your own tag per policy too, like <code className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9375rem] ring-1 ring-ink/10">winter-drop</code>.
               Waitly adds tags but never removes one. <PlanBadge level="growth" />
+            </p>
+            <p>
+              The guide covers{" "}
+              <TextLink href="/guide/preorder-message-and-ship-estimate/">
+                adding a preorder message, a ship estimate and an order tag
+              </TextLink>
+              .
             </p>
           </Explainer>
           <Explainer title="Track what’s owed">
@@ -101,7 +125,9 @@ export default function PreordersPage() {
             <p>
               Under the status, a line shows what the shopper has been told: Delay notice sent, or
               Agreed to wait. A second badge marks what needs you: Waiting for the shopper, Reaches 30
-              days, or Refund due when Shopify couldn’t make a refund.
+              days, or Refund due when Shopify couldn’t make a refund. See{" "}
+              <TextLink href="/guide/manage-preorders/">how to track and manage preorders</TextLink>, and{" "}
+              <TextLink href="/features/analytics/">preorder volume in demand analytics</TextLink>.
             </p>
           </Explainer>
         </div>
@@ -161,6 +187,13 @@ export default function PreordersPage() {
             },
           ]}
         />
+        <p className="mt-10 max-w-3xl text-ink/80">
+          Step by step:{" "}
+          <TextLink href="/guide/create-preorder-policy/">create a preorder policy</TextLink>,{" "}
+          <TextLink href="/guide/preorder-rules/">choose products by tag, collection or variant, with exceptions</TextLink>,{" "}
+          <TextLink href="/guide/add-preorder-block/">add the Pre-order block to your theme</TextLink>, or{" "}
+          <TextLink href="/guide/preorder-from-product-page/">manage preorders from a Shopify product page</TextLink>.
+        </p>
       </Band>
 
       <Band tone="paper">
@@ -186,6 +219,15 @@ export default function PreordersPage() {
               Cap how many units a policy can sell, counting all variants of a product together. When
               the cap is reached, preorder stops for that product. A cancelled or refunded unit is
               given back, so the cap always reflects what you actually owe.
+            </p>
+            <p>
+              See how to{" "}
+              <TextLink href="/guide/preorder-timing-and-limits/">set when preorder runs and how many</TextLink>,
+              and{" "}
+              <TextLink href="/use-cases/preorder-window-and-limit/">
+                how to run a Shopify preorder with a closing date and a unit limit
+              </TextLink>
+              .
             </p>
           </Explainer>
         </div>
@@ -254,7 +296,8 @@ export default function PreordersPage() {
             <p>
               The receipt links to a Keep or cancel page on your store. A shopper can cancel a
               preorder that hasn’t shipped, and Waitly refunds that line in full through Shopify
-              straight away. No approval step, and the rest of the order is untouched.
+              straight away. No approval step, and the rest of the order is untouched. Here is{" "}
+              <TextLink href="/guide/shopper-cancels-preorder/">what the shopper sees when they keep or cancel a preorder</TextLink>.
             </p>
           </Explainer>
           <Explainer title="Told when a date moves">
@@ -267,6 +310,14 @@ export default function PreordersPage() {
             <p>
               A preorder with no ship estimate is promised within 30 days of the order, and is told so
               in its receipt.
+            </p>
+            <p>
+              How to{" "}
+              <TextLink href="/guide/change-ship-date/">change a ship date and notify shoppers</TextLink>, and{" "}
+              <TextLink href="/use-cases/preorder-shipping-delay/">
+                what to tell customers when a preorder ships late
+              </TextLink>
+              .
             </p>
           </Explainer>
           <Explainer title="Agree to wait, or get a refund">

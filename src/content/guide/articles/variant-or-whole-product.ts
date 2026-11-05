@@ -5,6 +5,7 @@ export const article: GuideArticle = {
   section: "back-in-stock",
   title: "Wait for a variant or the whole product",
   summary: "Choose whether shoppers wait for the exact size or color they picked, or for any variant of the product.",
+  updated: "2026-11-05",
   before: ["The Notify me block is on your product page."],
   steps: [
     {

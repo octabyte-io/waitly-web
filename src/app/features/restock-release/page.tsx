@@ -9,6 +9,7 @@ import {
   SectionHeading,
   SettingList,
   CtaLink,
+  TextLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { GuideLinks } from "@/components/guide/guide-links";
@@ -49,7 +50,7 @@ export default function RestockReleasePage() {
     <>
       <JsonLd data={webPageJsonLd(pages.restockRelease)} />
       <PageHero
-        title="Decide who hears first when stock comes back"
+        title="Waitlist priority: who hears first when stock comes back"
         intro="Ten units and forty people waiting is a good problem, but emailing everyone at once turns it into a race. Waitly Pro lets you put your best customers first and release stock at a pace you choose."
       >
         <InstallLink />
@@ -85,7 +86,14 @@ export default function RestockReleasePage() {
               you have plenty of stock for the size of the list. Whoever opens the email first gets
               it.
             </p>
-            <p>This is how Waitly works on Free and Growth.</p>
+            <p>
+              This is how Waitly works on Free and Growth. If a small restock keeps selling out before
+              most of the list can buy, read{" "}
+              <TextLink href="/use-cases/restock-sells-out-before-waitlist/">
+                what to do when a restock sells out before your waitlist can buy
+              </TextLink>
+              .
+            </p>
           </Explainer>
           <Explainer title="In batches" level="pro">
             <p>
@@ -100,6 +108,10 @@ export default function RestockReleasePage() {
                 { name: "Most batches", detail: "The last batch alerts everyone still waiting.", value: "2 to 10, default 5" },
               ]}
             />
+            <p>
+              Step by step:{" "}
+              <TextLink href="/guide/release-in-batches/">send restock alerts in batches</TextLink>.
+            </p>
           </Explainer>
           <Explainer title="Reserve for the first shoppers" level="pro">
             <p>
@@ -117,6 +129,10 @@ export default function RestockReleasePage() {
               Holds are made as Shopify draft orders that reserve inventory, so they show up in your
               admin like any other reservation. This mode asks for one extra Shopify permission to
               create draft orders, which you grant when you turn it on.
+            </p>
+            <p>
+              Step by step:{" "}
+              <TextLink href="/guide/reserve-units/">hold a unit for the first shoppers in line</TextLink>.
             </p>
           </Explainer>
         </div>
@@ -162,6 +178,15 @@ export default function RestockReleasePage() {
               Every rule starts switched off. Switching one on or off reorders the line straight away,
               including shoppers already waiting, as long as they joined while your store was on Pro.
             </p>
+            <p className="mt-4 text-ink/80">
+              How to{" "}
+              <TextLink href="/guide/waitlist-priority/">set up waitlist priority rules</TextLink>, and why
+              you might{" "}
+              <TextLink href="/use-cases/vip-first-on-restock/">
+                give VIP customers the first chance at a restock
+              </TextLink>
+              .
+            </p>
           </div>
           <div className="lg:pt-24">
             <h3 className="text-d3 font-bold tracking-[-0.02em]">Tell shoppers their place</h3>
@@ -201,9 +226,11 @@ export default function RestockReleasePage() {
             <p>
               Priority and release settings are set once for the whole store, so there is nothing to
               configure per product or variant. Release settings take effect from the next restock.
+              Shoppers join the line through the Notify me button of{" "}
+              <TextLink href="/features/back-in-stock/">Waitly’s back in stock alerts</TextLink>.
             </p>
             <CtaLink href="/features/analytics/" variant="quiet" className="mt-2">
-              See how results are measured
+              See how demand analytics measures results
             </CtaLink>
           </Explainer>
         </div>

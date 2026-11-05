@@ -123,7 +123,7 @@ export const post: UseCasePost = {
       heading: "On Pro: a Demand Score and a suggested restock",
       voice: "waitly",
       blocks: [
-        "On the Pro plan, Waitly rates how strongly shoppers want an item from 0 to 100 and names the band: **Low** (0–29), **Medium** (30–49), **High** (50–69), **Very high** (70–84) or **Critical** (85–100). It weighs, from most to least: shoppers waiting, units preordered in the last 90 days, sales per day while in stock, restocks in the last 90 days, whether signups are growing, how many shoppers bought after an alert, and shoppers who came back to wait again.",
+        "On the Pro plan, Waitly’s [demand analytics](/features/analytics/) rates how strongly shoppers want an item from 0 to 100 and names the band: **Low** (0–29), **Medium** (30–49), **High** (50–69), **Very high** (70–84) or **Critical** (85–100). It weighs, from most to least: shoppers waiting, units preordered in the last 90 days, sales per day while in stock, restocks in the last 90 days, whether signups are growing, how many shoppers bought after an alert, and shoppers who came back to wait again.",
         "Next to the score is one line, **What to do**. For a sold-out item it runs from **Restock now.** at Critical to **No action needed.** at Low.",
         "**Suggested restock** estimates how many units to order. Waitly adds up the waiting shoppers likely to buy, preordered units not shipped yet, and 30 days of sales at the pace the product sells while in stock. Then it takes off the stock you have now and rounds up. Those are the two corrections from the by-hand method: sales are measured over in-stock time, and the waitlist is discounted before it’s added.",
         "How many waiting shoppers are likely to buy comes from the product’s own alerts once it has sent 20, or from your whole store’s once it has sent 100. Until Waitly has seen enough, it says **Not enough data yet** instead of guessing. If your stock already covers the demand, it says **Covered by stock**.",
@@ -197,7 +197,7 @@ export const post: UseCasePost = {
     },
     {
       q: "Do I need the Pro plan to use the waitlist for reordering?",
-      a: "No. The count of shoppers waiting for each variant is on every plan, including Free, and you can do the rest of the sum by hand. Pro adds the Demand Score, the suggested restock and the planner. See [pricing](/pricing/).",
+      a: "No. The count of shoppers waiting for each variant is on every plan, including Free, and you can do the rest of the sum by hand. Pro adds the Demand Score, the suggested restock and the planner. See [what each Waitly plan includes](/pricing/).",
     },
   ],
   related: ["restock-sells-out-before-waitlist", "sold-out-variants-shopify"],

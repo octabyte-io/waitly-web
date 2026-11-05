@@ -4,8 +4,10 @@ export const article: GuideArticle = {
   slug: "analytics-overview",
   section: "analytics",
   title: "Read your analytics",
+  metaTitle: "Read your Waitly analytics",
   summary:
     "See how many shoppers are waiting, what your alerts recovered, and how the rest of the demand ended.",
+  updated: "2026-11-05",
   before: ["At least one shopper has joined a waitlist. Until then, Analytics shows only a setup message."],
   steps: [
     {

@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Export a waitlist as CSV",
   summary:
     "Download everyone on a waitlist, or just the shoppers you’ve filtered to, as a spreadsheet.",
+  updated: "2026-11-05",
   level: "growth",
   before: [
     "You’re on the Growth or Pro plan.",
@@ -94,4 +95,5 @@ export const article: GuideArticle = {
     },
   ],
   related: ["see-whos-waiting", "remove-a-shopper", "choose-a-plan"],
+  useCases: ["back-in-stock-email-conversion-rate"],
 };

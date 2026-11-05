@@ -6,6 +6,9 @@ export const article: GuideArticle = {
   title: "Turn a winning proposal into a product",
   summary:
     "Promote a proposal to a new Shopify product, or link it to one you already have, so every voter hears when it launches.",
+  about:
+    "What the feature does: [product voting for Shopify](/features/coming-soon/#voting).",
+  updated: "2026-11-05",
   level: "pro",
   before: [
     "Your store is on the Pro plan.",

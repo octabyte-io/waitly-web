@@ -1,5 +1,5 @@
 import { Check, Minus } from "lucide-react";
-import { Band, Container, Explainer, SectionHeading } from "@/components/site/primitives";
+import { Band, Container, Explainer, SectionHeading, TextLink } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { FaqList } from "@/components/sections/faq-list";
 import { PlanColumns } from "@/components/sections/plan-columns";
@@ -22,9 +22,13 @@ export default function PricingPage() {
             Pay for Waitly when it’s paying you back
           </h1>
           <p className="mt-6 max-w-2xl text-lead text-ink/80">
-            Every plan includes Notify me, automatic restock alerts and preorders. Paid plans add
-            reporting, branding and control over who gets stock first. Prices are in US dollars and
-            billed monthly on your Shopify invoice.
+            Every plan includes{" "}
+            <TextLink href="/features/back-in-stock/">Notify me and automatic restock alerts</TextLink> and{" "}
+            <TextLink href="/features/preorders/">preorders paid in full at checkout</TextLink>. Paid plans
+            add <TextLink href="/features/analytics/">reporting on what alerts recover</TextLink>, branding
+            and <TextLink href="/features/restock-release/">control over who gets stock first</TextLink>, and
+            Pro adds <TextLink href="/features/coming-soon/">Coming Soon products and product voting</TextLink>.
+            Prices are in US dollars and billed monthly on your Shopify invoice.
           </p>
           <PlanColumns className="mt-14" />
         </Container>
@@ -95,7 +99,9 @@ export default function PricingPage() {
               <strong>Restock alerts</strong> are the emails sent to waiting shoppers when stock returns. <strong>Preorders</strong> are counted per order line: each
               product on an order placed through a Waitly preorder policy uses one, whatever its
               quantity. Signup confirmations have their own, much higher safety cap that
-              ordinary stores never reach.
+              ordinary stores never reach. See{" "}
+              <TextLink href="/guide/allowances-and-usage/">how to track your monthly allowances</TextLink>{" "}
+              in Waitly.
             </p>
           </Explainer>
           <Explainer title="Reaching a limit">
@@ -109,7 +115,8 @@ export default function PricingPage() {
           <Explainer title="Trials and changes">
             <p>
               Growth and Pro start with a 14-day free trial. Upgrade, downgrade or cancel whenever you
-              like from Shopify. If you move down a plan, your settings and waitlists are kept.
+              like from Shopify. If you move down a plan, your settings and waitlists are kept. Here is{" "}
+              <TextLink href="/guide/choose-a-plan/">how to choose or change your Waitly plan</TextLink>.
             </p>
           </Explainer>
         </div>

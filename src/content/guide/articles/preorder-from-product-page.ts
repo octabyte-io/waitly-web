@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Manage preorder from a Shopify product page",
   summary:
     "Add a product or variant to a policy, start a new policy, turn a policy on or off, or take a product out, without leaving the product in Shopify.",
+  updated: "2026-11-05",
   before: ["Waitly is installed. Preorders are on every plan."],
   steps: [
     {
@@ -110,4 +111,5 @@ export const article: GuideArticle = {
     },
   ],
   related: ["create-preorder-policy", "preorder-rules", "turn-off-or-delete-policy"],
+  useCases: ["continue-selling-when-out-of-stock", "made-to-order-production-time"],
 };

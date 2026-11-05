@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "waitlist-priority",
   section: "restock-release",
   title: "Put VIPs first with waitlist priority",
+  metaTitle: "Set waitlist priority rules in Waitly",
   summary:
     "Choose which shoppers hear about a restock first, and see each shopper’s place in line on the waitlist.",
+  metaDescription:
+    "Choose which shoppers Waitly alerts first about a restock, such as VIPs or top spenders, and see each shopper’s place in line on the waitlist. Needs Pro.",
+  updated: "2026-11-05",
   level: "pro",
   before: [
     "Your store is on the Pro plan.",
@@ -117,7 +121,7 @@ export const article: GuideArticle = {
     },
     {
       q: "Does priority take anyone off the waitlist?",
-      a: "No. Priority only decides the order. It matters most when you also release in batches or reserve units, where the first shoppers in line get the first chance to buy.",
+      a: "No. Priority only decides the order. It matters most when you also [release in batches](/guide/release-in-batches/) or [reserve units](/guide/reserve-units/), where the first shoppers in line get the first chance to buy.",
     },
   ],
   related: ["release-in-batches", "reserve-units", "see-whos-waiting"],

@@ -1,22 +1,12 @@
-import { Fragment } from "react";
+import { Inline, plainInline } from "@/lib/inline";
 
-/** Plain text with `**bold**` for the names of buttons, pages and settings. */
+/**
+ * Plain text with `**bold**` for the names of buttons, pages and settings,
+ * and `[label](/path/)` for a link. The same markup as use-case posts.
+ */
 export function RichText({ text }: { text: string }) {
-  const parts = text.split(/\*\*(.+?)\*\*/g);
-  return (
-    <>
-      {parts.map((part, i) =>
-        i % 2 === 1 ? (
-          <strong key={i} className="font-semibold text-ink">
-            {part}
-          </strong>
-        ) : (
-          <Fragment key={i}>{part}</Fragment>
-        ),
-      )}
-    </>
-  );
+  return <Inline text={text} />;
 }
 
-/** The same text with the markers stripped, for alt text, metadata and llms.txt. */
-export const plainText = (text: string) => text.replace(/\*\*(.+?)\*\*/g, "$1");
+/** The same text with the markup stripped, for alt text, metadata and llms.txt. */
+export const plainText = plainInline;

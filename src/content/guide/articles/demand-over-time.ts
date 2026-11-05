@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "See demand over time",
   summary:
     "Chart new signups and open demand by day or week, and read the same figures as a table.",
+  updated: "2026-11-05",
   level: "pro",
   before: ["You’re on the Pro plan.", "Shoppers have been joining your waitlists."],
   steps: [

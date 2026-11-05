@@ -9,6 +9,7 @@ import {
   SectionHeading,
   SettingList,
   CtaLink,
+  TextLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { GuideLinks } from "@/components/guide/guide-links";
@@ -23,7 +24,7 @@ export default function BackInStockPage() {
     <>
       <JsonLd data={webPageJsonLd(pages.backInStock)} />
       <PageHero
-        title="A Notify me button on every sold-out variant"
+        title="Shopify back in stock alerts on every sold-out variant"
         intro="When a size or color runs out, the Add to cart button can’t help. Waitly’s Notify me block appears on the page, collects an email, and sends an alert when Shopify says it’s back."
         aside={
           <ProductFrame
@@ -60,6 +61,25 @@ export default function BackInStockPage() {
             <p>
               <strong>The whole product</strong> suits items where any variant will do, like a
               candle in a few scents. The shopper is emailed when any variant comes back.
+            </p>
+            <p>
+              The guide shows how to{" "}
+              <TextLink href="/guide/variant-or-whole-product/">choose between a variant and the whole product</TextLink>{" "}
+              on the block.
+            </p>
+          </Explainer>
+          <Explainer title="Before you choose an app">
+            <p>
+              Read{" "}
+              <TextLink href="/use-cases/back-in-stock-notifications-shopify/">
+                how to send back in stock notifications on Shopify
+              </TextLink>
+              , with an app, without one, or not at all. If you’re deciding what a sold-out size should
+              look like, see{" "}
+              <TextLink href="/use-cases/sold-out-variants-shopify/">
+                whether to hide sold-out variants or let shoppers ask for them
+              </TextLink>
+              .
             </p>
           </Explainer>
           <Explainer title="Consent, built in">
@@ -109,6 +129,11 @@ export default function BackInStockPage() {
                 },
               ]}
             />
+            <p className="mt-8 text-ink/80">
+              Step by step:{" "}
+              <TextLink href="/guide/add-notify-me-block/">add the Notify me block to your theme</TextLink>, then{" "}
+              <TextLink href="/guide/customize-notify-me-block/">change the Notify me block’s words and style</TextLink>.
+            </p>
           </div>
           <div className="space-y-6 lg:pt-4">
             <ProductFrame title="Harbor overshirt" price="$68.00" compact>
@@ -131,7 +156,8 @@ export default function BackInStockPage() {
             <h3 className="text-[1.25rem] font-bold">No button to press</h3>
             <p className="mt-2 text-paper/75">
               Receive stock the way you already do, in Shopify admin, an inventory app or your
-              warehouse sync. Waitly hears about it either way.
+              warehouse sync. Waitly hears about it either way. See{" "}
+              <TextLink href="/guide/how-restock-alerts-work/">how Waitly sends restock alerts</TextLink>.
             </p>
           </div>
           <div>
@@ -141,14 +167,16 @@ export default function BackInStockPage() {
               first, and release stock in batches or as held units.
             </p>
             <CtaLink href="/features/restock-release/" variant="secondary" className="mt-5 h-10 px-4 text-[0.9375rem]">
-              Restock release
+              Restock release and waitlist priority
             </CtaLink>
           </div>
           <div>
             <h3 className="text-[1.25rem] font-bold">Stops at your limit</h3>
             <p className="mt-2 text-paper/75">
-              If a cycle’s restock alert allowance runs out, further alerts are held back rather than
-              sent, and shoppers stay on the list. You’re warned at 80%.
+              If a cycle’s{" "}
+              <TextLink href="/guide/allowances-and-usage/">restock alert allowance</TextLink> runs out,
+              further alerts are held back rather than sent, and shoppers stay on the list. You’re
+              warned at 80%.
             </p>
           </div>
         </div>
@@ -176,6 +204,11 @@ export default function BackInStockPage() {
                 },
               ]}
             />
+            <p className="mt-8 text-ink/80">
+              In the guide:{" "}
+              <TextLink href="/guide/brand-your-emails/">add your logo and brand color to Waitly emails</TextLink>{" "}
+              and <TextLink href="/guide/customize-email-text/">edit the back in stock email text</TextLink>.
+            </p>
           </div>
           <div className="space-y-6">
             <EmailMock
@@ -268,6 +301,16 @@ export default function BackInStockPage() {
             },
           ]}
         />
+        <p className="mt-10 max-w-3xl text-ink/80">
+          How to{" "}
+          <TextLink href="/guide/notification-rules/">set alert limits and attribution rules</TextLink> and{" "}
+          <TextLink href="/guide/data-retention/">choose how long to keep waitlist demand</TextLink>. To see
+          what alerts bring back, read{" "}
+          <TextLink href="/use-cases/back-in-stock-email-conversion-rate/">
+            how to measure a back in stock email conversion rate
+          </TextLink>{" "}
+          and Waitly’s <TextLink href="/features/analytics/">waitlist demand analytics</TextLink>.
+        </p>
       </Band>
 
       <Band tone="paper">
@@ -281,11 +324,16 @@ export default function BackInStockPage() {
           <Explainer title="Waitlists you can act on" className="md:grid-cols-1">
             <p>
               Every product and variant with shoppers waiting gets its own waitlist in Waitly: who’s in
-              line, when they joined, and what they asked for. Remove a shopper by hand if you need to.
+              line, when they joined, and what they asked for.{" "}
+              <TextLink href="/guide/remove-a-shopper/">Remove a shopper from a waitlist</TextLink> by hand if
+              you need to.
             </p>
             <p className="flex flex-wrap items-center gap-2">
-              Export any waitlist as CSV, and tag customers an alert brought back with{" "}
-              <code className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9375rem] ring-1 ring-ink/10">waitly-recovered</code>.
+              <span>
+                <TextLink href="/guide/export-waitlist/">Export any waitlist as CSV</TextLink>, and{" "}
+                <TextLink href="/guide/tag-recovered-customers/">tag customers an alert brought back</TextLink> with{" "}
+                <code className="rounded bg-white/75 px-1.5 py-0.5 text-[0.9375rem] ring-1 ring-ink/10">waitly-recovered</code>.
+              </span>
               <PlanBadge level="growth" />
             </p>
           </Explainer>

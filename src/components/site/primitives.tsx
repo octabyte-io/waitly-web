@@ -142,6 +142,18 @@ export function InstallLink({
   );
 }
 
+/** A link inside running text, underlined in the signal color. */
+export function TextLink({ href, className, children }: { href: string; className?: string; children: ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className={cn("font-semibold underline decoration-signal decoration-2 underline-offset-4 hover:decoration-current", className)}
+    >
+      {children}
+    </Link>
+  );
+}
+
 /** Marks a feature that needs a paid plan. Free features carry no badge. */
 export function PlanBadge({ level, className }: { level: Level; className?: string }) {
   if (level === "free") return null;

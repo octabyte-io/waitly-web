@@ -10,6 +10,19 @@ const absolute = (path: string) => new URL(path, siteConfig.url).toString();
 export const ogImageName = (page: PageEntry) =>
   `${page.ogName ?? (page.path === "/" ? "home" : page.path.split("/").filter(Boolean).at(-1))}.png`;
 
+/** The page's title tag text: its `metaTitle`, or its short name. */
+export const seoTitle = (page: PageEntry) => page.metaTitle ?? page.title;
+
+/**
+ * The `title` for a page's metadata. The layout's template adds " | Waitly";
+ * the home page, and a title that already names Waitly, skip it so the name
+ * isn't said twice.
+ */
+const metadataTitle = (page: PageEntry): Metadata["title"] => {
+  const title = seoTitle(page);
+  return page.path === "/" || title.includes(siteConfig.name) ? { absolute: title } : title;
+};
+
 /** When an article was first published and last changed, as YYYY-MM-DD. */
 export type ArticleDates = { published: string; modified: string };
 
@@ -22,7 +35,6 @@ export type ArticleDates = { published: string; modified: string };
  * for a dated post, so it is shared as an article with its dates.
  */
 export function pageMetadata(page: PageEntry, article?: ArticleDates): Metadata {
-  const isHome = page.path === "/";
   const image = {
     url: `/og/${ogImageName(page)}`,
     width: ogSize.width,
@@ -30,7 +42,7 @@ export function pageMetadata(page: PageEntry, article?: ArticleDates): Metadata 
     alt: page.headline ?? page.title,
   };
   return {
-    title: isHome ? { absolute: page.title } : page.title,
+    title: metadataTitle(page),
     description: page.description,
     alternates: { canonical: page.path },
     // Allow large image previews and full-length snippets in search and AI answers.
@@ -61,6 +73,7 @@ export const organizationJsonLd = {
   "@type": "Organization",
   "@id": ids.organization,
   name: siteConfig.company,
+  url: siteConfig.companyUrl,
   logo: absolute("/brand/waitly-mark-512.png"),
   email: siteConfig.supportEmail,
   contactPoint: {
@@ -123,7 +136,7 @@ export function webPageJsonLd(page: PageEntry, type: string = "WebPage", parents
     "@type": type,
     "@id": url,
     url,
-    name: page.title,
+    name: seoTitle(page),
     description: page.description,
     inLanguage: "en",
     isPartOf: { "@id": ids.website },

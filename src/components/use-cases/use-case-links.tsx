@@ -3,6 +3,15 @@ import { ArrowRight } from "lucide-react";
 import { Band, SectionHeading } from "@/components/site/primitives";
 import { SceneThumb } from "./scene-cover";
 import { postPath, postsForFeature, postsForGuide, type FeatureKey } from "@/content/use-cases";
+import { cn } from "@/lib/utils";
+
+/**
+ * A card's link covers the whole card, but only the post title is inside the
+ * <a>, so the link's text is the title and not the words in the mock.
+ * Give the overlay the card's corner radius alongside this.
+ */
+export const STRETCHED =
+  "after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:outline-3 focus-visible:after:outline-offset-3 focus-visible:after:outline-ink";
 
 /** The use-case posts about one feature, listed near the foot of its feature page. */
 export function UseCaseLinks({ features }: { features: FeatureKey[] }) {
@@ -16,20 +25,23 @@ export function UseCaseLinks({ features }: { features: FeatureKey[] }) {
       />
       <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
-          <li key={post.slug}>
-            <Link
-              href={postPath(post.slug)}
-              className="group block h-full glass-thin rounded-2xl p-4 transition-colors hover:bg-white/80"
-            >
-              <SceneThumb scene={post.cover} zoom={0.6} />
-              <span className="mt-4 flex items-start justify-between gap-3 px-1">
-                <span>
-                  <span className="font-semibold group-hover:underline">{post.title}</span>
-                  <span className="mt-1 block text-[0.9375rem] text-ink-soft">{post.summary}</span>
-                </span>
-                <ArrowRight aria-hidden="true" className="mt-1 size-4 shrink-0 text-ink-soft" />
-              </span>
-            </Link>
+          <li
+            key={post.slug}
+            className="group relative h-full glass-thin rounded-2xl p-4 transition-colors hover:bg-white/80"
+          >
+            <SceneThumb scene={post.cover} zoom={0.6} />
+            <div className="mt-4 flex items-start justify-between gap-3 px-1">
+              <div>
+                <Link
+                  href={postPath(post.slug)}
+                  className={cn("font-semibold group-hover:underline", STRETCHED, "after:rounded-2xl")}
+                >
+                  {post.title}
+                </Link>
+                <p className="mt-1 text-[0.9375rem] text-ink-soft">{post.summary}</p>
+              </div>
+              <ArrowRight aria-hidden="true" className="mt-1 size-4 shrink-0 text-ink-soft" />
+            </div>
           </li>
         ))}
       </ul>
@@ -46,15 +58,18 @@ export function UseCasesForGuide({ guide, className }: { guide: string; classNam
       <h2 className="text-d3 font-semibold tracking-[-0.02em]">Where this helps</h2>
       <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
         {posts.map((post) => (
-          <li key={post.slug}>
+          <li
+            key={post.slug}
+            className="relative h-full glass-thin rounded-2xl p-4 transition-colors hover:bg-white/80"
+          >
+            <SceneThumb scene={post.cover} zoom={0.6} />
             <Link
               href={postPath(post.slug)}
-              className="block h-full glass-thin rounded-2xl p-4 transition-colors hover:bg-white/80"
+              className={cn("mt-4 block px-1 font-semibold", STRETCHED, "after:rounded-2xl")}
             >
-              <SceneThumb scene={post.cover} zoom={0.6} />
-              <span className="mt-4 block px-1 font-semibold">{post.title}</span>
-              <span className="mt-1 block px-1 text-[0.9375rem] text-ink-soft">{post.summary}</span>
+              {post.title}
             </Link>
+            <p className="mt-1 px-1 text-[0.9375rem] text-ink-soft">{post.summary}</p>
           </li>
         ))}
       </ul>

@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Choose how long to keep demand",
   summary:
     "Set how long Waitly keeps waitlist signups that have gone quiet or ended, from 30 to 365 days.",
+  updated: "2026-11-05",
   before: ["Waitly is installed. This setting is on every plan."],
   steps: [
     {

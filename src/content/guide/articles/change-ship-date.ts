@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "change-ship-date",
   section: "preorders",
   title: "Change a ship date and notify shoppers",
+  metaTitle: "Change a preorder ship date in Waitly",
   summary:
     "Move a policy’s ship estimate later, see who will be told before you save, and let Waitly send the delay notices.",
+  metaDescription:
+    "Move a Waitly policy’s ship estimate later, see which shoppers will be told before you save, and let Waitly send the delay notices. Needs Growth or Pro.",
+  updated: "2026-11-05",
   level: "growth",
   before: [
     "You’re on the Growth or Pro plan.",
@@ -129,7 +133,7 @@ export const article: GuideArticle = {
   faqs: [
     {
       q: "What if the ship date passes and I don’t change it?",
-      a: "The day after it passes, Waitly sends a late notice to every shopper whose preorder hasn’t shipped, and asks those still waiting to keep or cancel. Set a new estimate to tell them when it ships.",
+      a: "The day after it passes, Waitly sends a late notice to every shopper whose preorder hasn’t shipped, and asks those still waiting to keep or cancel. Set a new estimate to tell them when it ships. For what to say, see [what to tell customers when a preorder ships late](/use-cases/preorder-shipping-delay/).",
     },
     {
       q: "Does a shopper who agreed to wait get asked again?",

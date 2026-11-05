@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Track your monthly allowances",
   summary:
     "See how many restock alerts and preorders you’ve used this billing cycle, and what happens when one runs out.",
+  updated: "2026-11-05",
   before: ["Waitly is installed."],
   steps: [
     {

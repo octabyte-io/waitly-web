@@ -104,7 +104,7 @@ export const post: UseCasePost = {
       heading: "With Waitly: the sold-out size takes signups",
       voice: "waitly",
       blocks: [
-        "Waitly adds a **Notify me when available** block to your product page. The form shows only while the variant the shopper has chosen is sold out: it tracks inventory, has none left, and isn’t set to keep selling. When they switch to a size that’s in stock, the form hides again.",
+        "Waitly’s [back in stock alerts](/features/back-in-stock/) add a **Notify me when available** block to your product page. The form shows only while the variant the shopper has chosen is sold out: it tracks inventory, has none left, and isn’t set to keep selling. When they switch to a size that’s in stock, the form hides again.",
         "The shopper types their email, ticks **Email me once when this is back in stock.** and presses the button. Waitly records that exact variant and sends a confirmation straight away. When you restock that size, the alert goes out without you pressing anything.",
         "The block leaves your variant picker alone. Your theme still decides whether the sold-out size is crossed out, greyed or labelled. The one thing Waitly needs is that the shopper can select it. If the options they pick don’t match any variant, the block shows “Choose your options to see availability.” instead of the form.",
       ],
@@ -191,5 +191,5 @@ export const post: UseCasePost = {
       a: "Yes, if you set **What a shopper waits for** to **The whole product**. They’re then emailed when any variant comes back. See [Wait for a variant or the whole product](/guide/variant-or-whole-product/).",
     },
   ],
-  related: ["back-in-stock-notifications-shopify", "how-much-to-reorder-after-selling-out"],
+  related: ["back-in-stock-notifications-shopify", "back-in-stock-email-conversion-rate", "how-much-to-reorder-after-selling-out"],
 };

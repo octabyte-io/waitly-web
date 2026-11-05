@@ -5,6 +5,7 @@ export const article: GuideArticle = {
   section: "back-in-stock",
   title: "Check the storefront connection",
   summary: "Confirm that the Notify me block can send signups to Waitly, and fix it when Waitly can’t confirm the connection.",
+  updated: "2026-11-05",
   before: ["Waitly is installed."],
   steps: [
     {
@@ -73,4 +74,5 @@ export const article: GuideArticle = {
     },
   ],
   related: ["add-notify-me-block", "test-notify-me", "notification-rules"],
+  useCases: ["back-in-stock-notifications-shopify"],
 };

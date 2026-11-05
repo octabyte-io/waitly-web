@@ -122,7 +122,7 @@ export const post: UseCasePost = {
       heading: "Send restock alerts in batches",
       voice: "waitly",
       blocks: [
-        "On Pro, under **Settings**, **Restock release**, choose **In batches**. Waitly then alerts a few shoppers at a time, in line order, until the item sells out.",
+        "[Restock release](/features/restock-release/) is on the Pro plan. Under **Settings**, **Restock release**, choose **In batches**. Waitly then alerts a few shoppers at a time, in line order, until the item sells out.",
         {
           type: "list",
           items: [
@@ -226,5 +226,5 @@ export const post: UseCasePost = {
       a: "Not in Waitly. Batch size, the gap between batches and the hold time are set once under **Settings** and apply to every restock.",
     },
   ],
-  related: ["back-in-stock-notifications-shopify", "how-much-to-reorder-after-selling-out"],
+  related: ["vip-first-on-restock", "back-in-stock-notifications-shopify", "how-much-to-reorder-after-selling-out"],
 };

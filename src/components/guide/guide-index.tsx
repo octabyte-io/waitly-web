@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { PlanBadge } from "@/components/site/primitives";
+import { Inline } from "@/lib/inline";
 import type { Level } from "@/content/plans";
 import type { GuideSectionKey } from "@/content/guide/types";
 
@@ -11,6 +12,8 @@ export type IndexSection = {
   key: GuideSectionKey;
   title: string;
   blurb: string;
+  /** One line of inline markup linking the section to its feature page. */
+  about: string;
   articles: { slug: string; title: string; summary: string; level?: Level; text: string }[];
 };
 
@@ -112,6 +115,9 @@ export function GuideIndex({ sections }: { sections: IndexSection[] }) {
             <section key={section.key} id={section.key} className="glass scroll-mt-28 rounded-[1.75rem] p-6 sm:p-8">
               <h2 className="text-d3 font-semibold tracking-[-0.02em]">{section.title}</h2>
               <p className="mt-1.5 text-ink-soft">{section.blurb}</p>
+              <p className="mt-2 text-[0.9375rem] text-ink-soft">
+                <Inline text={section.about} />
+              </p>
               <ul className="mt-5 divide-y divide-line border-t border-line">
                 {section.articles.map((a) => (
                   <li key={a.slug}>

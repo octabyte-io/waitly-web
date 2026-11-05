@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Create a preorder policy",
   summary:
     "Make a policy, choose the products it covers, and turn it on so Shopify offers them as Pre-order.",
+  updated: "2026-11-05",
   before: [
     "Waitly is installed. Preorders are on every plan.",
     "The Pre-order block is on your product page, or you’ll add it right after. Without it, shoppers can’t preorder.",

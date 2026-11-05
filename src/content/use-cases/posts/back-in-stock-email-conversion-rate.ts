@@ -3,7 +3,7 @@ import type { UseCasePost } from "../types";
 export const post: UseCasePost = {
   slug: "back-in-stock-email-conversion-rate",
   title: "Back in stock email conversion rate: what counts, and how to measure yours",
-  metaTitle: "Back in stock email conversion rate: how to measure it",
+  metaTitle: "Measure your back in stock email conversion rate",
   description:
     "A back in stock conversion rate depends on what you divide by, how long you wait and whether refunds count. How to measure your own on Shopify.",
   cardHeadline: "Back in stock email conversion rate, and how to measure it",
@@ -117,7 +117,7 @@ export const post: UseCasePost = {
       heading: "Your conversion rate for each restock, in Waitly",
       voice: "waitly",
       blocks: [
-        "Waitly sends the restock alert by email when a variant shoppers are waiting for comes back, and records what happened. On the **Analytics** page, **Restock alerts** lists each send, newest first: when it went out, the item, how many alerts were **Queued**, and how many the email service accepted as **Delivered**.",
+        "Waitly sends the restock alert by email when a variant shoppers are waiting for comes back, and records what happened in its [back in stock analytics](/features/analytics/). On the **Analytics** page, **Restock alerts** lists each send, newest first: when it went out, the item, how many alerts were **Queued**, and how many the email service accepted as **Delivered**.",
         "On Growth and Pro, two more columns fill in. **Bought** counts the purchases the alert led to. **Rate** is Bought divided by Delivered, so Waitly’s rate is per email delivered. A send with nothing delivered shows a dash, not zero.",
         "The date menu next to **Over time** filters the list by when each send started: **All time**, **Last 24 hours**, **Last 7 days** or **Last 30 days**. Reading down the Rate column is the comparison that matters: the same product last time, or one product against another.",
       ],
@@ -201,5 +201,5 @@ export const post: UseCasePost = {
       a: "In Waitly, refunded and uncollected amounts come off **Recovered revenue**. The **Bought** count and **Rate** for a send don’t change.",
     },
   ],
-  related: ["back-in-stock-notifications-shopify", "restock-sells-out-before-waitlist"],
+  related: ["back-in-stock-notifications-shopify", "sold-out-variants-shopify", "restock-sells-out-before-waitlist"],
 };

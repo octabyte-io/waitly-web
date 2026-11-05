@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "shopper-votes",
   section: "shoppers",
   title: "Voting for a product",
+  metaTitle: "What shoppers see when they vote with Waitly",
   summary:
     "What your shoppers see when they vote on your next products, and the thank-you email they get.",
+  about:
+    "The feature behind this: [product voting in Waitly](/features/coming-soon/#voting).",
+  updated: "2026-11-05",
   level: "pro",
   before: [
     "Your store is on Pro.",

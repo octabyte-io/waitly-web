@@ -51,18 +51,36 @@ export type Aside = {
 
 export type Step = {
   title: string;
-  /** Paragraphs. Keep each one short; plain text, with **bold** for UI labels. */
+  /** Paragraphs. Keep each one short; plain text, with **bold** for UI labels and `[label](/path/)` for a link. */
   body: string[];
   shot?: Shot;
   aside?: Aside;
 };
 
 export type GuideArticle = {
+  /** The app links to this. Never change it once published. */
   slug: string;
   section: GuideSectionKey;
+  /** The H1, the sidebar label and the card title. Keep it short. */
   title: string;
+  /**
+   * The title tag, when it should read differently from `title`: the task
+   * "in Waitly", so the page doesn't compete with a feature page or a use-case
+   * post for the same query. Shown as written, with no "| Waitly" after it,
+   * so it must name Waitly. At most 60 characters.
+   */
+  metaTitle?: string;
   /** One sentence: what the merchant will have done by the end. */
   summary: string;
+  /** The meta description, when it should read differently from `summary`. At most 160 characters. */
+  metaDescription?: string;
+  /**
+   * One line under the summary that links to the feature page (or other page)
+   * this task belongs to, in place of the section's `about`. Inline markup.
+   */
+  about?: string;
+  /** The day the article last changed, as YYYY-MM-DD, for the sitemap. Only set it from a real date. */
+  updated?: string;
   /** The lowest plan that has this feature. Omit for Free. */
   level?: Level;
   /** What must be true before the steps work. */
@@ -72,4 +90,9 @@ export type GuideArticle = {
   faqs?: { q: string; a: string }[];
   /** Slugs of other guide articles worth reading next. */
   related?: string[];
+  /**
+   * Slugs of use-case posts to show under "Where this helps", on top of the
+   * posts whose setup steps already send readers here.
+   */
+  useCases?: string[];
 };

@@ -8,6 +8,7 @@ import {
   PlanBadge,
   SectionHeading,
   SettingList,
+  TextLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { GuideLinks } from "@/components/guide/guide-links";
@@ -29,7 +30,7 @@ export default function ComingSoonPage() {
     <>
       <JsonLd data={webPageJsonLd(pages.comingSoon)} />
       <PageHero
-        title="Find out what sells before you make it"
+        title="Coming soon and voting: see what sells before you make it"
         intro="Two ways to hear from shoppers before a product exists: a Coming Soon page for something you’re about to launch, and a vote for ideas you haven’t committed to yet."
         aside={
           <ProductFrame title="Oat fleece, heavyweight" price="$96.00">
@@ -58,6 +59,12 @@ export default function ComingSoonPage() {
             <p>
               If someone signs up twice, Waitly updates their answers instead of adding them again.
             </p>
+            <p>
+              Step by step:{" "}
+              <TextLink href="/guide/mark-coming-soon/">mark a product Coming Soon</TextLink>, then{" "}
+              <TextLink href="/guide/coming-soon-block-and-fields/">set up the Coming soon form</TextLink> on
+              your product page.
+            </p>
           </Explainer>
           <SettingList
             settings={[
@@ -81,6 +88,13 @@ export default function ComingSoonPage() {
               for and where shoppers are from. Launches from the last 90 days are shown in a Launched
               list.
             </p>
+            <p>
+              Planning a launch? Read{" "}
+              <TextLink href="/use-cases/coming-soon-product-waitlist/">
+                how to add a coming soon product with a waitlist on a live Shopify store
+              </TextLink>
+              .
+            </p>
           </Explainer>
         </div>
       </Band>
@@ -94,7 +108,8 @@ export default function ComingSoonPage() {
             />
             <p className="mt-6 text-ink/80">
               On Growth and Pro you can write your own subject, heading, message and button for the
-              launch email, just as you can for restock alerts.
+              launch email, just as you can for{" "}
+              <TextLink href="/features/back-in-stock/">back in stock alerts</TextLink>.
             </p>
           </div>
           <EmailMock
@@ -143,6 +158,16 @@ export default function ComingSoonPage() {
                 { name: "Export", detail: "Download a proposal’s voters as CSV." },
               ]}
             />
+            <p className="mt-8 text-ink/80">
+              Step by step:{" "}
+              <TextLink href="/guide/create-a-proposal/">put up a product idea for shoppers to vote on</TextLink>{" "}
+              and <TextLink href="/guide/add-voting-block/">add the voting block to your store</TextLink>. Before
+              you start, read{" "}
+              <TextLink href="/use-cases/customers-vote-on-next-product/">
+                how to let customers vote on your next product
+              </TextLink>
+              .
+            </p>
           </div>
           <div className="lg:pt-4">
             <VotingBlock />
@@ -171,7 +196,9 @@ export default function ComingSoonPage() {
           </p>
           <p>
             When it goes on sale, each voter gets “Waxed canvas tote, which you voted for, is now
-            available”, with a link to buy.
+            available”, with a link to buy. See how to{" "}
+            <TextLink href="/guide/promote-a-proposal/">turn a winning proposal into a product</TextLink>,
+            and <TextLink href="/guide/shopper-votes/">what shoppers see when they vote</TextLink>.
           </p>
         </div>
       </Band>

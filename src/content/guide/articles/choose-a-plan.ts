@@ -4,8 +4,10 @@ export const article: GuideArticle = {
   slug: "choose-a-plan",
   section: "billing",
   title: "Choose or change your plan",
+  metaTitle: "Choose or change your Waitly plan",
   summary:
     "See which plan you’re on, compare what Growth and Pro add, and change plan through Shopify.",
+  updated: "2026-11-05",
   before: ["Waitly is installed. Every store starts on the Free plan."],
   steps: [
     {
@@ -47,7 +49,7 @@ export const article: GuideArticle = {
       title: "Compare what a higher plan adds",
       body: [
         "Below your plan, a card for each plan above yours lists what it adds. **Growth adds** 5,000 restock alerts and 500 preorders each billing cycle, plus analytics, CSV export, your own email text and widget styles, and the customer tag.",
-        "**Pro adds** 20,000 restock alerts, unlimited preorders, waitlist priority, alerts in batches, demand by variant, Demand Score and restock suggestions, Coming Soon pages and product voting.",
+        "**Pro adds** 20,000 restock alerts, unlimited preorders, waitlist priority, alerts in batches, demand by variant, Demand Score and restock suggestions, Coming soon products and product voting.",
       ],
       shot: {
         src: "/guide/choose-a-plan/03-upgrade-cards.jpg",

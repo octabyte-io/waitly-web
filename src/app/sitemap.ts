@@ -6,13 +6,19 @@ import { useCaseEntries } from "@/content/use-cases";
 
 export const dynamic = "force-static";
 
-/** The hub changes whenever a post does, so it carries the newest post's date. */
-const newestPost = useCaseEntries.map((entry) => entry.lastModified!).sort().at(-1);
+const newest = (dates: (string | undefined)[]) =>
+  dates.filter((date): date is string => Boolean(date)).sort().at(-1);
+
+/** A hub changes whenever one of its pages does, so it carries the newest date among them. */
+const hubDates: Record<string, string | undefined> = {
+  [pages.useCases.path]: newest(useCaseEntries.map((entry) => entry.lastModified)),
+  [pages.guide.path]: newest([pages.guide.lastModified, ...guideEntries.map((entry) => entry.lastModified)]),
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: PageEntry[] = [...Object.values(pages), ...guideEntries, ...useCaseEntries];
   return entries.map((page) => {
-    const lastModified = page.path === pages.useCases.path ? newestPost : page.lastModified;
+    const lastModified = hubDates[page.path] ?? page.lastModified;
     return {
       url: new URL(page.path, siteConfig.url).toString(),
       ...(lastModified ? { lastModified } : {}),

@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Add your logo and color to emails",
   summary:
     "Set the sender name and reply-to address, and put your logo and brand color on every email Waitly sends for you.",
+  updated: "2026-11-05",
   before: ["Waitly is installed. Logo and brand color are on every plan, Free included."],
   steps: [
     {

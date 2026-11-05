@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "shopper-preorders",
   section: "shoppers",
   title: "Buying on preorder",
+  metaTitle: "What shoppers see when they preorder with Waitly",
   summary:
     "What your shoppers see when they preorder a sold-out item, from the product page to the Preorder receipt email.",
+  about:
+    "The feature behind this: [Waitly preorders for Shopify](/features/preorders/).",
+  updated: "2026-11-05",
   before: [
     "A preorder policy that’s on covers the product.",
     "The Pre-order block is on your product page, above Add to cart.",

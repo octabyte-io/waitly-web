@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "add-voting-block",
   section: "coming-soon",
   title: "Add the voting block to your store",
+  metaTitle: "Add Waitly’s voting block to your store",
   summary:
     "Put the Product voting block on your home page or a page of its own, and word it your way.",
+  about:
+    "What the feature does: [product voting for Shopify](/features/coming-soon/#voting).",
+  updated: "2026-11-05",
   level: "pro",
   before: [
     "Your store is on the Pro plan.",

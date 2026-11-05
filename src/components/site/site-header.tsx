@@ -73,27 +73,30 @@ export function SiteHeader() {
                 className={cn("size-4 transition-transform", featuresOpen && "rotate-180")}
               />
             </button>
-            {featuresOpen ? (
-              <div
-                id={panelId}
-                className="glass absolute top-14 left-0 w-[34rem] rounded-[1.75rem] bg-white/70 p-2"
-              >
-                <ul className="grid gap-0.5">
-                  {featureNav.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        aria-current={pathname === item.href ? "page" : undefined}
-                        className="block rounded-[1.25rem] px-4 py-3 hover:bg-white/70 aria-[current=page]:bg-white/70"
-                      >
-                        <span className="block font-semibold">{item.label}</span>
-                        <span className="block text-[0.9375rem] text-ink-soft">{item.blurb}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
+            {/*
+              Always rendered and toggled with `hidden`, so the five feature
+              links are in every page's static HTML for crawlers.
+            */}
+            <div
+              id={panelId}
+              hidden={!featuresOpen}
+              className="glass absolute top-14 left-0 w-[34rem] rounded-[1.75rem] bg-white/70 p-2"
+            >
+              <ul className="grid gap-0.5">
+                {featureNav.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      aria-current={pathname === item.href ? "page" : undefined}
+                      className="block rounded-[1.25rem] px-4 py-3 hover:bg-white/70 aria-[current=page]:bg-white/70"
+                    >
+                      <span className="block font-semibold">{item.label}</span>
+                      <span className="block text-[0.9375rem] text-ink-soft">{item.blurb}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           {mainNav.map((item) => (
             <Link

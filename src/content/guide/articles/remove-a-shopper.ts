@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Remove a shopper from a waitlist",
   summary:
     "Take one shopper off one waitlist so they don’t get the alert when it’s back in stock.",
+  updated: "2026-11-05",
   before: ["The shopper is on the waitlist and hasn’t already bought, unsubscribed or expired."],
   steps: [
     {

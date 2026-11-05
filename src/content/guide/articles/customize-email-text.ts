@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Write your own email text",
   summary:
     "Change the subject, heading, message and button of the back-in-stock alert, the launch alert and the waitlist confirmation.",
+  updated: "2026-11-05",
   level: "growth",
   before: ["Your store is on the Growth or Pro plan."],
   steps: [

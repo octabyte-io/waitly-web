@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "shopper-unsubscribes",
   section: "shoppers",
   title: "Stopping alerts",
+  metaTitle: "How shoppers stop Waitly alerts",
   summary:
     "How your shoppers leave one waitlist or stop every waitlist email from your store.",
+  about:
+    "The feature behind these emails: [Waitly back in stock alerts](/features/back-in-stock/).",
+  updated: "2026-11-05",
   before: ["A shopper has had an email from Waitly: a confirmation or an alert."],
   steps: [
     {
@@ -89,4 +93,5 @@ export const article: GuideArticle = {
     },
   ],
   related: ["shopper-restock-alert", "see-whos-waiting", "remove-a-shopper"],
+  useCases: ["back-in-stock-notifications-shopify"],
 };

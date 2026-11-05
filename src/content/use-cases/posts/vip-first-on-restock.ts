@@ -3,7 +3,7 @@ import type { UseCasePost } from "../types";
 export const post: UseCasePost = {
   slug: "vip-first-on-restock",
   title: "Give VIP customers the first chance at a restock",
-  metaTitle: "Give VIP customers first chance at a Shopify restock",
+  metaTitle: "VIP early access to a Shopify restock",
   description:
     "Let your best Shopify customers hear about a restock before everyone else: who counts as a VIP, how to give them a real head start, and what it can’t do.",
   cardHeadline: "Give VIP customers the first chance at a restock",
@@ -109,7 +109,7 @@ export const post: UseCasePost = {
       heading: "With Waitly: put VIPs at the front of the waitlist",
       voice: "waitly",
       blocks: [
-        "On the Pro plan, Waitly’s **Settings** page has a **Waitlist priority** section. Its rules read as one sentence, from the first shoppers alerted to the last:",
+        "[Waitlist priority](/features/restock-release/) is on Waitly’s Pro plan, in the **Waitlist priority** section of its **Settings** page. Its rules read as one sentence, from the first shoppers alerted to the last:",
         {
           type: "list",
           items: [

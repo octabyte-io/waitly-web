@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "release-in-batches",
   section: "restock-release",
   title: "Send restock alerts in batches",
+  metaTitle: "Set up batch restock alerts in Waitly",
   summary:
     "Alert a few shoppers at a time, in line order, until the item sells out, and follow each batch in the send log.",
+  metaDescription:
+    "Have Waitly alert a few shoppers at a time, in line order, until the item sells out, and follow every batch in the send log. Needs the Waitly Pro plan.",
+  updated: "2026-11-05",
   level: "pro",
   before: ["Your store is on the Pro plan."],
   steps: [

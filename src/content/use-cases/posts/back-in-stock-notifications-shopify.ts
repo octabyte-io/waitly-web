@@ -3,7 +3,7 @@ import type { UseCasePost } from "../types";
 export const post: UseCasePost = {
   slug: "back-in-stock-notifications-shopify",
   title: "Back in stock notifications on Shopify: with an app, without one, or not at all",
-  metaTitle: "Back in stock notifications on Shopify",
+  metaTitle: "How to send back in stock notifications on Shopify",
   description:
     "Shopify has no built-in “notify me when available” email. Compare doing it by hand, selling while sold out, and using an app, and see when each one fits.",
   cardHeadline: "Back in stock notifications on Shopify, with an app or without",
@@ -97,7 +97,7 @@ export const post: UseCasePost = {
       blocks: [
         "Each variant in Shopify has a **Continue selling when out of stock** setting in its Inventory section. With it on, shoppers can buy at zero stock. Shopify lists “You have stock coming soon and you want to continue selling before it arrives” as [one reason to use it](https://help.shopify.com/en/manual/products/inventory/setup/selling-when-out-of-stock).",
         "It’s the better choice when you’ve ordered the stock and can give a date. It’s the worse one when you don’t know if or when the product returns, because you’ve taken money for something you may not be able to send.",
-        "Be clear on the page. With that setting on, your product page looks exactly like an in-stock one unless you say otherwise. Add a line about when it ships, or use a [preorder](/features/preorders/) so the shopper sees it before they pay.",
+        "Be clear on the page. With that setting on, your product page looks exactly like an in-stock one unless you say otherwise. Add a line about when it ships, or use [Waitly preorders](/features/preorders/) so the shopper sees it before they pay.",
       ],
     },
     {
@@ -105,7 +105,7 @@ export const post: UseCasePost = {
       heading: "With Waitly: a form on the sold-out variant",
       voice: "waitly",
       blocks: [
-        "Waitly adds a **Notify me when available** block to your product page. It shows only while the variant the shopper picked is sold out, and hides again when they switch to one that’s in stock.",
+        "Waitly is a [back in stock alerts app for Shopify](/features/back-in-stock/). It adds a **Notify me when available** block to your product page, which shows only while the variant the shopper picked is sold out, and hides again when they switch to one that’s in stock.",
         "The shopper types their email and ticks **Email me once when this is back in stock.** Waitly records the exact variant, puts them on that variant’s waitlist, and sends a confirmation straight away.",
         "You can change every word on the form in the theme editor, and the button’s color and corners.",
       ],
@@ -153,14 +153,14 @@ export const post: UseCasePost = {
   limits: [
     "It sends email only. There’s no SMS or push notification.",
     "The form goes on product pages, on an Online Store 2.0 theme. It can’t go on collection pages or older (vintage) themes.",
-    "An ordinary alert doesn’t reserve stock. Holding a unit for the first shoppers in line is a [Pro feature](/features/restock-release/).",
+    "An ordinary alert doesn’t reserve stock. Holding a unit for the first shoppers in line is part of [restock release](/features/restock-release/), a Pro feature.",
     "The Free plan sends up to 100 restock alerts each billing cycle. Alerts past that aren’t sent later; those shoppers stay on the list for the next restock.",
     "It doesn’t connect to Klaviyo or Shopify Flow. On Growth and Pro you can export a waitlist as a CSV file.",
   ],
   faqs: [
     {
       q: "Can I add back in stock notifications to Shopify for free?",
-      a: "Yes, two ways. You can collect emails with a form and send them yourself, which costs time rather than money. Or you can use an app with a free plan: Waitly’s covers the form, the confirmation and up to 100 restock alerts each billing cycle. See [pricing](/pricing/).",
+      a: "Yes, two ways. You can collect emails with a form and send them yourself, which costs time rather than money. Or you can use an app with a free plan: Waitly’s covers the form, the confirmation and up to 100 restock alerts each billing cycle. See [each plan’s restock alert allowance](/pricing/).",
     },
     {
       q: "How does the app know a product is back in stock?",
@@ -179,5 +179,10 @@ export const post: UseCasePost = {
       a: "Then use a preorder instead of a waitlist. Waitly has [preorders](/features/preorders/) on every plan, paid in full at checkout.",
     },
   ],
-  related: ["sold-out-variants-shopify", "continue-selling-when-out-of-stock", "restock-sells-out-before-waitlist"],
+  related: [
+    "sold-out-variants-shopify",
+    "back-in-stock-email-conversion-rate",
+    "continue-selling-when-out-of-stock",
+    "restock-sells-out-before-waitlist",
+  ],
 };

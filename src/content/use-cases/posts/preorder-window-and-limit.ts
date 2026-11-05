@@ -3,7 +3,7 @@ import type { UseCasePost } from "../types";
 export const post: UseCasePost = {
   slug: "preorder-window-and-limit",
   title: "How to run a Shopify preorder with a closing date and a unit limit",
-  metaTitle: "A Shopify preorder with a closing date and a limit",
+  metaTitle: "How to limit Shopify preorders by date and quantity",
   description:
     "Open a preorder on a set date, close it on another, and stop at the units you can make. How to do it in Shopify alone, and what to decide first.",
   cardHeadline: "A preorder with a closing date and a unit limit",
@@ -107,7 +107,7 @@ export const post: UseCasePost = {
       heading: "With Waitly: open and close preorder on set dates",
       voice: "waitly",
       blocks: [
-        "In Waitly, a preorder policy covers the products, variants, collections or tags you choose. On the Growth and Pro plans, its **When preorder runs** card has **Between these dates**: an **Opens on** date and **Opens at** time, and a **Closes on** date and **Closes at** time. Times are 24-hour, in your store’s time zone, which the card names under the fields.",
+        "In Waitly, a [full-payment preorder](/features/preorders/) policy covers the products, variants, collections or tags you choose. On the Growth and Pro plans, its **When preorder runs** card has **Between these dates**: an **Opens on** date and **Opens at** time, and a **Closes on** date and **Closes at** time. Times are 24-hour, in your store’s time zone, which the card names under the fields.",
         "Leave the opening empty to start now, or the closing empty to run until you turn the policy off. Once saved, the card says what the policy will do, such as “This policy is on, and opens on October 15 at 09:00 (America/New_York).” On the **Preorders** page, the policy’s status reads **On** with “Opens …” under it while it waits, and “Ended” once its dates have passed.",
         "Before it opens and after it closes, the policy offers nothing, as if it were off. The covered variants stop selling at zero stock, so the product page shows them as sold out. The policy stays on, and you can change the dates to run it again.",
         {
@@ -173,7 +173,7 @@ export const post: UseCasePost = {
     "The limit is checked after each sale. Preorder closes about a minute after the order that reaches it, and checkouts already under way can still finish, so a busy launch can go a few units over.",
     "The block has no countdown and no count of units left. When the dates pass or the limit is reached, the shopper sees the variant as sold out, with no reason given.",
     "The opening is the same for everyone. Waitly doesn’t hide the page before it opens, give early access to some shoppers, or stop bots.",
-    "Preorders count against your plan’s allowance, one per order line. Growth has 500 each billing cycle. When they’re used up, preorder pauses on every product until the cycle resets, so a large run on Growth can stop short. Pro is unlimited. See [pricing](/pricing/).",
+    "Preorders count against your plan’s allowance, one per order line. Growth has 500 each billing cycle. When they’re used up, preorder pauses on every product until the cycle resets, so a large run on Growth can stop short. Pro is unlimited. See [preorder allowances by plan](/pricing/).",
     "A Waitly preorder is a Shopify pre-order purchase option. Shopify says customers [can’t buy pre-orders with the Shop Pay, Apple Pay or Google Pay accelerated checkouts, or with local payment methods such as Klarna](https://help.shopify.com/en/manual/products/purchase-options/pre-orders/setup), and that pre-orders work on the Online Store and custom storefronts only.",
     "The block needs an Online Store 2.0 theme and goes on product pages.",
   ],
@@ -203,5 +203,5 @@ export const post: UseCasePost = {
       a: "Your store’s time zone, which the card names under the time fields. Use the same time in your announcement.",
     },
   ],
-  related: ["continue-selling-when-out-of-stock", "preorder-shipping-delay"],
+  related: ["preorder-shipping-delay", "made-to-order-production-time", "continue-selling-when-out-of-stock"],
 };

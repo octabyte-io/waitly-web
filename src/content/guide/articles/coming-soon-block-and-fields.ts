@@ -4,8 +4,10 @@ export const article: GuideArticle = {
   slug: "coming-soon-block-and-fields",
   section: "coming-soon",
   title: "Set up the Coming soon form",
+  metaTitle: "Set up Waitly’s Coming soon form",
   summary:
     "Add the Coming soon block to your product page, word it your way, and choose whether it asks for quantity and country.",
+  updated: "2026-11-05",
   level: "pro",
   before: ["Your store is on the Pro plan."],
   steps: [

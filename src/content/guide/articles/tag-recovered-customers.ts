@@ -6,6 +6,9 @@ export const article: GuideArticle = {
   title: "Tag customers an alert brought back",
   summary:
     "Have Waitly add a Shopify customer tag to every buyer a Waitly alert brought back, so you can find them in Customers.",
+  about:
+    "Where recovered sales are counted: [Waitly demand analytics](/features/analytics/).",
+  updated: "2026-11-05",
   level: "growth",
   before: ["Your store is on the Growth or Pro plan."],
   steps: [

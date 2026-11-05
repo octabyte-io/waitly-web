@@ -15,6 +15,7 @@ import {
   PlanBadge,
   SectionHeading,
   CtaLink,
+  TextLink,
 } from "@/components/site/primitives";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { GuideLinks } from "@/components/guide/guide-links";
@@ -49,7 +50,7 @@ export default function AnalyticsPage() {
     <>
       <JsonLd data={webPageJsonLd(pages.analytics)} />
       <PageHero
-        title="Know what your waitlist is worth"
+        title="Demand analytics: know what your waitlist is worth"
         intro="Waitly measures what every restock alert brings back, then turns waiting shoppers, preorders and sales into a score and a restock estimate for each product."
         aside={
           <AdminFrame title="Analytics">
@@ -88,7 +89,8 @@ export default function AnalyticsPage() {
           <Explainer title="Right now">
             <p>
               Shoppers waiting and live waitlists, on every plan. The Waitly home page also shows your
-              most wanted products at a glance.
+              most wanted products at a glance. The guide shows how to{" "}
+              <TextLink href="/guide/analytics-overview/">read your Waitly analytics</TextLink>.
             </p>
           </Explainer>
           <Explainer title="How the demand ended" level="growth">
@@ -102,6 +104,15 @@ export default function AnalyticsPage() {
               Sales from shoppers who bought what they were waiting for within your attribution window
               (7 days by default) after an alert. It covers all time. Refunds and unpaid cancellations
               are subtracted, so the figure is what you actually kept.
+            </p>
+            <p>
+              Set the window in{" "}
+              <TextLink href="/guide/notification-rules/">alert and attribution rules</TextLink>. For the
+              thinking behind it, read{" "}
+              <TextLink href="/use-cases/back-in-stock-email-conversion-rate/">
+                what counts in a back in stock email conversion rate, and how to measure yours
+              </TextLink>
+              .
             </p>
           </Explainer>
         </div>
@@ -125,6 +136,12 @@ export default function AnalyticsPage() {
                 </div>
               ))}
             </dl>
+            <p className="mt-8 text-ink/80">
+              See how to{" "}
+              <TextLink href="/guide/restock-alert-log/">check how a restock alert went</TextLink>. Not sent
+              and Held come from{" "}
+              <TextLink href="/features/restock-release/">restock release in batches or held units</TextLink>.
+            </p>
           </div>
           <AdminFrame title="Restock alerts" className="self-start">
             <Panel>
@@ -151,7 +168,8 @@ export default function AnalyticsPage() {
             </ul>
             <p className="mt-6 text-ink/80">
               When Waitly hasn’t seen enough of an input yet, it leaves it out and lists it as “Not
-              known yet” rather than guessing.
+              known yet” rather than guessing. Step by step:{" "}
+              <TextLink href="/guide/demand-score/">use Demand Score and the restock suggestion</TextLink>.
             </p>
           </div>
           <div className="space-y-6 lg:pt-4">
@@ -205,6 +223,13 @@ export default function AnalyticsPage() {
             carries the same note: an estimate from what Waitly has seen, not a promise of sales.
           </p>
         </div>
+        <p className="mt-10 max-w-3xl text-paper/80">
+          Working it out by hand? Read{" "}
+          <TextLink href="/use-cases/how-much-to-reorder-after-selling-out/">
+            how much inventory to reorder after a product sells out
+          </TextLink>
+          .
+        </p>
       </Band>
 
       <Band tone="paper">
@@ -230,7 +255,10 @@ export default function AnalyticsPage() {
             <p>The 10 waitlists with the most shoppers waiting, so you can see which sizes and colors people actually want.</p>
           </Explainer>
           <Explainer title="Trends" level="pro" className="md:grid-cols-1">
-            <p>New signups and open demand across your store, by day or week, to see whether demand is building.</p>
+            <p>
+              New signups and open demand across your store, by day or week, to see whether demand is
+              building. <TextLink href="/guide/demand-over-time/">See demand over time</TextLink>.
+            </p>
           </Explainer>
           <Explainer title="Potential revenue" level="pro" className="md:grid-cols-1">
             <p>
@@ -239,7 +267,11 @@ export default function AnalyticsPage() {
             </p>
           </Explainer>
           <Explainer title="Preorder volume" level="pro" className="md:grid-cols-1">
-            <p>Which variants take the most preorders, in units and amount, over the period you choose.</p>
+            <p>
+              Which variants take the most preorders, in units and amount, over the period you choose,
+              from <TextLink href="/features/preorders/">Waitly preorders</TextLink>.{" "}
+              <TextLink href="/guide/preorder-volume/">See preorder volume by variant</TextLink>.
+            </p>
           </Explainer>
         </div>
       </Band>

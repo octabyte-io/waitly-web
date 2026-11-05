@@ -6,6 +6,7 @@ export const article: GuideArticle = {
   title: "Track the preorders you’ve taken",
   summary:
     "See every preorder with its ship estimate and status, spot the ones that need you, and ship, cancel or refund them in Shopify.",
+  updated: "2026-11-05",
   before: ["You have a preorder policy that has taken at least one order."],
   steps: [
     {

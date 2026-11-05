@@ -4,8 +4,10 @@ export const article: GuideArticle = {
   slug: "add-preorder-block",
   section: "preorders",
   title: "Add the Pre-order block to your theme",
+  metaTitle: "Add Waitly’s Pre-order block to your theme",
   summary:
     "Put the Pre-order block above Add to cart so shoppers see the Pre-order badge, the ship estimate and the terms, and can buy.",
+  updated: "2026-11-05",
   before: [
     "You use an Online Store 2.0 theme, such as Dawn or Horizon.",
     "You have a preorder policy. The block shows only on products a policy covers.",

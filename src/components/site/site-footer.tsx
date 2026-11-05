@@ -43,7 +43,7 @@ export function SiteFooter() {
         <Container className="border-t border-ink/10 py-6 text-[0.9375rem] text-ink/65">
           <p>
             © {new Date().getFullYear()} {siteConfig.company}. Shopify is a trademark of Shopify Inc.
-            Waitly is an independent app, not made by Shopify.
+            Waitly is a Shopify app by {siteConfig.company}. It is independent and not made by Shopify.
           </p>
         </Container>
       </div>

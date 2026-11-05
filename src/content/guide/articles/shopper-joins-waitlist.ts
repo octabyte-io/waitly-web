@@ -4,8 +4,12 @@ export const article: GuideArticle = {
   slug: "shopper-joins-waitlist",
   section: "shoppers",
   title: "Joining a waitlist",
+  metaTitle: "What shoppers see when they join a Waitly waitlist",
   summary:
     "What your shoppers see when they sign up with Notify me, and the confirmation email they get.",
+  about:
+    "The feature behind this form: [Waitly back in stock alerts](/features/back-in-stock/).",
+  updated: "2026-11-05",
   before: [
     "The Notify me block is on your product page.",
     "The product has a sold-out variant that tracks inventory.",

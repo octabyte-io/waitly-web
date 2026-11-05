@@ -4,8 +4,10 @@ export const article: GuideArticle = {
   slug: "reserve-units",
   section: "restock-release",
   title: "Hold a unit for the first shoppers",
+  metaTitle: "Hold a restocked unit for the first shoppers in Waitly",
   summary:
     "Hold one restocked unit for each of the first shoppers in line, send them a link only they can use, and see who holds a unit right now.",
+  updated: "2026-11-05",
   level: "pro",
   before: [
     "Your store is on the Pro plan.",

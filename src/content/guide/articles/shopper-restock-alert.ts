@@ -4,15 +4,21 @@ export const article: GuideArticle = {
   slug: "shopper-restock-alert",
   section: "shoppers",
   title: "The back-in-stock email",
+  metaTitle: "What shoppers get in Waitly’s back-in-stock email",
   summary:
     "What your shoppers get when an item they’re waiting for comes back, and what happens after they read it.",
+  metaDescription:
+    "What your shoppers get from Waitly when an item they wait for comes back, what the email says, and what happens after they open it or let it lapse.",
+  about:
+    "The feature behind this email: [Waitly back in stock alerts](/features/back-in-stock/).",
+  updated: "2026-11-05",
   before: ["A shopper has joined a waitlist, and the item has come back in stock."],
   steps: [
     {
       title: "The shopper gets the alert",
       body: [
         "When the item is back in stock, Waitly emails the shoppers waiting for it. The subject reads “The Complete Snowboard is back in stock”.",
-        "Shoppers who joined through a Coming Soon page get “is now available” instead, and shoppers who voted for a product get the product’s name and “, which you voted for, is now available”.",
+        "Shoppers who joined through the Coming Soon form on a product get “is now available” instead, and shoppers who voted for a product get the product’s name and “, which you voted for, is now available”.",
       ],
     },
     {
@@ -94,4 +100,5 @@ export const article: GuideArticle = {
     },
   ],
   related: ["how-restock-alerts-work", "customize-email-text", "shopper-unsubscribes"],
+  useCases: ["back-in-stock-notifications-shopify", "back-in-stock-email-conversion-rate"],
 };
