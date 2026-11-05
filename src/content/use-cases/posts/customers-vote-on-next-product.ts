@@ -81,7 +81,7 @@ export const post: UseCasePost = {
           items: [
             "**Write the form.** One checkbox question lists the ideas, each with its rough price, so shoppers can tick more than one. Add an email question, and say next to it what you’ll send: “We’ll email you if we make one you ticked.”",
             "**Decide on repeat answers.** Google Forms’ **Limit to 1 response** setting [requires respondents to sign in to their Google Account](https://support.google.com/docs/answer/2839588), which some shoppers won’t do. Without it, sort the sheet by email when you count, and count each address once.",
-            "**Put it on your store.** In Google Forms, open the **More** menu and choose [**Embed HTML**](https://support.google.com/docs/answer/2839588), then copy the code. In Shopify, [add a page](https://help.shopify.com/en/manual/online-store/themes/theme-structure/pages) such as “Vote”, open the HTML view of its content and paste the code in.",
+            "**Put it on your store.** In Google Forms, open the **More** menu and choose [Embed HTML](https://support.google.com/docs/answer/2839588), then copy the code. In Shopify, [add a page](https://help.shopify.com/en/manual/online-store/themes/theme-structure/pages) such as “Vote”, open the HTML view of its content and paste the code in.",
             "**Point people to it.** Link the page from your home page, your newsletter and your order confirmation, and give it a closing date.",
             "**Count, and tell the winners’ voters.** When you make the product, filter the sheet to the people who ticked it and email them on the day it goes on sale.",
           ],

@@ -122,6 +122,13 @@ function check(posts: UseCasePost[]) {
       if (href.startsWith("https://")) continue;
       if (!known.has(href.split("#")[0])) say(`link "${href}" is not a page on this site`);
     }
+    // Inline markup can't nest: bold around a link, or bold inside a link's
+    // label, shows up on the page as raw ** and [label](href).
+    for (const text of inlineTextOf(post)) {
+      const bold = text.split("**").filter((_, i) => i % 2 === 1);
+      if (bold.some((part) => /\[[^\]]*\]\(/.test(part))) say(`a link sits inside bold: ${text.slice(0, 60)}…`);
+      if (/\[[^\]]*\*\*[^\]]*\]\(/.test(text)) say(`a link's label contains bold: ${text.slice(0, 60)}…`);
+    }
   }
 
   if (problems.length) throw new Error(`Use-case posts:\n- ${problems.join("\n- ")}`);

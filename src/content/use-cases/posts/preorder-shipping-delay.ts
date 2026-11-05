@@ -111,7 +111,7 @@ export const post: UseCasePost = {
             "**Export them.** Filter the Orders page by that tag and select **Export**. The [CSV file](https://help.shopify.com/en/manual/fulfillment/managing-orders/exporting-orders) has each order’s name and the customer’s email.",
             "**Send the email.** Use your own mailbox or an email tool, one message per customer. Check that the tool will send to people who never subscribed to marketing, because this notice has to reach every one of them.",
             "**Track the replies.** Add a second tag as each customer answers, such as “delay-agreed” or “delay-cancel”, and note the date you gave them to answer by.",
-            "**Refund from the order.** Open the order and select [**Refund**](https://help.shopify.com/en/manual/fulfillment/managing-orders/refunding-orders). Do the same on the deadline for anyone who had to agree and didn’t.",
+            "**Refund from the order.** Open the order and select [Refund](https://help.shopify.com/en/manual/fulfillment/managing-orders/refunding-orders). Do the same on the deadline for anyone who had to agree and didn’t.",
           ],
         },
         "This is fine for one late product and a few dozen orders. The weak point is the deadline: nothing reminds you that order 37 never answered.",

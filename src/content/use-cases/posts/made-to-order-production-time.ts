@@ -33,7 +33,7 @@ export const post: UseCasePost = {
               "Nothing tells you how many are owed. Ready-made pieces and made-to-order ones look the same.",
             ],
             [
-              "**Inventory tracked, with [Continue selling when out of stock](https://help.shopify.com/en/manual/products/inventory/setup/selling-when-out-of-stock)**",
+              "**Inventory tracked**, with [Continue selling when out of stock](https://help.shopify.com/en/manual/products/inventory/setup/selling-when-out-of-stock)",
               "Ready-made units sell first. Past zero, the variant keeps selling, and the count goes below zero by the number owed.",
               "Set per variant. Shopify says the setting doesn’t apply to orders placed from Shopify POS.",
             ],
