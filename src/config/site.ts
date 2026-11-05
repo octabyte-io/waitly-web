@@ -2,7 +2,7 @@
  * Everything about the site that changes at launch lives here.
  *
  * - `url`: the public domain, used for canonical URLs, the sitemap and Open Graph.
- * - `installUrl`: swap for the Shopify App Store listing once it is live.
+ * - `installUrl`: the Shopify App Store listing.
  * - `legal`: fill these in and every legal page updates. `null` renders a
  *   visible placeholder so an unfinished page cannot pass for a finished one.
  */
@@ -12,7 +12,7 @@ export const siteConfig = {
   /** The maker's own site, as the privacy policy and DPA name it. */
   companyUrl: "https://octabyte.io",
   url: "https://waitly.octabyte.io",
-  installUrl: "https://apps.shopify.com/search?q=waitly",
+  installUrl: "https://apps.shopify.com/waitly",
   supportEmail: "support@octabyte.io",
   description:
     "Waitly adds Notify me, preorders, Coming soon products and product voting to Shopify, emails shoppers the moment stock returns, and shows what to restock next.",

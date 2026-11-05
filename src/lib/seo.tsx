@@ -105,6 +105,7 @@ export const appJsonLd = {
   operatingSystem: "Shopify",
   softwareRequirements: "A Shopify store with an Online Store 2.0 theme",
   installUrl: siteConfig.installUrl,
+  sameAs: [siteConfig.installUrl],
   image: absolute("/brand/waitly-app-icon-1200.png"),
   featureList: featureNav.map((item) => `${item.label}: ${item.blurb}`),
   publisher: { "@id": ids.organization },
